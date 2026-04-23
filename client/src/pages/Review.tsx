@@ -7,7 +7,6 @@ import {
   HowBlock,
   MetricHeader,
   Toggle,
-  WhatBlock,
 } from "../components/MetricBlock";
 import { MetricStepper, StepperProgress } from "../components/MetricStepper";
 import { ProjectContext } from "../components/ProjectContext";
@@ -18,6 +17,7 @@ import { useExpertId } from "../hooks/useExpertId";
 import { useProject } from "../hooks/useProject";
 import { useProjectsAndMetrics } from "../hooks/useProjects";
 import { useAllRatings, useDebouncedSave, useProjectRatings } from "../hooks/useRatings";
+import { cn } from "../lib/util";
 
 export default function Review() {
   const { slug = "" } = useParams();
@@ -121,7 +121,21 @@ function LeftSidebar({
   activeMetricId: string;
   allRatings: import("../lib/types").Rating[];
 }) {
-  const done = ratings.filter((r) => r.metricId !== "final").length;
+  const scored = ratings.filter((r) => r.metricId !== "final");
+  const done = scored.length;
+  const total = metrics.length;
+  const allDone = done === total && total > 0;
+
+  const weightSumScored = scored.reduce((s, r) => {
+    const m = metrics.find((x) => x.id === r.metricId);
+    return m ? s + m.weight : s;
+  }, 0);
+  const weightedScore = scored.reduce((s, r) => {
+    const m = metrics.find((x) => x.id === r.metricId);
+    return m ? s + r.score * m.weight : s;
+  }, 0);
+  const expertTeaser = weightSumScored > 0 ? weightedScore / weightSumScored : null;
+
   return (
     <aside className="no-print sticky top-[72px] h-[calc(100vh-72px)] w-[260px] shrink-0 border-r border-hairline bg-cream flex flex-col">
       <div className="p-4">
@@ -146,10 +160,75 @@ function LeftSidebar({
           projectSlug={projectSlug}
         />
       </div>
+      <div className="px-4 pt-3 pb-3 border-t border-hairline">
+        <FinalSidebarLink
+          projectSlug={projectSlug}
+          allDone={allDone}
+          done={done}
+          total={total}
+          teaser={expertTeaser}
+        />
+      </div>
       <div className="px-4 pb-5">
         <StepperProgress done={done} total={metrics.length} />
       </div>
     </aside>
+  );
+}
+
+function FinalSidebarLink({
+  projectSlug,
+  allDone,
+  done,
+  total,
+  teaser,
+}: {
+  projectSlug: string;
+  allDone: boolean;
+  done: number;
+  total: number;
+  teaser: number | null;
+}) {
+  const inner = (
+    <>
+      <span className="flex items-center gap-2">
+        <span
+          className={cn(
+            "shrink-0 flex items-center justify-center h-7 w-7 rounded-pill text-xs font-bold",
+            allDone ? "bg-coral text-white" : "bg-zebra text-muted",
+          )}
+        >
+          ★
+        </span>
+        <span className={cn("text-sm font-medium", allDone ? "text-ink" : "text-muted")}>
+          {allDone ? "See final" : "Final"}
+        </span>
+      </span>
+      {allDone ? (
+        <span className="text-coral text-sm font-bold">{teaser?.toFixed(1)}/5 →</span>
+      ) : teaser != null ? (
+        <span className="text-[11px] text-muted">≈ {teaser.toFixed(1)}/5</span>
+      ) : null}
+    </>
+  );
+
+  if (allDone) {
+    return (
+      <Link
+        to={`/project/${projectSlug}/final`}
+        className="flex items-center justify-between gap-2 rounded-card p-2 border border-coral hover:bg-coral/10 transition"
+      >
+        {inner}
+      </Link>
+    );
+  }
+  return (
+    <div
+      className="flex items-center justify-between gap-2 rounded-card p-2 border border-dashed border-hairline cursor-not-allowed opacity-80"
+      title={`Complete all ${total} metrics first — ${done}/${total} done`}
+    >
+      {inner}
+    </div>
   );
 }
 
@@ -179,14 +258,23 @@ function MetricEditor({
   const [score, setScore] = useState<number | null>(existingScore);
   const [comment, setComment] = useState<string>(existingComment);
   const [revealed, setRevealed] = useState<boolean>(existingScore !== null);
+  const aiRevealRef = useRef<HTMLDivElement | null>(null);
 
   useEffect(() => {
     setScore(existingScore);
     setComment(existingComment);
     setRevealed(existingScore !== null);
-    // scroll top when metric changes
-    window.scrollTo({ top: 0, behavior: "smooth" });
   }, [metric.id, existingScore, existingComment]);
+
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  }, [metric.id]);
+
+  useEffect(() => {
+    if (revealed) {
+      aiRevealRef.current?.scrollIntoView({ block: "nearest", behavior: "smooth" });
+    }
+  }, [revealed]);
 
   const handleScore = useCallback((v: number) => {
     setScore(v);
@@ -235,11 +323,11 @@ function MetricEditor({
     <>
       <MetricHeader metric={metric} />
 
-      <Toggle title="What it means">
-        <WhatBlock what={metric.what} />
-      </Toggle>
+      <p className="text-[17px] leading-relaxed text-ink/85 mb-8 max-w-[640px]">
+        {metric.what}
+      </p>
 
-      <Toggle title="How to evaluate">
+      <Toggle title="How to evaluate" defaultOpen={false}>
         <HowBlock metric={metric} />
       </Toggle>
 
@@ -288,12 +376,14 @@ function MetricEditor({
         </span>
       </section>
 
-      <AiReveal
-        visible={revealed && score !== null}
-        ai={aiMetric}
-        notEvaluated={aiNotEvaluated}
-        aiAnalysisPdf={aiAnalysisPdf}
-      />
+      <div ref={aiRevealRef}>
+        <AiReveal
+          visible={revealed && score !== null}
+          ai={aiMetric}
+          notEvaluated={aiNotEvaluated}
+          aiAnalysisPdf={aiAnalysisPdf}
+        />
+      </div>
 
       {revealed && score !== null && (
         <div className="mt-8">
