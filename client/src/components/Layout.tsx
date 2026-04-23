@@ -1,9 +1,15 @@
-import { Link } from "react-router-dom";
-import { useExpertId } from "../hooks/useExpertId";
+import { Link, useNavigate } from "react-router-dom";
+import { useExpertIdentity } from "../hooks/useExpertId";
 
 export function Header({ rightSlot }: { rightSlot?: React.ReactNode }) {
-  const [expertId, reset] = useExpertId();
-  const shortId = expertId.slice(0, 8);
+  const { expert, clear } = useExpertIdentity();
+  const navigate = useNavigate();
+
+  const onSwitch = () => {
+    if (!confirm("Switch expert? Your work is kept on this device (and on the server) — you can come back by typing the same name again.")) return;
+    clear();
+    navigate("/start", { replace: true });
+  };
 
   return (
     <header className="no-print sticky top-0 z-30 bg-cream/90 backdrop-blur border-b border-hairline">
@@ -16,22 +22,21 @@ export function Header({ rightSlot }: { rightSlot?: React.ReactNode }) {
         </Link>
         <div className="flex items-center gap-3">
           {rightSlot}
-          <div className="flex items-center gap-2 text-xs text-muted">
-            <span className="font-mono">expert {shortId}</span>
-            <button
-              type="button"
-              onClick={() => {
-                if (confirm("Reset expert identity? Your current progress will be disconnected (data is kept on the server).")) {
-                  reset();
-                  window.location.reload();
-                }
-              }}
-              className="px-2 py-1 rounded-pill border border-hairline hover:border-coral hover:text-coral transition"
-              title="Reset expert identity"
-            >
-              reset
-            </button>
-          </div>
+          {expert && (
+            <div className="flex items-center gap-2 text-xs text-muted">
+              <span>
+                expert <strong className="text-ink font-medium">{expert.name}</strong>
+              </span>
+              <button
+                type="button"
+                onClick={onSwitch}
+                className="px-2 py-1 rounded-pill border border-hairline hover:border-coral hover:text-coral transition"
+                title="Switch expert"
+              >
+                switch
+              </button>
+            </div>
+          )}
         </div>
       </div>
     </header>

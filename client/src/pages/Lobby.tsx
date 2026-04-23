@@ -1,14 +1,16 @@
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import { Header } from "../components/Layout";
 import { ProjectCard } from "../components/ProjectCard";
-import { useExpertId } from "../hooks/useExpertId";
+import { useExpertIdentity } from "../hooks/useExpertId";
 import { useProjectsAndMetrics } from "../hooks/useProjects";
 import { useAllRatings } from "../hooks/useRatings";
 import { loadAiEval } from "../lib/api";
+import { buildVault, installVault } from "../lib/storage";
 import type { Rating } from "../lib/types";
 
 export default function Lobby() {
-  const [expertId] = useExpertId();
+  const { expert } = useExpertIdentity();
+  const expertId = expert?.id ?? "";
   const { manifest, metrics, loading, error } = useProjectsAndMetrics();
   const { ratings } = useAllRatings(expertId);
   const [aiFinals, setAiFinals] = useState<Record<string, number | null>>({});
@@ -46,6 +48,36 @@ export default function Lobby() {
   const scoredTotal  = ratings.filter((r) => r.metricId !== "final").length;
   const expectedTotal = (manifest?.projects.length ?? 0) * totalMetrics;
 
+  const fileRef = useRef<HTMLInputElement | null>(null);
+
+  const onDownload = () => {
+    if (!expert) return;
+    const v = buildVault(expert);
+    const blob = new Blob([JSON.stringify(v, null, 2)], { type: "application/json" });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement("a");
+    const stamp = new Date(v.exportedAt).toISOString().slice(0, 10);
+    a.href = url;
+    a.download = `hosq-vault-${expert.id}-${stamp}.json`;
+    a.click();
+    URL.revokeObjectURL(url);
+  };
+
+  const onRestore = async (e: React.ChangeEvent<HTMLInputElement>) => {
+    const file = e.target.files?.[0];
+    if (!file) return;
+    try {
+      const text = await file.text();
+      const restored = installVault(JSON.parse(text));
+      alert(`Restored ${restored.name}. Reloading…`);
+      window.location.reload();
+    } catch (ex) {
+      alert(ex instanceof Error ? ex.message : "Could not read vault file.");
+    } finally {
+      if (fileRef.current) fileRef.current.value = "";
+    }
+  };
+
   if (error) return <div className="p-8 text-red-600">Failed to load: {error.message}</div>;
 
   return (
@@ -54,11 +86,12 @@ export default function Lobby() {
       <main className="max-w-[1400px] mx-auto px-8 py-16">
         <div className="max-w-3xl mb-14">
           <h1 className="font-bold text-5xl leading-tight text-ink mb-4">
-            Project expert review
+            {expert ? <>Hi, <span className="text-coral">{expert.name}</span>.</> : "Project expert review"}
           </h1>
           <p className="text-lg text-muted">
-            Go through all five projects. Your progress is saved automatically.
-            Choose a project to start or resume the evaluation.
+            Go through all five projects. Your progress is saved on this device
+            as you rate — and mirrored on the server so you can come back on any
+            browser with the same name.
           </p>
           {expectedTotal > 0 && (
             <div className="mt-8 max-w-md">
@@ -93,6 +126,30 @@ export default function Lobby() {
             ))}
           </div>
         )}
+
+        <div className="mt-20 pt-8 border-t border-hairline flex items-center gap-3 text-xs text-muted flex-wrap">
+          <span>Backup your session:</span>
+          <button
+            type="button"
+            onClick={onDownload}
+            className="px-3 py-1.5 rounded-pill bg-white border border-hairline text-ink hover:border-coral transition"
+          >
+            Download my vault
+          </button>
+          <label className="px-3 py-1.5 rounded-pill bg-white border border-hairline text-ink hover:border-coral transition cursor-pointer">
+            Restore from file
+            <input
+              ref={fileRef}
+              type="file"
+              accept="application/json,.json,.hosq"
+              className="hidden"
+              onChange={onRestore}
+            />
+          </label>
+          <span className="opacity-70">
+            — one file with all your ratings, portable between devices.
+          </span>
+        </div>
       </main>
     </div>
   );

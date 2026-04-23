@@ -1,16 +1,26 @@
-import { Route, Routes } from "react-router-dom";
+import { Navigate, Route, Routes } from "react-router-dom";
 
 import Final from "./pages/Final";
+import Gate from "./pages/Gate";
 import Lobby from "./pages/Lobby";
 import Review from "./pages/Review";
+
+import { useExpertIdentity } from "./hooks/useExpertId";
+
+function RequireExpert({ children }: { children: React.ReactNode }) {
+  const { expert } = useExpertIdentity();
+  if (!expert) return <Navigate to="/start" replace />;
+  return <>{children}</>;
+}
 
 export default function App() {
   return (
     <Routes>
-      <Route path="/" element={<Lobby />} />
-      <Route path="/project/:slug" element={<Review />} />
-      <Route path="/project/:slug/final" element={<Final />} />
-      <Route path="*" element={<Lobby />} />
+      <Route path="/start" element={<Gate />} />
+      <Route path="/" element={<RequireExpert><Lobby /></RequireExpert>} />
+      <Route path="/project/:slug" element={<RequireExpert><Review /></RequireExpert>} />
+      <Route path="/project/:slug/final" element={<RequireExpert><Final /></RequireExpert>} />
+      <Route path="*" element={<Navigate to="/" replace />} />
     </Routes>
   );
 }
