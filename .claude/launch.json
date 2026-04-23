@@ -1,0 +1,13 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "hosq-expert-review",
+      "runtimeExecutable": "node",
+      "runtimeArgs": ["server/dist/index.js"],
+      "port": 8080,
+      "cwd": "/Users/kola/dev/hosq-expert-review",
+      "env": {"PORT": "8080", "DB_PATH": "./dev.db"}
+    }
+  ]
+}

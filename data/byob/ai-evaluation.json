@@ -1,0 +1,164 @@
+{
+  "projectId": "byob",
+  "status": "evaluated",
+  "summary": "Bring Your Own Beamer (BYOB) is a one-night community event held in Yerevan on November 7, 2025, at Gabriel Sundukyan National Academic Theatre. Part of an international movement launched by Rafaël Rozendaal, this immersive audio-visual jam invites visual artists and musicians to showcase experimental work using their own projectors and installations without curators or selection processes. The event attracted 425 on-site participants and featured collaborative light installations in various formats including video, animation, VJ sets, mapping, and AR. Initiated locally by artist Misak Samokatian, BYOB Yerevan continues the tradition of spontaneous creative expression that has occurred in cities worldwide since 2010.",
+  "finalScore": 56,
+  "finalScoreMax": 100,
+  "metrics": [
+    {
+      "metricId": "cultural-vitality",
+      "score": 3,
+      "scoreMax": 5,
+      "pros": [
+        "Strong thematic clarity anchored in established international BYOB movement with proven track record across major cities",
+        "Clear local embedding through identified initiator (Misak Samokatian) and institutional venue partnership (Gabriel Sundukyan Theatre)",
+        "Concrete attendance outcome (425 on-site) demonstrates successful local reach",
+        "Radical openness format (no curators/judges) provides clear structural differentiator"
+      ],
+      "cons": [
+        "No artistic research layer or documented investigation process"
+      ]
+    },
+    {
+      "metricId": "creative-economy",
+      "score": 2,
+      "scoreMax": 5,
+      "pros": [
+        "Strong integration into international BYOB network with confirmed partnership and validated attendance (425 on-site)",
+        "Connection to established global brand provides distribution channel for local artists",
+        "Completed event with concrete audience reach demonstrates execution capability"
+      ],
+      "cons": [
+        "No economic sustainability framework - clear revenue model or financial logic beyond budget",
+        "Employment dimension completely absent: no jobs created, paid roles, or meaningful work opportunities addressed",
+        "Financial innovation missing: standard funding approach with no novel mechanisms or structure",
+        "One-time event model with no evidence of sustained market access or artist career advancement"
+      ]
+    },
+    {
+      "metricId": "social-inclusion",
+      "score": 2,
+      "scoreMax": 5,
+      "pros": [
+        "No-gatekeeping open call structure removes barriers to artist participation",
+        "Documented community turnout of 425 attendees shows successful middle-scale engagement",
+        "Bilingual approach (Armenian/English) and international movement context"
+      ],
+      "cons": [
+        "No targeted inclusion of marginalized voices or underrepresented groups",
+        "Zero documented accessibility provisions across physical, economic, or digital dimensions",
+        "Audience engagement limited to passive viewing with no participatory mechanisms",
+        "Multilingual claim lacks implementation evidence or translation artifacts"
+      ]
+    },
+    {
+      "metricId": "artistic-quality",
+      "score": 4,
+      "scoreMax": 5,
+      "pros": [
+        "Strong execution of contemporary digital art forms with documented proof (video, photos)",
+        "Credible initiator with relevant track record at recognized venue",
+        "Clear participation mechanism and established international format precedent",
+        "Completed event demonstrates capacity to realize technical infrastructure"
+      ],
+      "cons": [
+        "Minimal critical or theoretical framing beyond participation format",
+        "No evidence of discourse development or public program",
+        "Single-person team structure with no documented production capacity"
+      ]
+    },
+    {
+      "metricId": "heritage-environment",
+      "score": 1,
+      "scoreMax": 5,
+      "pros": [
+        "Referenced established international cultural practice (BYOB movement) with participatory tradition",
+        "Names specific local venue and initiator in Yerevan"
+      ],
+      "cons": [
+        "No mechanisms or partnerships for intangible heritage engagement beyond format reference",
+        "No site-specific artistic rationale or connection to Yerevan's cultural identity",
+        "Complete absence of environmental sensitivity considerations",
+        "All evidence is claims-only with no documented plans, agreements, or verification"
+      ]
+    },
+    {
+      "metricId": "digitality",
+      "score": 4,
+      "scoreMax": 5,
+      "pros": [
+        "Excellent multi-platform digital documentation with verified artifacts across website, YouTube, Instagram, and photo repositories",
+        "Strong accessibility through multiple public channels and bilingual approach",
+        "Clear participatory model with open call and non-curated format creating community engagement loop"
+      ],
+      "cons": [
+        "Technological innovation limited to claims without technical validation or R&D documentation",
+        "Digital interactivity focused on documentation rather than active user participation features",
+        "No evidence of custom technical development or novel digital tools"
+      ]
+    },
+    {
+      "metricId": "internationality",
+      "score": 3,
+      "scoreMax": 5,
+      "pros": [
+        "Strong transferability demonstrated by proven replication history across 6+ global cities since 2010",
+        "Simple, low-barrier format (bring-your-own-projector, no curation) minimizes local dependencies and supports scalability",
+        "Participatory open-call design enables artist interaction and collaborative installation"
+      ],
+      "cons": [
+        "No concrete international partnerships or formal ties for Yerevan edition beyond generic movement affiliation",
+        "Absence of local-exposure mechanisms for international participants or content beyond bilingual accommodation",
+        "No documentation of actual cross-cultural exchange outcomes or depth of international artist interaction"
+      ]
+    },
+    {
+      "metricId": "capacity-building",
+      "score": 2,
+      "scoreMax": 5,
+      "pros": [
+        "Strong institutional connection to established international BYOB movement with 15-year track record",
+        "Partnership with credible local venue (National Academic Theatre) and movement founder",
+        "Proven sustainability model demonstrated across multiple global cities since 2010"
+      ],
+      "cons": [
+        "Zero educational or capacity building components in project design",
+        "No skills transfer mechanisms or learning objectives for participants",
+        "Absence of local ecosystem development or post-event continuity plans",
+        "Single-event format without documented infrastructure for ongoing community"
+      ]
+    },
+    {
+      "metricId": "participation",
+      "score": 4,
+      "scoreMax": 5,
+      "pros": [
+        "Strong active participation model with open call and 425 attendees",
+        "Barrier-free selection process (no curators/judges) lowers participation threshold",
+        "Bilingual delivery and multiple artistic format options",
+        "Clear logistical transparency and completed event with documented outcomes"
+      ],
+      "cons": [
+        "No evidence of facilitated dialogue or feedback mechanisms during event",
+        "Equipment requirement (bring your own beamer) creates economic participation barrier",
+        "Limited process transparency beyond basic logistics"
+      ]
+    },
+    {
+      "metricId": "resonance",
+      "score": 4,
+      "scoreMax": 5,
+      "pros": [
+        "Exceptional media infrastructure with documented social media presence, video content, and photo assets ready for distribution",
+        "Strong institutional positioning through National Theater venue and Rafael Rozendaal partnership",
+        "Inherent storyability from established global brand with 15-year track record across cultural capitals",
+        "Clear reputational lift for Yerevan cultural scene through association with prestigious international movement"
+      ],
+      "cons": [
+        "No risk mitigation protocols despite open-call format without curation or quality control",
+        "Continuation between proven global repeatability model and local one-off framing with no continuation plans",
+        "Missing crisis response or content moderation mechanisms for experimental 'playground' format"
+      ]
+    }
+  ]
+}

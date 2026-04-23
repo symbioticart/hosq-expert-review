@@ -1,0 +1,29 @@
+{
+  "projects": [
+    {
+      "id": "art-science",
+      "slug": "art-science",
+      "name": "Art & Science Exhibitions at Schools"
+    },
+    {
+      "id": "byob",
+      "slug": "byob",
+      "name": "Bring Your Own Beamer"
+    },
+    {
+      "id": "cosmic",
+      "slug": "cosmic",
+      "name": "Cosmic Perspective"
+    },
+    {
+      "id": "jam-discipline",
+      "slug": "jam-discipline",
+      "name": "Jam Discipline #1"
+    },
+    {
+      "id": "notations-lab",
+      "slug": "notations-lab",
+      "name": "Notations Laboratory & Showcase"
+    }
+  ]
+}

@@ -1,0 +1,75 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: "Cera Pro";
+  src: url("/fonts/CeraPro-Regular.woff") format("woff");
+  font-weight: 400;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Cera Pro";
+  src: url("/fonts/CeraPro-Medium.woff") format("woff");
+  font-weight: 500;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Cera Pro";
+  src: url("/fonts/CeraPro-Bold.woff") format("woff");
+  font-weight: 700;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Austin Cy";
+  src: url("/fonts/AustinCy-Bold.woff") format("woff");
+  font-weight: 700;
+  font-display: swap;
+}
+
+html, body, #root {
+  height: 100%;
+}
+
+body {
+  background: #EBE2D6;
+  color: #231F20;
+  font-family: "Cera Pro", system-ui, -apple-system, sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* brand rule: no shadows on content */
+.no-shadow * { box-shadow: none !important; }
+
+/* textarea underline style */
+.underline-input {
+  border: none;
+  border-bottom: 1px solid #D9CFC3;
+  background: transparent;
+  outline: none;
+  padding: 8px 0;
+  transition: border-color 0.15s;
+  width: 100%;
+  resize: vertical;
+  font-family: inherit;
+  font-size: 16px;
+  color: #231F20;
+}
+.underline-input:focus {
+  border-bottom-color: #FF6F55;
+}
+.underline-input::placeholder {
+  color: #9A9596;
+}
+
+/* smooth scroll to anchors */
+html { scroll-behavior: smooth; }
+
+/* print styles for Final page PDF export */
+@media print {
+  .no-print { display: none !important; }
+  body { background: white; }
+}

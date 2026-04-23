@@ -1,0 +1,105 @@
+{
+  "id": "jam-discipline",
+  "name": "Jam Discipline #1",
+  "description": "**Short description**\n\nJam Discipline #1\n\n**Full description**\n\nFirst Jam Discipline platform for audiovisual experimentation linking sound, light, code, and moving images into live systems\n\nOur first Jam Discipline — a platform for audiovisual experimentation where artists connected sound, light, code, and moving images into live, temporary systems.\n\n**Curatorial concept**\n\nGAP:notion_missing\n\n**Research questions**\n\nGAP:notion_missing",
+  "tableColumns": [
+    "Field",
+    "Value"
+  ],
+  "tableRows": [
+    [
+      "Project type",
+      "community_event"
+    ],
+    [
+      "Edition year",
+      "2025"
+    ],
+    [
+      "Status",
+      "completed"
+    ],
+    [
+      "HOSQ stream",
+      "network"
+    ],
+    [
+      "Format tags",
+      "Jam Session | community event | sound & music | media art | light"
+    ],
+    [
+      "Start date",
+      "2025-03-22 00:00:00"
+    ],
+    [
+      "End date",
+      "2025-03-22 00:00:00"
+    ],
+    [
+      "Duration (days)",
+      "1"
+    ],
+    [
+      "City",
+      "Yerevan"
+    ],
+    [
+      "Country",
+      "Armenia"
+    ],
+    [
+      "Primary venue",
+      "State Philharmonia of Armenia"
+    ],
+    [
+      "Venue type",
+      "concert_hall"
+    ],
+    [
+      "Team size",
+      "GAP:notion_missing"
+    ],
+    [
+      "Active participants",
+      "16"
+    ],
+    [
+      "International partners",
+      "0"
+    ],
+    [
+      "Local partners",
+      "1"
+    ],
+    [
+      "Jobs created",
+      "GAP:notion_missing"
+    ],
+    [
+      "Paid positions",
+      "GAP:notion_missing"
+    ],
+    [
+      "Total budget (USD)",
+      "1000"
+    ],
+    [
+      "Target audience",
+      "GAP:notion_missing"
+    ],
+    [
+      "Languages",
+      "Armenian|English"
+    ],
+    [
+      "On-site audience",
+      "16"
+    ],
+    [
+      "Online audience",
+      "GAP:notion_missing"
+    ]
+  ],
+  "sourcePdf": "/data/jam-discipline/source.pdf",
+  "aiAnalysisPdf": "/data/jam-discipline/ai-analysis.pdf"
+}

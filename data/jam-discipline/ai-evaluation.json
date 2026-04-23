@@ -1,0 +1,157 @@
+{
+  "projectId": "jam-discipline",
+  "status": "evaluated",
+  "summary": "Jam Discipline #1 was a one-day community event held at the State Philharmonia of Armenia in Yerevan on March 22, 2025. The project created a platform for audiovisual experimentation where 16 active participants connected sound, light, code, and moving images into live, temporary systems. Artists and practitioners collaborated in real-time jam sessions exploring the intersection of media art, sound, music, and light. The event aimed to foster creative experimentation and community building within Armenia's emerging audiovisual and media art scene, operating on a modest budget of $1,000 USD.",
+  "finalScore": 21,
+  "finalScoreMax": 100,
+  "metrics": [
+    {
+      "metricId": "cultural-vitality",
+      "score": 1,
+      "scoreMax": 5,
+      "pros": [
+        "Clear thematic domain (audiovisual experimentation) identified",
+        "Institutional partner (State Philharmonia of Armenia) named"
+      ],
+      "cons": [
+        "No contextual anchors, problem definition, or audience relevance for theme",
+        "No differentiation mechanism or cultural significance for claimed novelty",
+        "No investment mechanisms or co-creation processes with local partner",
+        "Artistic research layer entirely absent"
+      ]
+    },
+    {
+      "metricId": "creative-economy",
+      "score": 1,
+      "scoreMax": 5,
+      "pros": [
+        "Completed event with documented participant count and venue partnership"
+      ],
+      "cons": [
+        "No revenue model, cost structure, or economic sustainability logic",
+        "No employment creation, paid roles, or job potential articulated",
+        "No distribution channels, market access, or creative value chain integration",
+        "No financial innovation or novel funding mechanisms present"
+      ]
+    },
+    {
+      "metricId": "social-inclusion",
+      "score": 1,
+      "scoreMax": 5,
+      "pros": [
+        "Bilingual project context (Armenian/English) provides foundation for multilingual expansion",
+        "Feedback collection mechanism (5/10 score) indicates some audience engagement infrastructure"
+      ],
+      "cons": [
+        "No marginalized target groups identified or inclusion design support",
+        "Zero accessibility provisions documented despite physical venue event",
+        "Participatory format claimed but no co-creation or engagement mechanisms described",
+        "Multilingual claim unsupported by translation deliverables or cultural mediation"
+      ]
+    },
+    {
+      "metricId": "artistic-quality",
+      "score": 2,
+      "scoreMax": 5,
+      "pros": [
+        "Contemporary forms (sound, light, code, moving images) are clearly stated and align with experimental audiovisual practice",
+        "Institutional venue partner (State Philharmonia of Armenia) suggests credible infrastructure support",
+        "Documentation links (photo bank, Instagram) indicate some post-event outputs to materials"
+      ],
+      "cons": [
+        "No curatorial logic, artistic rationale, or production detail provided for the concept",
+        "Team structure, roles, and track records absent — support + artist competence",
+        "Critical grammar not addressed via discourse triggers, public program, or reflection mechanisms"
+      ]
+    },
+    {
+      "metricId": "heritage-environment",
+      "score": 1,
+      "scoreMax": 5,
+      "pros": [
+        "Use of established cultural venue (State Philharmonia) provides institutional foundation"
+      ],
+      "cons": [
+        "No engagement with intangible heritage or Armenian cultural traditions",
+        "Site choice appears logistical rather than culturally motivated by place",
+        "Complete absence of environmental or sustainability considerations",
+        "Generic experimental format with no visible connection to local context"
+      ]
+    },
+    {
+      "metricId": "digitality",
+      "score": 2,
+      "scoreMax": 5,
+      "pros": [
+        "Strong digital documentation with multiple verified artifacts (Google Drive, Instagram, photo bank)",
+        "Clear evidence of post-event archival and visual materials"
+      ],
+      "cons": [
+        "No technological innovation design or validation beyond claims",
+        "Digital accessibility limited to retrospective social media; no live streaming or remote access",
+        "Complete absence of data/interactivity components",
+        "No structured digital exhibition or distribution strategy"
+      ]
+    },
+    {
+      "metricId": "internationality",
+      "score": 0,
+      "scoreMax": 5,
+      "pros": [
+        "Bilingual delivery (Armenian/English) shows basic accessibility consideration"
+      ],
+      "cons": [
+        "Zero international partnerships or cross-border institutional ties",
+        "No documented multicultural representation among participants or content",
+        "No cross-cultural exchange mechanisms or reciprocal engagement",
+        "No transferability design or replication potential demonstrated"
+      ]
+    },
+    {
+      "metricId": "capacity-building",
+      "score": 0,
+      "scoreMax": 5,
+      "pros": [],
+      "cons": [
+        "Clear artistic concept connecting multiple media disciplines (sound, light, code, moving images)",
+        "Partnership with established cultural institution (State Philharmonia of Armenia)",
+        "Documented media outputs and photo archive from the event",
+        "No educational or capacity-building components in project design",
+        "No skills transfer mechanisms, learning outcomes, or training infrastructure",
+        "No institutional relationship development or long-term partnership mechanisms",
+        "Complete lack of sustainability infrastructure or continuation plans"
+      ]
+    },
+    {
+      "metricId": "participation",
+      "score": 1,
+      "scoreMax": 5,
+      "pros": [
+        "Jam session format inherently supports active co-creation and experimentation",
+        "Feedback mechanism implemented, showing some attempt at dialogue"
+      ],
+      "cons": [
+        "No documented engagement design or facilitation plan",
+        "Low feedback score (5/10) suggests limited dialogue quality or depth",
+        "Process transparency completely absent from materials",
+        "No evidence of inclusive participation design or accessibility considerations"
+      ]
+    },
+    {
+      "metricId": "resonance",
+      "score": 2,
+      "scoreMax": 5,
+      "pros": [
+        "Strong visual documentation via Instagram and photo bank demonstrates basic media presence",
+        "State Philharmonia partnership provides institutional credibility and venue prestige",
+        "Completed event with documented output (74 on-site) confirms execution capability"
+      ],
+      "cons": [
+        "No media strategy, press partnerships, or narrative packaging beyond basic posting",
+        "Risk assessment and preparedness completely absent despite experimental format",
+        "Continuation architecture undeveloped - 'platform' language used loosely without specific mechanisms",
+        "Reputational value limited vs venue partnership; no broader recognition or status lift documented"
+      ]
+    }
+  ]
+}

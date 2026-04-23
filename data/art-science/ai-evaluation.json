@@ -1,0 +1,160 @@
+{
+  "projectId": "art-science",
+  "status": "evaluated",
+  "summary": "A pilot educational program in Yerevan and Charentsavan schools where students aged 10-16 proposed, developed, and exhibited their own interdisciplinary projects combining art, science, and technology. Through an Open Call process, workshops with industry professionals, and mentorship from school curators, participants applied classroom knowledge to real-world creative research. The initiative aimed to integrate project-based learning into the Armenian school system, identify talented students for further development in the hosq ecosystem, and create a sustainable model for interdisciplinary education. The program culminated in public exhibitions where students presented their work to a jury, establishing a foundation for ongoing collaboration between schools and creative industry professionals.",
+  "finalScore": 42,
+  "finalScoreMax": 100,
+  "metrics": [
+    {
+      "metricId": "cultural-vitality",
+      "score": 2,
+      "scoreMax": 5,
+      "pros": [
+        "Clear thematic focus on project-based learning bridging school subjects and creative research (A1)",
+        "Named local school partners (Charentsavan School #4, Yerevan State School #57) providing institutional anchor (A1, A3)",
+        "Original mechanisms for school context: student-driven Open Call and public jury exhibition (A2)"
+      ],
+      "cons": [
+        "No articulated ambition statement or gap in Armenian education that this project addresses (A1)",
+        "No artifact proof of cultural originality: no student project samples, jury feedback, or comparison to existing formats (A2)",
+        "Unclear co-authorship power: no formal agreements, no evidence of co-design with school partners (A3)",
+        "Artistic research layer absent: no method, sources, process, or artifacts documented (A4)"
+      ]
+    },
+    {
+      "metricId": "creative-economy",
+      "score": 1,
+      "scoreMax": 5,
+      "pros": [
+        "Clear budget total and itemized cost breakdown with validated numeric artifacts",
+        "Transparent cost structure for pilot execution"
+      ],
+      "cons": [
+        "No revenue model or income diversification beyond grant",
+        "No employment creation detail or paid roles specified",
+        "Absent market integration or distribution channels",
+        "No financial innovation or novel funding mechanisms"
+      ]
+    },
+    {
+      "metricId": "social-inclusion",
+      "score": 2,
+      "scoreMax": 5,
+      "pros": [
+        "Strong community engagement mechanisms with concrete budget allocations and student co-creation processes (C3, score A)",
+        "Clear participatory structures including Open Call, project ownership, and public presentation formats",
+        "Teacher-curator community model provides sustainability pathway for engagement"
+      ],
+      "cons": [
+        "No evidence of targeting or mechanisms for marginalized voices: focus on 'talented students' suggests merit-biased exclusion (C1 score 1)",
+        "Accessibility provisions entirely absent across physical, economic, and digital dimensions (C2; score 1)"
+      ]
+    },
+    {
+      "metricId": "artistic-quality",
+      "score": 3,
+      "scoreMax": 5,
+      "pros": [
+        "Clear curatorial mechanism (Open Call, skill-building exhibition) with documented outputs (photos, video)",
+        "Confirmed institutional partnerships (two named schools) and realized exhibition",
+        "Evidence of visual/digital outputs via Imago links and Instagram post"
+      ],
+      "cons": [
+        "No team bios, track records, or named curators/speakers; team composition unverified",
+        "No detail on integration of contemporary art forms (media art, sound, performance) into pedagogy or exhibition",
+        "Minimal critical layer: no public discourse, curatorial essays, or documented critical engagement beyond jury"
+      ]
+    },
+    {
+      "metricId": "heritage-environment",
+      "score": 1,
+      "scoreMax": 5,
+      "pros": [
+        "Strong community engagement with project-based learning methodology",
+        "Partnership infrastructure with schools and external organizations"
+      ],
+      "cons": [
+        "No engagement with Armenian intangible heritage or cultural traditions",
+        "Location treated as logistical detail rather than meaningful site context",
+        "Environmental sensitivity limited to partner mention without implementation evidence"
+      ]
+    },
+    {
+      "metricId": "digitality",
+      "score": 3,
+      "scoreMax": 5,
+      "pros": [
+        "Excellent digital documentation infrastructure with multiple verified platforms (website, YouTube, Instagram, Google Drive)",
+        "Strong accessibility through multiple public channels and bilingual approach",
+        "Comprehensive digital presence with both archival and social media components"
+      ],
+      "cons": [
+        "No evidence of technological innovation or novel digital formats in project execution",
+        "Missing interactive or data-driven components in digital materials",
+        "No documented mechanisms for digital participation or user engagement loops"
+      ]
+    },
+    {
+      "metricId": "internationality",
+      "score": 2,
+      "scoreMax": 5,
+      "pros": [
+        "Designed knowledge-sharing workshop with bidirectional exchange mechanism between educators",
+        "Transferable methodology with specific components for replication (Open Call, project tools)",
+        "Scalability intention through curator network expansion"
+      ],
+      "cons": [
+        "No international partnerships or cross-border institutional ties",
+        "Mono-cultural context with no evidence of diverse cultural representation",
+        "Limited proof of exchange depth beyond single workshop format",
+        "No documented replication pilots or transferability evidence"
+      ]
+    },
+    {
+      "metricId": "capacity-building",
+      "score": 2,
+      "scoreMax": 5,
+      "pros": [
+        "Structured educational formats with multiple pedagogical methods (presentations, discussions, hands-on exercises)",
+        "Specific skills identified for teacher training (Open Call structuring, curation, art-science integration)",
+        "Clear intent to build teacher community and scale to other schools"
+      ],
+      "cons": [
+        "No artifacts proving educational delivery (syllabi, instructor rosters, prior results)",
+        "No assessment methods or validation of skill transfer outcomes",
+        "Institutional relationships lack long-term mechanics, MoUs, or defined roles",
+        "Sustainability relies on vague claims without infrastructure, funding, or governance detail"
+      ]
+    },
+    {
+      "metricId": "participation",
+      "score": 2,
+      "scoreMax": 5,
+      "pros": [
+        "Clear active participation formats: Open Call, skill-building workshops, hands-on project creation, public exhibition with jury",
+        "Planned dialogue mechanisms including project proposals and presentation rehearsals",
+        "Budget allocation for ongoing student interaction (chat, rehearsals) shows resource commitment to engagement"
+      ],
+      "cons": [
+        "No proof of execution quality: all participation claims lack artifacts or documented outcomes",
+        "Process transparency absent: no public roadmap, decision logic, or open updates visible in materials",
+        "Inclusivity not addressed: no adaptations for diverse learners, accessibility, or multiple participation modes"
+      ]
+    },
+    {
+      "metricId": "resonance",
+      "score": 4,
+      "scoreMax": 5,
+      "pros": [
+        "Strong media execution with documented social media presence, video content, and organized photo archives",
+        "Solid institutional partnerships with named schools and foundation backing providing reputational foundation",
+        "Comprehensive continuation architecture spanning talent pipeline, institutional integration, educator network, and replicable methodology"
+      ],
+      "cons": [
+        "No evidence of proactive media strategy: press coverage, or media partner commitments despite good asset creation",
+        "Absence of external validation markers (awards, high-profile endorsements) limiting reputational ceiling",
+        "Critical gap in risk management documentation for project involving minors and school system intervention"
+      ]
+    }
+  ]
+}

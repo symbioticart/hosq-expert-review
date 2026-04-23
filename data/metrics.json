@@ -1,0 +1,559 @@
+{
+  "metrics": [
+    {
+      "id": "cultural-vitality",
+      "letter": "A",
+      "weight": 0.13,
+      "nameEn": "Cultural Vitality",
+      "what": "Thematic relevance, cultural originality, local embedding and the depth of artistic research behind the project.",
+      "how": "Give a single 0–5 score for the whole vector based on the evidence present in the project materials. Use the level definitions below. Remember: 3 is a competent baseline, 5 requires concrete artefacts and independent evidence. Do not inflate — strictness is helpful.",
+      "scale": [
+        {
+          "score": 0,
+          "label": "Not addressed in the materials"
+        },
+        {
+          "score": 1,
+          "label": "Only claims / very weak signals"
+        },
+        {
+          "score": 2,
+          "label": "Generic or minor mentions"
+        },
+        {
+          "score": 3,
+          "label": "Competent baseline — basic criteria met"
+        },
+        {
+          "score": 4,
+          "label": "Strong evidence with minor gaps"
+        },
+        {
+          "score": 5,
+          "label": "Rigorous + multiple independent artefacts"
+        }
+      ],
+      "subindices": [
+        {
+          "id": "A1",
+          "name": "Thematic relevance",
+          "description": "theme quality + linkage to context/problem/audience"
+        },
+        {
+          "id": "A2",
+          "name": "Cultural originality",
+          "description": "novelty in proposition/form/method, not generic"
+        },
+        {
+          "id": "A3",
+          "name": "Connection to local cultural fabric",
+          "description": "local embedding, partners, co-creation"
+        },
+        {
+          "id": "A4",
+          "name": "Depth of artistic research",
+          "description": "research process: method/sources/steps/artifacts"
+        }
+      ]
+    },
+    {
+      "id": "creative-economy",
+      "letter": "B",
+      "weight": 0.12,
+      "nameEn": "Creative Economy",
+      "what": "Economic sustainability, job creation, value-chain integration and financial innovation.",
+      "how": "Give a single 0–5 score for the whole vector based on the evidence present in the project materials. Use the level definitions below. Remember: 3 is a competent baseline, 5 requires concrete artefacts and independent evidence. Do not inflate — strictness is helpful.",
+      "scale": [
+        {
+          "score": 0,
+          "label": "Not addressed in the materials"
+        },
+        {
+          "score": 1,
+          "label": "Only claims / very weak signals"
+        },
+        {
+          "score": 2,
+          "label": "Generic or minor mentions"
+        },
+        {
+          "score": 3,
+          "label": "Competent baseline — basic criteria met"
+        },
+        {
+          "score": 4,
+          "label": "Strong evidence with minor gaps"
+        },
+        {
+          "score": 5,
+          "label": "Rigorous + multiple independent artefacts"
+        }
+      ],
+      "subindices": [
+        {
+          "id": "B1",
+          "name": "Economic sustainability",
+          "description": "revenue model, diversified income, cost logic, runway"
+        },
+        {
+          "id": "B2",
+          "name": "Jobs/Employment potential",
+          "description": "jobs created, paid roles, meaningful work opportunities"
+        },
+        {
+          "id": "B3",
+          "name": "Integration into creative value chain",
+          "description": "distribution, platforms, market links, sales channels"
+        },
+        {
+          "id": "B4",
+          "name": "Financial innovation",
+          "description": "novel funding models, partnerships, financing mechanisms"
+        }
+      ]
+    },
+    {
+      "id": "social-inclusion",
+      "letter": "C",
+      "weight": 0.08,
+      "nameEn": "Social Inclusion",
+      "what": "Representation of marginalised voices, accessibility, community engagement and multilingual/multicultural reach.",
+      "how": "Give a single 0–5 score for the whole vector based on the evidence present in the project materials. Use the level definitions below. Remember: 3 is a competent baseline, 5 requires concrete artefacts and independent evidence. Do not inflate — strictness is helpful.",
+      "scale": [
+        {
+          "score": 0,
+          "label": "Not addressed in the materials"
+        },
+        {
+          "score": 1,
+          "label": "Only claims / very weak signals"
+        },
+        {
+          "score": 2,
+          "label": "Generic or minor mentions"
+        },
+        {
+          "score": 3,
+          "label": "Competent baseline — basic criteria met"
+        },
+        {
+          "score": 4,
+          "label": "Strong evidence with minor gaps"
+        },
+        {
+          "score": 5,
+          "label": "Rigorous + multiple independent artefacts"
+        }
+      ],
+      "subindices": [
+        {
+          "id": "C1",
+          "name": "Representation of marginalized voices",
+          "description": "target groups, agency, voice, not tokenism"
+        },
+        {
+          "id": "C2",
+          "name": "Accessibility for broad audiences",
+          "description": "physical, economic, digital access"
+        },
+        {
+          "id": "C3",
+          "name": "Mechanisms for local community engagement",
+          "description": "co-creation, participation structures"
+        },
+        {
+          "id": "C4",
+          "name": "Multilingualism and multiculturality",
+          "description": "languages used, cultural codes, inclusion design"
+        }
+      ]
+    },
+    {
+      "id": "artistic-quality",
+      "letter": "D",
+      "weight": 0.14,
+      "nameEn": "Artistic Quality",
+      "what": "Curatorial and artistic concept, team competence, contemporary forms and critical potential.",
+      "how": "Give a single 0–5 score for the whole vector based on the evidence present in the project materials. Use the level definitions below. Remember: 3 is a competent baseline, 5 requires concrete artefacts and independent evidence. Do not inflate — strictness is helpful.",
+      "scale": [
+        {
+          "score": 0,
+          "label": "Not addressed in the materials"
+        },
+        {
+          "score": 1,
+          "label": "Only claims / very weak signals"
+        },
+        {
+          "score": 2,
+          "label": "Generic or minor mentions"
+        },
+        {
+          "score": 3,
+          "label": "Competent baseline — basic criteria met"
+        },
+        {
+          "score": 4,
+          "label": "Strong evidence with minor gaps"
+        },
+        {
+          "score": 5,
+          "label": "Rigorous + multiple independent artefacts"
+        }
+      ],
+      "subindices": [
+        {
+          "id": "D1",
+          "name": "Curatorial and artistic concept",
+          "description": "clarity, strength, internal logic"
+        },
+        {
+          "id": "D2",
+          "name": "Team competence",
+          "description": "track record, roles, capacity, credibility"
+        },
+        {
+          "id": "D3",
+          "name": "Use of contemporary art forms",
+          "description": "digital/performance/experimental relevance and execution"
+        },
+        {
+          "id": "D4",
+          "name": "Critical potential",
+          "description": "reflection, debate, challenge, discourse triggers"
+        }
+      ]
+    },
+    {
+      "id": "heritage-environment",
+      "letter": "E",
+      "weight": 0.1,
+      "nameEn": "Heritage & Environment",
+      "what": "Engagement with intangible heritage, meaningfulness of place and environmental sensitivity.",
+      "how": "Give a single 0–5 score for the whole vector based on the evidence present in the project materials. Use the level definitions below. Remember: 3 is a competent baseline, 5 requires concrete artefacts and independent evidence. Do not inflate — strictness is helpful.",
+      "scale": [
+        {
+          "score": 0,
+          "label": "Not addressed in the materials"
+        },
+        {
+          "score": 1,
+          "label": "Only claims / very weak signals"
+        },
+        {
+          "score": 2,
+          "label": "Generic or minor mentions"
+        },
+        {
+          "score": 3,
+          "label": "Competent baseline — basic criteria met"
+        },
+        {
+          "score": 4,
+          "label": "Strong evidence with minor gaps"
+        },
+        {
+          "score": 5,
+          "label": "Rigorous + multiple independent artefacts"
+        }
+      ],
+      "subindices": [
+        {
+          "id": "E1",
+          "name": "Intangible heritage",
+          "description": "traditions, cultural memory, language, practices"
+        },
+        {
+          "id": "E2",
+          "name": "Place meaningfulness",
+          "description": "site-specific link to history/identity of location"
+        },
+        {
+          "id": "E3",
+          "name": "Environmental sensitivity",
+          "description": "sustainability, resources, materials, footprint"
+        }
+      ]
+    },
+    {
+      "id": "digitality",
+      "letter": "F",
+      "weight": 0.1,
+      "nameEn": "Digitality",
+      "what": "Digital representation, technological innovation, digital accessibility and data/interactivity loops.",
+      "how": "Give a single 0–5 score for the whole vector based on the evidence present in the project materials. Use the level definitions below. Remember: 3 is a competent baseline, 5 requires concrete artefacts and independent evidence. Do not inflate — strictness is helpful.",
+      "scale": [
+        {
+          "score": 0,
+          "label": "Not addressed in the materials"
+        },
+        {
+          "score": 1,
+          "label": "Only claims / very weak signals"
+        },
+        {
+          "score": 2,
+          "label": "Generic or minor mentions"
+        },
+        {
+          "score": 3,
+          "label": "Competent baseline — basic criteria met"
+        },
+        {
+          "score": 4,
+          "label": "Strong evidence with minor gaps"
+        },
+        {
+          "score": 5,
+          "label": "Rigorous + multiple independent artefacts"
+        }
+      ],
+      "subindices": [
+        {
+          "id": "F1",
+          "name": "Digital representation format",
+          "description": "online presence, digital exhibition, documentation"
+        },
+        {
+          "id": "F2",
+          "name": "Technological innovation",
+          "description": "use of new tech, R&D, novel digital formats"
+        },
+        {
+          "id": "F3",
+          "name": "Accessibility via digital channels",
+          "description": "usability, distribution, onboarding, availability"
+        },
+        {
+          "id": "F4",
+          "name": "Data/interactivity",
+          "description": "user interaction, data-driven components, participation loops"
+        }
+      ]
+    },
+    {
+      "id": "internationality",
+      "letter": "G",
+      "weight": 0.11,
+      "nameEn": "Internationality",
+      "what": "International partners, multi-cultural representation, depth of cross-cultural exchange and transferability.",
+      "how": "Give a single 0–5 score for the whole vector based on the evidence present in the project materials. Use the level definitions below. Remember: 3 is a competent baseline, 5 requires concrete artefacts and independent evidence. Do not inflate — strictness is helpful.",
+      "scale": [
+        {
+          "score": 0,
+          "label": "Not addressed in the materials"
+        },
+        {
+          "score": 1,
+          "label": "Only claims / very weak signals"
+        },
+        {
+          "score": 2,
+          "label": "Generic or minor mentions"
+        },
+        {
+          "score": 3,
+          "label": "Competent baseline — basic criteria met"
+        },
+        {
+          "score": 4,
+          "label": "Strong evidence with minor gaps"
+        },
+        {
+          "score": 5,
+          "label": "Rigorous + multiple independent artefacts"
+        }
+      ],
+      "subindices": [
+        {
+          "id": "G1",
+          "name": "International partners",
+          "description": "partners from other countries, formal ties"
+        },
+        {
+          "id": "G2",
+          "name": "Representation of different cultures",
+          "description": "multiple cultural identities in content/participants"
+        },
+        {
+          "id": "G3",
+          "name": "Cross-cultural exchange potential",
+          "description": "depth of interaction, not just presence"
+        },
+        {
+          "id": "G4",
+          "name": "Transferability to other countries",
+          "description": "replicable model, translation, modularity"
+        }
+      ]
+    },
+    {
+      "id": "capacity-building",
+      "letter": "H",
+      "weight": 0.11,
+      "nameEn": "Capacity Building",
+      "what": "Educational component, skills transfer, institutional ties and ecosystem sustainability.",
+      "how": "Give a single 0–5 score for the whole vector based on the evidence present in the project materials. Use the level definitions below. Remember: 3 is a competent baseline, 5 requires concrete artefacts and independent evidence. Do not inflate — strictness is helpful.",
+      "scale": [
+        {
+          "score": 0,
+          "label": "Not addressed in the materials"
+        },
+        {
+          "score": 1,
+          "label": "Only claims / very weak signals"
+        },
+        {
+          "score": 2,
+          "label": "Generic or minor mentions"
+        },
+        {
+          "score": 3,
+          "label": "Competent baseline — basic criteria met"
+        },
+        {
+          "score": 4,
+          "label": "Strong evidence with minor gaps"
+        },
+        {
+          "score": 5,
+          "label": "Rigorous + multiple independent artefacts"
+        }
+      ],
+      "subindices": [
+        {
+          "id": "H1",
+          "name": "Educational component",
+          "description": "workshops, trainings, learning formats"
+        },
+        {
+          "id": "H2",
+          "name": "Skills transferred to participants",
+          "description": "specific competencies, outputs, assessment"
+        },
+        {
+          "id": "H3",
+          "name": "Institutional relationship development",
+          "description": "long-term ties between orgs"
+        },
+        {
+          "id": "H4",
+          "name": "Ecosystem sustainability beyond project",
+          "description": "community, continuity, infrastructure"
+        }
+      ]
+    },
+    {
+      "id": "participation",
+      "letter": "I",
+      "weight": 0.06,
+      "nameEn": "Participation",
+      "what": "Engagement level, dialogue depth, process transparency and inclusivity of formats.",
+      "how": "Give a single 0–5 score for the whole vector based on the evidence present in the project materials. Use the level definitions below. Remember: 3 is a competent baseline, 5 requires concrete artefacts and independent evidence. Do not inflate — strictness is helpful.",
+      "scale": [
+        {
+          "score": 0,
+          "label": "Not addressed in the materials"
+        },
+        {
+          "score": 1,
+          "label": "Only claims / very weak signals"
+        },
+        {
+          "score": 2,
+          "label": "Generic or minor mentions"
+        },
+        {
+          "score": 3,
+          "label": "Competent baseline — basic criteria met"
+        },
+        {
+          "score": 4,
+          "label": "Strong evidence with minor gaps"
+        },
+        {
+          "score": 5,
+          "label": "Rigorous + multiple independent artefacts"
+        }
+      ],
+      "subindices": [
+        {
+          "id": "I1",
+          "name": "Audience engagement level",
+          "description": "active participation, not just attendance"
+        },
+        {
+          "id": "I2",
+          "name": "Depth of dialogue with public",
+          "description": "meaningful discussion, feedback loops"
+        },
+        {
+          "id": "I3",
+          "name": "Process transparency",
+          "description": "stages, choices, logic communicated"
+        },
+        {
+          "id": "I4",
+          "name": "Inclusivity of participation formats",
+          "description": "adaptation for different audiences"
+        }
+      ]
+    },
+    {
+      "id": "resonance",
+      "letter": "J",
+      "weight": 0.05,
+      "nameEn": "Resonance",
+      "what": "Media potential, reputational value, risk awareness and post-project continuation effects.",
+      "how": "Give a single 0–5 score for the whole vector based on the evidence present in the project materials. Use the level definitions below. Remember: 3 is a competent baseline, 5 requires concrete artefacts and independent evidence. Do not inflate — strictness is helpful.",
+      "scale": [
+        {
+          "score": 0,
+          "label": "Not addressed in the materials"
+        },
+        {
+          "score": 1,
+          "label": "Only claims / very weak signals"
+        },
+        {
+          "score": 2,
+          "label": "Generic or minor mentions"
+        },
+        {
+          "score": 3,
+          "label": "Competent baseline — basic criteria met"
+        },
+        {
+          "score": 4,
+          "label": "Strong evidence with minor gaps"
+        },
+        {
+          "score": 5,
+          "label": "Rigorous + multiple independent artefacts"
+        }
+      ],
+      "subindices": [
+        {
+          "id": "J1",
+          "name": "Media potential",
+          "description": "storyability, visibility, press/social packaging"
+        },
+        {
+          "id": "J2",
+          "name": "Reputational value",
+          "description": "status lift for organizers/artists, institutional signaling"
+        },
+        {
+          "id": "J3",
+          "name": "Risk of misunderstanding/scandal",
+          "description": "taboo/provocation and preparedness"
+        },
+        {
+          "id": "J4",
+          "name": "Post-effect/continuation potential",
+          "description": "spin-offs, follow-up formats, scalability of impact"
+        }
+      ]
+    }
+  ]
+}

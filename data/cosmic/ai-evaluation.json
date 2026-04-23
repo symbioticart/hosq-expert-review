@@ -1,0 +1,160 @@
+{
+  "projectId": "cosmic",
+  "status": "evaluated",
+  "summary": "Cosmic Perspective is a completed lecture series held in Yerevan, Armenia in March 2025, led by curator and astrophysicist Jan Świerkoski. The masterclass explored how art helps humans engage with scientific concepts beyond sensory perception, from atoms to black holes, examining cognitive shifts similar to the Overview Effect. Participants learned strategies for creating successful art-science residencies and explored the work of Instytut B61, an international art-science collective. The single-day event attracted 74 on-site attendees and was conducted in Armenian and English, receiving a feedback score of 8/10.",
+  "finalScore": 49,
+  "finalScoreMax": 100,
+  "metrics": [
+    {
+      "metricId": "cultural-vitality",
+      "score": 3,
+      "scoreMax": 5,
+      "pros": [
+        "Strong speaker credentials with interdisciplinary research background in astrophysics and cultural studies",
+        "Clear thematic focus on art-science engagement grounded in cognitive theory (Cosmic Underground)",
+        "Established institutional research affiliation and past high-profile projects (Cosmic Underground)"
+      ],
+      "cons": [
+        "No connection to Yerevan cultural context or local audience needs—theme remains abstract and generic",
+        "Minimal local embedding: venue partnership only, no co-creation or involvement of Armenian cultural actors",
+        "Originality unclear: standard lecture format with references to past work, no novel methodology demonstrated",
+        "Research depth not traced to this event: no lecture-specific artifacts, bibliography, or process documentation"
+      ]
+    },
+    {
+      "metricId": "creative-economy",
+      "score": 0,
+      "scoreMax": 5,
+      "pros": [
+        "Strong intellectual content with art-science integration focus",
+        "Completed event with documented audience (74 on-site) and feedback (8/10)",
+        "International expert (Jan Świerkoski) with credible background in art-science curation"
+      ],
+      "cons": [
+        "Zero economic sustainability framework - no revenue model or financial logic beyond budget item numbers",
+        "No employment dimension - single-person team with no paid or meaningful work opportunities addressed",
+        "No creative value chain integration - no distribution, market access, or commercial pathways",
+        "No financial innovation - standard grant-dependent single-event structure"
+      ]
+    },
+    {
+      "metricId": "social-inclusion",
+      "score": 2,
+      "scoreMax": 5,
+      "pros": [
+        "Bilingual delivery in Armenian and English with artifact-level evidence",
+        "Interactive hands-on component providing some participant engagement",
+        "Public-event format with documented attendance of 74 people"
+      ],
+      "cons": [
+        "No identification of marginalized target groups or mechanisms for their meaningful representation",
+        "Absence of accessibility provisions (physical, economic, digital) beyond generic 'public' label",
+        "No local community co-creation, participatory governance, or engagement structures",
+        "Limited cultural mediation or multicultural design beyond language provision"
+      ]
+    },
+    {
+      "metricId": "artistic-quality",
+      "score": 4,
+      "scoreMax": 5,
+      "pros": [
+        "Exceptional team credentials with verified interdisciplinary expertise in both astrophysics and cultural studies, sustained institutional recognition",
+        "Strong prior contemporary practice evidenced by EC-funded immersive exhibition (Cosmic Underground) with documented scale",
+        "Clear theoretical framework grounding curatorial approach in cognitive metaphor theory and conceptual blending",
+        "Concept articulation notable at methodological claim level without demonstrated curatorial outputs or realized exhibitions under this framework"
+      ],
+      "cons": []
+    },
+    {
+      "metricId": "heritage-environment",
+      "score": 1,
+      "scoreMax": 5,
+      "pros": [
+        "Theoretical framework (cognitive metaphor theory) provides intellectual rigor to science-art engagement",
+        "Clear documentation of location and venue logistics"
+      ],
+      "cons": [
+        "No engagement with intangible heritage, cultural memory, or traditional knowledge systems",
+        "Site selection appears logistical rather than place-based; no Yerevan-specific context",
+        "Environmental considerations completely absent from planning and documentation",
+        "Missed opportunity to connect cosmic themes to Armenian astronomical heritage or local cultural context"
+      ]
+    },
+    {
+      "metricId": "digitality",
+      "score": 3,
+      "scoreMax": 5,
+      "pros": [
+        "Exceptional digital representation with multi-platform presence (project page, photo archive, YouTube, Instagram, optimized web images)",
+        "Strong accessibility through multiple digital channels and bilingual delivery (Armenian/English)",
+        "Comprehensive documentation strategy with verified artifacts across platforms"
+      ],
+      "cons": [
+        "No technological innovation or R&D specific to this masterclass event",
+        "Absence of digital interactivity or data-driven components",
+        "No evidence of user participation loops or interactive digital systems"
+      ]
+    },
+    {
+      "metricId": "internationality",
+      "score": 4,
+      "scoreMax": 5,
+      "pros": [
+        "Exceptional international partnership portfolio through speaker's institutional ties (Portuguese/Danish universities, Polish Embassy, EC-funded projects)",
+        "Proven transferable model via Cosmic Underground traveling exhibition across multiple countries",
+        "Bilingual delivery and multi-cultural speaker background provide representation functionality",
+        "Teaching replicable art-science residency strategies with portable theoretical framework"
+      ],
+      "cons": [
+        "No concrete international partnerships or formal ties for Yerevan edition beyond generic movement affiliation documented",
+        "Limited evidence of deep cross-cultural exchange in this one-day masterclass format (no co-creation outputs documented)"
+      ]
+    },
+    {
+      "metricId": "capacity-building",
+      "score": 1,
+      "scoreMax": 5,
+      "pros": [
+        "Structured masterclass format with clear thematic focus on art-science engagement",
+        "Pedagogical framework grounded in cognitive theory (metaphor theory, conceptual blending)",
+        "Hands-on case study component using established organization (Instytut B61)"
+      ],
+      "cons": [
+        "No curriculum artifacts, syllabi, or detailed session structure provided",
+        "Skill transfer methods and assessment mechanisms not described",
+        "No institutional relationship development or long-term partnership mechanics",
+        "Zero evidence of ecosystem sustainability or post-event continuation"
+      ]
+    },
+    {
+      "metricId": "participation",
+      "score": 3,
+      "scoreMax": 5,
+      "pros": [
+        "Strong post-event transparency through multiple public documentation channels (video, photos, social media)",
+        "Active engagement mechanisms including hands-on exploration and collaborative learning strategies",
+        "Bilingual delivery demonstrates basic accessibility consideration"
+      ],
+      "cons": [
+        "Minimal evidence of dialogue depth or feedback integration mechanisms",
+        "Limited inclusivity adaptations beyond language",
+        "No pre-event engagement design or facilitation protocols documented"
+      ]
+    },
+    {
+      "metricId": "resonance",
+      "score": 4,
+      "scoreMax": 5,
+      "pros": [
+        "Exceptional speaker credentials with multiple institutional recognitions and EU funding history provide strong reputational lift",
+        "Robust media presence with documented social media, video, and photo assets demonstrating actual visibility",
+        "Live-role educational topic with validated positive reception (8/10 feedback)",
+        "Connection to established international collective (Instytut B61) suggests institutional continuity"
+      ],
+      "cons": [
+        "No documented continuation plan or follow-up commitments specific to this event",
+        "Absence of proactive risk assessment or communication protocols (though retrospectively low-risk)"
+      ]
+    }
+  ]
+}

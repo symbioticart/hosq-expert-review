@@ -1,0 +1,16 @@
+{
+  "name": "hosq-expert-review",
+  "private": true,
+  "version": "0.1.0",
+  "scripts": {
+    "install:all": "cd server && npm install && cd ../client && npm install",
+    "build": "cd client && npm install && npm run build && cd ../server && npm install && npm run build",
+    "start": "cd server && npm run start",
+    "dev:client": "cd client && npm run dev",
+    "dev:server": "cd server && npm run dev",
+    "dev": "npx --yes concurrently -n client,server -c magenta,cyan \"npm run dev:client\" \"npm run dev:server\""
+  },
+  "engines": {
+    "node": ">=20.0.0"
+  }
+}

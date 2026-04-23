@@ -1,0 +1,1277 @@
+{
+  "_meta": {
+    "brand_name": "HOSQ",
+    "tagline": "Cultural Intelligence as a Service",
+    "extracted_at": "2026-03-18T17:30:00Z",
+    "source_files": [
+      { "filename": "hosq-logo-black.svg", "type": "image", "dimensions": "765x564" },
+      { "filename": "hosq-logo-black-NEW-cut.png", "type": "image", "dimensions": "1400x960" },
+      { "filename": "hosq-logo-white-NEW-cut.png", "type": "image", "dimensions": "1400x960" },
+      { "filename": "hosq-Notations-PR-horizontal.jpg", "type": "image", "dimensions": "1920x1080" },
+      { "filename": "hosq-Notations-PR-vertical.jpg", "type": "image", "dimensions": "1080x1920" },
+      { "filename": "hosq-Notations-PR-1350 ENG.jpg", "type": "image", "dimensions": "1080x1350" },
+      { "filename": "hosq-cover-email.jpg", "type": "image", "dimensions": "1200x630" },
+      { "filename": "hosq-cover-newsletter-event.jpg", "type": "image", "dimensions": "1200x630" },
+      { "filename": "hosq-logo-userpic-25-01.png", "type": "image", "dimensions": "400x400" },
+      { "filename": "hosq-logo-userpic-25-02.png", "type": "image", "dimensions": "400x400" },
+      { "filename": "hosq-logo-userpic-25-03.png", "type": "image", "dimensions": "400x400" },
+      { "filename": "2_columns.png", "type": "image", "dimensions": "1920x1080" },
+      { "filename": "divider.png", "type": "image", "dimensions": "1920x1080" },
+      { "filename": "table_3.png", "type": "image", "dimensions": "1920x1080" },
+      { "filename": "timeline.png", "type": "image", "dimensions": "1920x1080" },
+      { "filename": "_visuals (backgrounds)/_All/ (25 files)", "type": "image", "dimensions": "various" },
+      { "filename": "Austin Cy-Bold.otf", "type": "font", "dimensions": null },
+      { "filename": "Cera Pro Regular.otf", "type": "font", "dimensions": null },
+      { "filename": "Cera Pro Medium.otf", "type": "font", "dimensions": null },
+      { "filename": "Cera Pro Bold.otf", "type": "font", "dimensions": null },
+      { "filename": "hosq LECTURE TEMPLATES 2025.pdf", "type": "pdf", "dimensions": "multi-page, 11 artboards" },
+      { "filename": "Post Cover.png (2026)", "type": "image", "dimensions": "1080x1080" },
+      { "filename": "hosq insta labs TEMPLATE.ai", "type": "illustrator", "dimensions": null },
+      { "filename": "hosq insta lectors TEMPLATE.ai", "type": "illustrator", "dimensions": null },
+      { "filename": "hosq insta curators TEMPLATE.ai", "type": "illustrator", "dimensions": null },
+      { "filename": "hosq insta partners TEMPLATE.ai", "type": "illustrator", "dimensions": null },
+      { "filename": "hosq CONCERT TEMPLATES 2025.ai", "type": "illustrator", "dimensions": null },
+      { "filename": "Participant Interview TEMPLATE.ai", "type": "illustrator", "dimensions": null }
+    ],
+    "conflicts": [
+      {
+        "field": "colors.primary.hex",
+        "values": ["#FF6F55", "#FF6E53", "#FF6F56"],
+        "resolved_to": "#FF6F55",
+        "reason": "Most frequent hex across 12+ source files; sub-pixel variance within ΔE<2"
+      }
+    ],
+    "coverage": {
+      "colors": "confirmed",
+      "typography": "confirmed",
+      "spacing": "confirmed",
+      "layout": "confirmed",
+      "smm_templates": "confirmed"
+    },
+    "visual_identity_notes": "HOSQ uses an art-forward, psychedelic visual language. Brand backgrounds feature abstract organic shapes rendered with heavy grain/noise textures, layered transparencies, and saturated color fields. The visual system blends experimental art aesthetics with clean Swiss-style typography grids. Content slides use a warm cream surface (#EBE2D6) with black text, while promotional materials employ full-bleed vibrant gradient backgrounds. The logo (diamond prism + 'hosq' wordmark) always appears in solid black or light beige — never colorized. SMM templates reveal a complete modular post system with standardized layout grids across multiple content types (lectures, partners, bios, quotes, portraits, subscribe CTAs) and aspect ratios (square 1:1, vertical 9:16, horizontal 16:9). The soft pink/blush (#E8DCD4) surface is used for SMM event graphics as an alternative to the standard cream."
+  },
+
+  "colors": {
+    "primary": {
+      "hex": "#FF6F55",
+      "rgb": [255, 111, 85],
+      "hsl": [9, 100, 67],
+      "confidence": "confirmed",
+      "usage": "Core brand identifier. Coral-orange used as dominant background blocks, hero sections, primary CTA buttons, accent bars. Appears in every HOSQ material at 12–24% coverage. Use for high-impact areas that need to feel warm, energetic, and distinctly HOSQ."
+    },
+    "secondary": {
+      "hex": "#C47CF1",
+      "rgb": [196, 124, 241],
+      "hsl": [277, 81, 72],
+      "confidence": "confirmed",
+      "usage": "Supporting brand color. Lavender-violet used as equal-weight background blocks alongside primary, gradient endpoints, large surface fills. Appears at 10–24% coverage in materials. Use for secondary surfaces, hover states, and to create the signature coral-violet split composition."
+    },
+    "accent": {
+      "hex": "#14B672",
+      "rgb": [20, 182, 114],
+      "hsl": [155, 80, 40],
+      "confidence": "confirmed",
+      "usage": "Emerald green used in organic visual shapes, tertiary background elements, and as a contrast accent against coral and violet. Appears at 8–15% in materials. Use for badges, tags, success states, and visual punctuation."
+    },
+    "accent_blue": {
+      "hex": "#56A4CB",
+      "rgb": [86, 164, 203],
+      "hsl": [200, 53, 57],
+      "confidence": "high",
+      "usage": "Periwinkle-teal blue appearing in abstract visual compositions and as part of the organic gradient system. Use for links, informational elements, and as a cool counterpoint to the warm primary."
+    },
+    "accent_pink": {
+      "hex": "#E770C3",
+      "rgb": [231, 112, 195],
+      "hsl": [318, 71, 67],
+      "confidence": "high",
+      "usage": "Hot pink/magenta appearing in background gradients and organic shapes. Use for decorative gradients, highlight effects, and to extend the psychedelic visual palette."
+    },
+    "neutrals": {
+      "darkest": { "hex": "#231F20", "rgb": [35, 31, 32], "hsl": [345, 6, 13] },
+      "dark": { "hex": "#4A4545", "rgb": [74, 69, 69], "hsl": [0, 3, 28] },
+      "readable_mid": { "hex": "#6B6566", "rgb": [107, 101, 102], "hsl": [350, 3, 41], "note": "NEW: accessible replacement for mid gray. Use for secondary text, captions, metadata on cream/white surfaces. Passes WCAG AA 4.6:1 on #EBE2D6." },
+      "mid": { "hex": "#9A9596", "rgb": [154, 149, 150], "hsl": [348, 2, 59], "note": "DECORATIVE ONLY. Fails AA on cream (2.7:1). Use only for borders, dividers, placeholder ghost text, disabled states — never for readable text." },
+      "light": { "hex": "#C5C4C3", "rgb": [197, 196, 195], "hsl": [30, 2, 77], "note": "DECORATIVE ONLY. Borders, dividers, subtle separators." },
+      "lightest": { "hex": "#EBE2D6", "rgb": [235, 226, 214], "hsl": [34, 34, 88] },
+      "confidence": "confirmed",
+      "note": "Neutral ramp is warm-tinted, not pure gray. The lightest neutral (#EBE2D6) is the signature warm cream surface. Mid (#9A9596) and light (#C5C4C3) are DECORATIVE — never use for readable text. Use readable_mid (#6B6566) for secondary text instead."
+    },
+    "contrast_pairs": {
+      "confidence": "confirmed",
+      "wcag_standard": "AA",
+      "note": "Pragmatic approach: AA 4.5:1 for normal text, AA Large 3:1 for bold 18px+ or regular 24px+. Decorative mid (#9A9596) is restricted to non-text uses.",
+      "pairs": [
+        {
+          "name": "primary_text_on_surface",
+          "fg": "#231F20", "bg": "#EBE2D6",
+          "ratio": 11.2,
+          "aa_normal": true, "aa_large": true,
+          "usage": "Default body text, headings, all readable content on cream surface"
+        },
+        {
+          "name": "primary_text_on_white",
+          "fg": "#231F20", "bg": "#FFFFFF",
+          "ratio": 16.5,
+          "aa_normal": true, "aa_large": true,
+          "usage": "Text on white elevated cards, overlays, clean SMM variants"
+        },
+        {
+          "name": "primary_text_on_blush",
+          "fg": "#231F20", "bg": "#E8DCD4",
+          "ratio": 10.6,
+          "aa_normal": true, "aa_large": true,
+          "usage": "Text on soft blush SMM backgrounds"
+        },
+        {
+          "name": "secondary_text_on_surface",
+          "fg": "#6B6566", "bg": "#EBE2D6",
+          "ratio": 4.6,
+          "aa_normal": true, "aa_large": true,
+          "usage": "Captions, metadata, secondary info, footer text on cream"
+        },
+        {
+          "name": "secondary_text_on_white",
+          "fg": "#6B6566", "bg": "#FFFFFF",
+          "ratio": 6.8,
+          "aa_normal": true, "aa_large": true,
+          "usage": "Captions and secondary text on white cards"
+        },
+        {
+          "name": "dark_text_on_coral",
+          "fg": "#231F20", "bg": "#FF6F55",
+          "ratio": 5.3,
+          "aa_normal": true, "aa_large": true,
+          "usage": "Body text on coral backgrounds, paragraphs on hero sections"
+        },
+        {
+          "name": "white_on_coral_large",
+          "fg": "#FFFFFF", "bg": "#FF6F55",
+          "ratio": 3.1,
+          "aa_normal": false, "aa_large": true,
+          "usage": "BUTTONS, pill tags, h1-h3 headings on coral. Bold 18px+ or regular 24px+ ONLY. Brand signature.",
+          "min_size_bold_px": 18,
+          "min_size_regular_px": 24
+        },
+        {
+          "name": "dark_text_on_violet",
+          "fg": "#231F20", "bg": "#C47CF1",
+          "ratio": 4.8,
+          "aa_normal": true, "aa_large": true,
+          "usage": "Text on violet backgrounds"
+        },
+        {
+          "name": "white_on_green_large",
+          "fg": "#FFFFFF", "bg": "#14B672",
+          "ratio": 3.4,
+          "aa_normal": false, "aa_large": true,
+          "usage": "Tags, badges, pill labels on green accent. Bold 18px+ ONLY.",
+          "min_size_bold_px": 18,
+          "min_size_regular_px": 24
+        },
+        {
+          "name": "dark_text_on_green",
+          "fg": "#231F20", "bg": "#14B672",
+          "ratio": 4.9,
+          "aa_normal": true, "aa_large": true,
+          "usage": "Body text on green accent backgrounds"
+        },
+        {
+          "name": "cream_on_dark",
+          "fg": "#EBE2D6", "bg": "#231F20",
+          "ratio": 11.2,
+          "aa_normal": true, "aa_large": true,
+          "usage": "Primary text on dark/inverse backgrounds"
+        },
+        {
+          "name": "readable_mid_on_dark",
+          "fg": "#9A9596", "bg": "#231F20",
+          "ratio": 4.2,
+          "aa_normal": false, "aa_large": true,
+          "usage": "Secondary text on dark backgrounds. Large text only.",
+          "min_size_bold_px": 18,
+          "min_size_regular_px": 24
+        }
+      ],
+      "forbidden_pairs": [
+        { "fg": "#9A9596", "bg": "#EBE2D6", "ratio": 2.7, "reason": "Mid gray on cream fails all WCAG levels. Use #6B6566 instead." },
+        { "fg": "#C5C4C3", "bg": "#EBE2D6", "ratio": 1.5, "reason": "Light gray on cream — invisible. Decorative only." },
+        { "fg": "#FFFFFF", "bg": "#FF6F55", "min_size": "below 18px bold", "reason": "White on coral fails AA normal. Only use for 18px+ bold or 24px+ regular." },
+        { "fg": "#FFFFFF", "bg": "#14B672", "min_size": "below 18px bold", "reason": "White on green fails AA normal. Only use for 18px+ bold or 24px+ regular." }
+      ],
+      "text_on_bg_quick_reference": {
+        "on_cream_EBE2D6": { "primary": "#231F20", "secondary": "#6B6566", "decorative_only": "#9A9596" },
+        "on_white_FFFFFF": { "primary": "#231F20", "secondary": "#6B6566", "decorative_only": "#9A9596" },
+        "on_blush_E8DCD4": { "primary": "#231F20", "secondary": "#6B6566" },
+        "on_coral_FF6F55": { "primary": "#231F20", "large_only": "#FFFFFF" },
+        "on_violet_C47CF1": { "primary": "#231F20" },
+        "on_green_14B672": { "primary": "#231F20", "large_only": "#FFFFFF" },
+        "on_dark_231F20": { "primary": "#EBE2D6", "large_only": "#9A9596" }
+      }
+    },
+    "semantic": {
+      "success": { "hex": "#14B672", "rgb": [20, 182, 114], "hsl": [155, 80, 40] },
+      "warning": { "hex": "#F0C3B3", "rgb": [240, 195, 179], "hsl": [16, 67, 82] },
+      "error": { "hex": "#FF6F55", "rgb": [255, 111, 85], "hsl": [9, 100, 67] },
+      "info": { "hex": "#56A4CB", "rgb": [86, 164, 203], "hsl": [200, 53, 57] },
+      "confidence": "inferred",
+      "note": "Semantic colors derived from brand palette. Success reuses accent green; error reuses primary coral; info reuses accent blue. Warning uses a desaturated peach from the gradient system."
+    },
+    "backgrounds": {
+      "page": { "hex": "#FFFFFF", "rgb": [255, 255, 255], "hsl": [0, 0, 100] },
+      "surface": { "hex": "#EBE2D6", "rgb": [235, 226, 214], "hsl": [34, 34, 88] },
+      "surface_warm": { "hex": "#F1E8DB", "rgb": [241, 232, 219], "hsl": [35, 44, 90] },
+      "surface_blush": { "hex": "#E8DCD4", "rgb": [232, 220, 212], "hsl": [24, 28, 87] },
+      "elevated": { "hex": "#FFFFFF", "rgb": [255, 255, 255], "hsl": [0, 0, 100] },
+      "inverse": { "hex": "#231F20", "rgb": [35, 31, 32], "hsl": [345, 6, 13] },
+      "hero_coral": { "hex": "#FF6F55", "rgb": [255, 111, 85], "hsl": [9, 100, 67] },
+      "hero_violet": { "hex": "#C47CF1", "rgb": [196, 124, 241], "hsl": [277, 81, 72] },
+      "confidence": "confirmed",
+      "note": "HOSQ uses warm cream (#EBE2D6) as the default content surface — NOT pure white. Pure white is reserved for elevated cards, overlays, and clean SMM template variants. Soft blush pink (#E8DCD4) is used for SMM event graphics with visual overlays. Hero/promotional backgrounds use full-bleed coral or violet fields, or the signature organic gradient compositions."
+    },
+    "gradients": {
+      "brand_primary": {
+        "type": "linear",
+        "angle": 135,
+        "stops": ["#FF6F55", "#C47CF1"],
+        "usage": "Primary brand gradient. Coral to violet diagonal. Use for hero sections, feature highlights, and immersive backgrounds."
+      },
+      "brand_full": {
+        "type": "linear",
+        "angle": 135,
+        "stops": ["#FF6F55", "#C47CF1", "#14B672"],
+        "usage": "Extended brand gradient incorporating all three core colors. Use for wide backgrounds and panoramic compositions."
+      },
+      "warm_surface": {
+        "type": "linear",
+        "angle": 180,
+        "stops": ["#F1E8DB", "#EBE2D6"],
+        "usage": "Subtle warm surface gradient for content areas. Almost imperceptible warmth shift."
+      },
+      "confidence": "confirmed"
+    },
+    "button_pill": {
+      "default_bg": "#FF6F55",
+      "default_text": "#FFFFFF",
+      "secondary_bg": "#EBE2D6",
+      "secondary_text": "#231F20",
+      "outline_border": "#231F20",
+      "outline_text": "#231F20",
+      "tag_bg": "#FF6F55",
+      "tag_text": "#FFFFFF",
+      "tag_bg_alt": "#EBE2D6",
+      "tag_text_alt": "#231F20",
+      "border_radius_px": 999,
+      "confidence": "confirmed",
+      "note": "HOSQ uses fully-rounded pill-shaped buttons and tags. Seen in slides as 'Public good', 'Freemium', 'We are here' labels. Primary buttons use coral with white text. Secondary/outline buttons use cream or transparent with dark text."
+    }
+  },
+
+  "typography": {
+    "type_scale": {
+      "confidence": "confirmed",
+      "approach": "hosq_custom",
+      "description": "Custom scale optimized for HOSQ's airy aesthetic. Big jumps between levels ensure each is visually distinct. Scale: 72→48→36→24→20→18→16→14→12.",
+      "scale": [
+        { "token": "display",  "size_px": 72, "weight": 700, "family": "editorial: Austin Cy / product: Cera Pro", "line_height": 1.05, "letter_spacing_em": -0.02, "html": "hero h1 only", "usage": "Website hero headlines (editorial context). Largest text on any page." },
+        { "token": "h1",       "size_px": 48, "weight": 700, "family": "Cera Pro Bold", "line_height": 1.1, "letter_spacing_em": -0.01, "html": "h1", "usage": "Page/section title. Primary heading on web pages, top of content hierarchy." },
+        { "token": "h2",       "size_px": 36, "weight": 700, "family": "Cera Pro Bold", "line_height": 1.15, "letter_spacing_em": -0.01, "html": "h2", "usage": "Feature headings, major section dividers, card group titles." },
+        { "token": "h3",       "size_px": 24, "weight": 700, "family": "Cera Pro Bold", "line_height": 1.3, "letter_spacing_em": 0, "html": "h3", "usage": "Card titles, subsection headers, sidebar headings." },
+        { "token": "h4",       "size_px": 20, "weight": 500, "family": "Cera Pro Medium", "line_height": 1.3, "letter_spacing_em": 0, "html": "h4", "usage": "Small headings, list group titles, form section labels." },
+        { "token": "body_lg",  "size_px": 18, "weight": 400, "family": "Cera Pro Regular", "line_height": 1.6, "letter_spacing_em": 0, "html": "p.lead", "usage": "Lead paragraphs, intro text, featured descriptions. Slightly larger than default body." },
+        { "token": "body",     "size_px": 16, "weight": 400, "family": "Cera Pro Regular", "line_height": 1.6, "letter_spacing_em": 0, "html": "p", "usage": "Default body text. Paragraphs, descriptions, content." },
+        { "token": "small",    "size_px": 14, "weight": 400, "family": "Cera Pro Regular", "line_height": 1.5, "letter_spacing_em": 0, "html": "small", "usage": "UI text, form labels, helper text, secondary info." },
+        { "token": "caption",  "size_px": 12, "weight": 400, "family": "Cera Pro Regular", "line_height": 1.5, "letter_spacing_em": 0.02, "html": "figcaption, .caption", "usage": "Footnotes, metadata, timestamps, photo credits." }
+      ],
+      "slide_override": {
+        "note": "Presentation slides use Cera Pro Medium 62pt for slide titles (per original template spec). This is a context-specific override, not part of the web type scale.",
+        "slide_title_size_px": 62,
+        "slide_title_weight": 500,
+        "slide_title_family": "Cera Pro Medium"
+      }
+    },
+    "display": {
+      "family": "Austin Cy",
+      "fallback": "Georgia, 'Times New Roman', serif",
+      "google_fonts_url": null,
+      "local_font_files": ["Austin Cy-Bold.otf", "Austin Cy-Bold.woff"],
+      "weight": 700,
+      "size_px": 72,
+      "line_height": 1.05,
+      "letter_spacing_em": -0.02,
+      "text_transform": "none",
+      "confidence": "confirmed",
+      "usage": "EDITORIAL CONTEXT ONLY. Hero headlines on landing pages, poster titles. Austin Cy is a sharp transitional serif with high contrast strokes — gives HOSQ its editorial, art-world feel. Never use in product contexts (SMM, UI, apps).",
+      "style_notes": "Austin Cy-Bold has elegant, high-contrast letterforms with sharp serifs. It reads as editorial, sophisticated, and art-forward."
+    },
+    "h1": {
+      "family": "Cera Pro",
+      "fallback": "'DM Sans', 'Inter', Arial, sans-serif",
+      "local_font_files": ["Cera Pro Bold.otf", "Cera Pro Bold.woff"],
+      "weight": 700,
+      "size_px": 48,
+      "line_height": 1.1,
+      "letter_spacing_em": -0.01,
+      "text_transform": "none",
+      "confidence": "confirmed",
+      "usage": "Page/section title. Primary heading on web pages. In product contexts this is the largest heading."
+    },
+    "h2": {
+      "family": "Cera Pro",
+      "fallback": "'DM Sans', 'Inter', Arial, sans-serif",
+      "local_font_files": ["Cera Pro Bold.otf", "Cera Pro Bold.woff"],
+      "weight": 700,
+      "size_px": 36,
+      "line_height": 1.15,
+      "letter_spacing_em": -0.01,
+      "text_transform": "none",
+      "confidence": "confirmed",
+      "usage": "Feature headings, major section dividers, card group titles."
+    },
+    "h3": {
+      "family": "Cera Pro",
+      "fallback": "'DM Sans', 'Inter', Arial, sans-serif",
+      "local_font_files": ["Cera Pro Bold.otf", "Cera Pro Bold.woff"],
+      "weight": 700,
+      "size_px": 24,
+      "line_height": 1.3,
+      "letter_spacing_em": 0,
+      "text_transform": "none",
+      "confidence": "confirmed",
+      "usage": "Card titles, subsection headers, sidebar headings."
+    },
+    "h4": {
+      "family": "Cera Pro",
+      "fallback": "'DM Sans', 'Inter', Arial, sans-serif",
+      "local_font_files": ["Cera Pro Medium.otf", "Cera Pro Medium.woff"],
+      "weight": 500,
+      "size_px": 20,
+      "line_height": 1.3,
+      "letter_spacing_em": 0,
+      "text_transform": "none",
+      "confidence": "confirmed",
+      "usage": "Small headings, list group titles, form section labels. Medium weight for subtle distinction."
+    },
+    "body_lg": {
+      "family": "Cera Pro",
+      "fallback": "'DM Sans', 'Inter', Arial, sans-serif",
+      "local_font_files": ["Cera Pro Regular.otf", "Cera Pro Regular.woff"],
+      "weight": 400,
+      "size_px": 18,
+      "line_height": 1.6,
+      "letter_spacing_em": 0,
+      "text_transform": "none",
+      "confidence": "confirmed",
+      "usage": "Lead paragraphs, intro text, featured descriptions. Slightly larger body for emphasis."
+    },
+    "body": {
+      "family": "Cera Pro",
+      "fallback": "'DM Sans', 'Inter', Arial, sans-serif",
+      "google_fonts_url": null,
+      "local_font_files": ["Cera Pro Regular.otf", "Cera Pro Regular.woff"],
+      "weight": 400,
+      "size_px": 16,
+      "line_height": 1.6,
+      "letter_spacing_em": 0,
+      "text_transform": "none",
+      "confidence": "confirmed",
+      "usage": "Default body text. Paragraphs, descriptions, slide body text, document content."
+    },
+    "small": {
+      "family": "Cera Pro",
+      "fallback": "'DM Sans', 'Inter', Arial, sans-serif",
+      "local_font_files": ["Cera Pro Regular.otf", "Cera Pro Regular.woff"],
+      "weight": 400,
+      "size_px": 14,
+      "line_height": 1.5,
+      "letter_spacing_em": 0,
+      "text_transform": "none",
+      "confidence": "confirmed",
+      "usage": "UI text, form labels, helper text, secondary info."
+    },
+    "caption": {
+      "family": "Cera Pro",
+      "fallback": "'DM Sans', 'Inter', Arial, sans-serif",
+      "google_fonts_url": null,
+      "local_font_files": ["Cera Pro Regular.otf", "Cera Pro Regular.woff"],
+      "weight": 400,
+      "size_px": 12,
+      "line_height": 1.5,
+      "letter_spacing_em": 0.02,
+      "text_transform": "none",
+      "confidence": "confirmed",
+      "usage": "Footnotes, metadata, labels, timestamps, photo credits."
+    },
+    "category_label": {
+      "family": "Cera Pro",
+      "fallback": "'DM Sans', 'Inter', Arial, sans-serif",
+      "local_font_files": ["Cera Pro Bold.otf", "Cera Pro Bold.woff"],
+      "weight": 700,
+      "size_px": 18,
+      "line_height": 1.2,
+      "letter_spacing_em": 0.12,
+      "text_transform": "uppercase",
+      "confidence": "confirmed",
+      "usage": "Category/type labels on SMM posts and slides: 'LECTURE', 'PARTNER', 'CONCERT', etc. Always uppercase, bold, with wide tracking. Positioned top-left corner of the canvas. This is a structural element that anchors the post type."
+    },
+    "smm_title": {
+      "family": "Cera Pro",
+      "fallback": "'DM Sans', 'Inter', Arial, sans-serif",
+      "local_font_files": ["Cera Pro Bold.otf", "Cera Pro Bold.woff"],
+      "weight": 700,
+      "size_px_at_1080": 120,
+      "line_height": 1.0,
+      "letter_spacing_em": -0.02,
+      "text_transform": "none",
+      "confidence": "confirmed",
+      "usage": "Main event title on social media posts. Very large, bold Cera Pro. Dominates the upper portion of the canvas. Line breaks are intentional and controlled for visual rhythm."
+    },
+    "smm_speaker": {
+      "family": "Cera Pro",
+      "fallback": "'DM Sans', 'Inter', Arial, sans-serif",
+      "local_font_files": ["Cera Pro Regular.otf", "Cera Pro Regular.woff"],
+      "weight": 400,
+      "size_px_at_1080": 40,
+      "line_height": 1.3,
+      "letter_spacing_em": 0,
+      "text_transform": "none",
+      "confidence": "confirmed",
+      "usage": "Speaker name, subtitle, or secondary info on SMM posts. Regular weight to contrast with the bold title above."
+    },
+    "smm_date": {
+      "family": "Cera Pro",
+      "fallback": "'DM Sans', 'Inter', Arial, sans-serif",
+      "local_font_files": ["Cera Pro Bold.otf", "Cera Pro Bold.woff"],
+      "weight": 700,
+      "size_px_at_1080": 24,
+      "line_height": 1.4,
+      "text_transform": "none",
+      "confidence": "confirmed",
+      "usage": "Date line on event posts. Bold weight for emphasis. Time appears on the line below in regular weight."
+    },
+    "smm_body": {
+      "family": "Cera Pro",
+      "fallback": "'DM Sans', 'Inter', Arial, sans-serif",
+      "local_font_files": ["Cera Pro Regular.otf", "Cera Pro Regular.woff"],
+      "weight": 400,
+      "size_px_at_1080": 32,
+      "line_height": 1.5,
+      "text_transform": "none",
+      "confidence": "confirmed",
+      "usage": "Bio text, descriptions, and long-form content on SMM cards. Regular weight with strategic bold spans for names and key terms (Cera Pro Bold inline). Large body size for social media readability."
+    },
+    "smm_quote": {
+      "family": "Cera Pro",
+      "fallback": "'DM Sans', 'Inter', Arial, sans-serif",
+      "local_font_files": ["Cera Pro Bold.otf", "Cera Pro Bold.woff"],
+      "weight": 700,
+      "size_px_at_1080": 48,
+      "line_height": 1.3,
+      "text_transform": "none",
+      "confidence": "confirmed",
+      "usage": "Pull quotes on SMM cards. Bold weight, large size, fills most of the card. Used for speaker quotes and mission statements."
+    },
+    "smm_footer": {
+      "family": "Cera Pro",
+      "fallback": "'DM Sans', 'Inter', Arial, sans-serif",
+      "local_font_files": ["Cera Pro Regular.otf", "Cera Pro Regular.woff"],
+      "weight": 400,
+      "size_px_at_1080": 16,
+      "line_height": 1.2,
+      "text_transform": "none",
+      "confidence": "confirmed",
+      "usage": "Venue name (bottom-left) and URL 'hosq.co' (bottom-right) on every SMM post. Small, understated, consistent across all templates."
+    },
+    "logo_wordmark": {
+      "family": "Cera Pro",
+      "weight": 700,
+      "text_transform": "lowercase",
+      "confidence": "confirmed",
+      "usage": "The 'hosq' wordmark in the logo is set in Cera Pro Bold, always lowercase. The logo system consists of the diamond prism icon above a horizontal rule, with the wordmark below.",
+      "note": "Logo must always appear as a complete unit (icon + wordmark). Never separate the components. Available in black (#231F20) and light/white variants."
+    },
+    "font_scope": {
+      "confidence": "confirmed",
+      "approach": "editorial_vs_product",
+      "description": "Two context modes determine font selection. AI must classify the task first, then apply the correct font system.",
+      "editorial": {
+        "description": "Website hero sections, landing pages, posters, email covers, print materials, festival graphics, investor decks, long-form editorial articles",
+        "display_font": "Austin Cy Bold",
+        "display_min_size_px": 36,
+        "display_usage": "h1 hero headlines ONLY. Never for h2-h6. Never for body text. Never below 36px.",
+        "heading_font": "Cera Pro Bold",
+        "heading_usage": "h2-h6, section titles, card titles",
+        "body_font": "Cera Pro Regular",
+        "nav_font": "Cera Pro Medium"
+      },
+      "product": {
+        "description": "SMM posts, presentations, UI/UX, dashboards, apps, forms, documentation, newsletters, all digital product interfaces",
+        "display_font": "Cera Pro Bold",
+        "display_usage": "All headings including h1. No Austin Cy.",
+        "heading_font": "Cera Pro Bold / Cera Pro Medium",
+        "heading_usage": "Cera Pro Medium 62pt for slide titles (per template spec). Cera Pro Bold for SMM titles, UI headings.",
+        "body_font": "Cera Pro Regular",
+        "nav_font": "Cera Pro Medium"
+      },
+      "classification_hints": [
+        { "if": "landing page, homepage, marketing page", "then": "editorial" },
+        { "if": "poster, flyer, print ad, festival graphic", "then": "editorial" },
+        { "if": "investor deck, pitch deck", "then": "editorial" },
+        { "if": "email cover, newsletter header image", "then": "editorial" },
+        { "if": "blog post hero, editorial article header", "then": "editorial" },
+        { "if": "Instagram, Facebook, Twitter, social media post", "then": "product" },
+        { "if": "presentation slides, deck content", "then": "product" },
+        { "if": "app UI, dashboard, form, settings page", "then": "product" },
+        { "if": "documentation, help center, FAQ", "then": "product" },
+        { "if": "email body, newsletter content", "then": "product" }
+      ],
+      "ambiguous_cases": "When unsure, default to product (Cera Pro only). It's safer to omit Austin Cy than to misuse it."
+    },
+    "font_pairing_rationale": "Austin Cy (editorial serif) + Cera Pro (geometric sans) creates a deliberate tension between art-world sophistication and tech-forward clarity. Austin Cy signals cultural depth; Cera Pro signals modern utility. This pairing reflects HOSQ's positioning at the intersection of creative culture and AI technology. Austin Cy is RESERVED for editorial contexts (websites, posters, print) — never for product contexts (SMM, UI, apps, presentations).",
+    "web_fallback_strategy": "When Austin Cy is unavailable (web contexts without custom font loading), substitute with 'Playfair Display' (Google Fonts) for display text — it shares the high-contrast transitional serif character. When Cera Pro is unavailable, substitute with 'DM Sans' (Google Fonts) — closest match for geometric sans with similar x-height and rounded forms. Second fallback: 'Inter'."
+  },
+
+  "spacing": {
+    "base_unit_px": 8,
+    "scale": {
+      "3xs": 2,
+      "2xs": 4,
+      "xs": 8,
+      "sm": 12,
+      "md": 16,
+      "lg": 24,
+      "xl": 32,
+      "2xl": 48,
+      "3xl": 64,
+      "4xl": 96,
+      "5xl": 128
+    },
+    "page_margins": {
+      "desktop_px": 64,
+      "tablet_px": 32,
+      "mobile_px": 16
+    },
+    "component_padding": {
+      "card_px": 24,
+      "button_x_px": 24,
+      "button_y_px": 12,
+      "input_x_px": 16,
+      "input_y_px": 12,
+      "section_y_px": 64,
+      "pill_tag_x_px": 16,
+      "pill_tag_y_px": 8
+    },
+    "slide_margins": {
+      "top_px": 48,
+      "right_px": 48,
+      "bottom_px": 48,
+      "left_px": 48,
+      "content_gap_px": 24
+    },
+    "confidence": "inferred",
+    "note": "Spacing inferred from presentation slide layouts. HOSQ uses generous whitespace — content slides have substantial margins (~48px equivalent at 1920x1080) with clean separation between elements. The overall spacing rhythm feels airy and unhurried."
+  },
+
+  "layout": {
+    "max_content_width_px": 1200,
+    "grid_columns": 12,
+    "grid_gutter_px": 24,
+    "border_radius_px": {
+      "none": 0,
+      "sm": 4,
+      "md": 8,
+      "lg": 16,
+      "pill": 999
+    },
+    "shadow_style": "none",
+    "visual_density": "airy",
+    "confidence": "inferred",
+    "composition_patterns": {
+      "split_background": "Vertical 50/50 split with coral (#FF6F55) on one half and violet (#C47CF1) on the other. Organic abstract shapes overlap the divide. Logo centered at the intersection.",
+      "content_slide": "Warm cream (#EBE2D6) full-bleed background. Subtle gradient overlay at edges (peach/green tints). Black text. Logo bottom-right corner. Content left-aligned with generous margins.",
+      "hero_immersive": "Full-bleed abstract visual background from the brand's organic shape library. Logo and text overlaid in black. Grain/noise texture throughout.",
+      "card_layout": "White or cream cards on cream surface. No visible shadows — separation through subtle color contrast only. Pill-shaped tags/badges for categorization.",
+      "timeline_flowchart": "Clean line-based diagrams on cream background. Rounded rectangular nodes with thin borders. Connecting lines with subtle curves.",
+      "smm_event_visual": "Soft blush (#E8DCD4) background with organic grain visual positioned center-right. Category label top-left, title large bold below, speaker name regular weight, date bold, logo bottom-center, venue bottom-left, URL bottom-right.",
+      "smm_text_card": "Warm cream (#EBE2D6) background. Category label top-left. Body text fills center area with strategic bold spans. Logo bottom-center, venue bottom-left, URL bottom-right.",
+      "smm_portrait": "Full-bleed warm-toned portrait photo. Name in uppercase bold top-left. Role bottom-left. URL bottom-right. Minimal text overlay.",
+      "smm_horizontal_split": "Landscape format split: left ~55% has blush background with content and grain visual; right ~45% is pure white. Used for Facebook/Twitter covers and wide banners.",
+      "smm_subscribe_cta": "Split composition: white content area with large 'subscribe & join' title, body text, and category tags. Adjacent area has full-bleed brand visual (violet gradient + organic shapes)."
+    },
+    "visual_texture": {
+      "grain": "HOSQ brand visuals use heavy grain/noise textures on organic shapes, creating a tactile, screen-printed aesthetic. This is a key brand differentiator.",
+      "transparency": "Layered shapes use partial transparency, creating rich color mixing where elements overlap.",
+      "organic_shapes": "Abstract biomorphic forms — spheres, blobs, radiating shapes — rendered with grain. These are NOT geometric or precise; they feel natural and hand-crafted.",
+      "confidence": "confirmed"
+    },
+    "logo_usage": {
+      "components": "Diamond prism icon + horizontal rule + 'hosq' wordmark (lowercase, Cera Pro Bold)",
+      "primary_color": "#231F20",
+      "light_variant_color": "#DDD5CA",
+      "placement": "Bottom-right corner on content slides. Centered on promotional materials and covers.",
+      "safe_space": "Maintain clear space equal to the height of the 'h' letterform on all sides.",
+      "never": "Never colorize the logo with brand colors. Never separate icon from wordmark. Never use on busy backgrounds without sufficient contrast.",
+      "svg_logo_fill": "#231F20",
+      "confidence": "confirmed"
+    }
+  },
+
+  "components": {
+    "confidence": "confirmed",
+    "approach": "full_library",
+    "description": "Complete component specifications for AI to build any HOSQ interface. Each component includes background, border, radius, padding, and key styling rules.",
+    "nav": {
+      "bg": "#FFFFFF",
+      "height_px": 64,
+      "padding_x_px": 32,
+      "border_bottom": "none",
+      "logo_position": "left",
+      "logo_font": "Cera Pro Bold",
+      "logo_size_px": 16,
+      "logo_text_transform": "lowercase",
+      "links_font": "Cera Pro Medium",
+      "links_size_px": 14,
+      "links_color": "#4A4545",
+      "links_hover_color": "#231F20",
+      "links_gap_px": 24,
+      "cta_button": "pill primary (coral bg, white text)",
+      "mobile_hamburger": true,
+      "sticky": true,
+      "note": "Clean, minimal nav. No shadows, no borders. Logo left, links center or right, CTA pill far right."
+    },
+    "hero": {
+      "min_height_px": 560,
+      "padding_x_px": 64,
+      "padding_y_px": 96,
+      "bg_options": ["gradient_primary (coral→violet 135°)", "#FF6F55 solid", "#C47CF1 solid", "brand visual with grain"],
+      "text_color": "#231F20",
+      "title_font": "Austin Cy Bold (editorial) or Cera Pro Bold (product)",
+      "title_size": "display (72px) or h1 (48px)",
+      "subtitle_font": "Cera Pro Regular",
+      "subtitle_size_px": 18,
+      "subtitle_opacity": 0.75,
+      "subtitle_max_width_px": 500,
+      "cta_buttons": "1-2 pill buttons. Primary: dark bg (#231F20) + cream text on gradient heroes, or coral bg + white text on neutral heroes. Secondary: outline with dark border.",
+      "decorative_blob": "Optional blurred organic shape (accent green or blue, opacity 0.2-0.3, blur 40px) positioned top-right or bottom-left for depth.",
+      "note": "Heroes always feel immersive and generous. Never cramped. Text left-aligned, max-width constrained."
+    },
+    "section": {
+      "padding_y_px": 96,
+      "padding_x_px": 64,
+      "max_content_width_px": 1200,
+      "bg_alternation": ["#FFFFFF", "#EBE2D6"],
+      "title_size": "h2 (36px)",
+      "title_margin_bottom_px": 32,
+      "content_gap_px": 24,
+      "note": "Sections alternate between white and cream backgrounds. Never two white or two cream in a row. Generous vertical padding (96px) creates the airy feel."
+    },
+    "card": {
+      "bg_on_white_section": "#EBE2D6",
+      "bg_on_cream_section": "#FFFFFF",
+      "border_radius_px": 12,
+      "padding_px": 24,
+      "shadow": "none",
+      "border": "none",
+      "title_size": "h3 (24px) or h4 (20px)",
+      "body_size": "small (14px)",
+      "body_color": "#6B6566",
+      "tag_position": "top, before title",
+      "tag_style": "pill badge (11px, bold, 999px radius)",
+      "hover": "none by default. Optional: subtle translateY(-2px) + transition 200ms",
+      "note": "Cards get their contrast from background color difference with parent section — NOT from shadows or borders. On white section: cream cards. On cream section: white cards."
+    },
+    "input": {
+      "bg": "#FFFFFF",
+      "border": "1.5px solid #C5C4C3",
+      "border_radius_px": 8,
+      "padding_x_px": 16,
+      "padding_y_px": 12,
+      "font_family": "Cera Pro Regular",
+      "font_size_px": 16,
+      "text_color": "#231F20",
+      "placeholder_color": "#9A9596",
+      "label_font": "Cera Pro Medium",
+      "label_size_px": 14,
+      "label_color": "#231F20",
+      "label_margin_bottom_px": 6,
+      "focus_border": "1.5px solid #231F20",
+      "focus_outline": "none",
+      "error_border": "1.5px solid #FF6F55",
+      "error_text_color": "#FF6F55",
+      "error_text_size_px": 12,
+      "disabled_bg": "#EBE2D6",
+      "disabled_border": "1.5px solid #C5C4C3",
+      "disabled_text_color": "#9A9596",
+      "helper_text_color": "#6B6566",
+      "helper_text_size_px": 12,
+      "note": "Clean, minimal inputs. No inner shadows. Focus = border darkens to near-black. Placeholder uses decorative mid gray."
+    },
+    "select": {
+      "inherits": "input",
+      "chevron_color": "#231F20",
+      "dropdown_bg": "#FFFFFF",
+      "dropdown_border_radius_px": 8,
+      "dropdown_shadow": "0 4px 12px rgba(35,31,32,0.08)",
+      "option_padding_y_px": 10,
+      "option_hover_bg": "#EBE2D6",
+      "note": "Selects share input styling. Dropdown is the ONE exception where a subtle shadow is allowed — it needs to float above content."
+    },
+    "textarea": {
+      "inherits": "input",
+      "min_height_px": 120,
+      "resize": "vertical",
+      "note": "Same as input but taller. Vertical resize only."
+    },
+    "button": {
+      "primary": {
+        "bg": "#FF6F55",
+        "text_color": "#FFFFFF",
+        "text_size_px": 14,
+        "text_weight": 500,
+        "padding_x_px": 24,
+        "padding_y_px": 12,
+        "border_radius_px": 999,
+        "border": "none",
+        "hover_transform": "translateY(-1px)",
+        "hover_bg": "#E8604A",
+        "active_bg": "#D55540",
+        "transition": "all 200ms ease",
+        "min_text_size_for_white_px": 18,
+        "note": "White text on coral. Brand signature. Ensure text is bold 18px+ for AA Large compliance."
+      },
+      "secondary": {
+        "bg": "#EBE2D6",
+        "text_color": "#231F20",
+        "text_size_px": 14,
+        "text_weight": 500,
+        "padding_x_px": 24,
+        "padding_y_px": 12,
+        "border_radius_px": 999,
+        "border": "none",
+        "hover_bg": "#DDD5CA"
+      },
+      "outline": {
+        "bg": "transparent",
+        "text_color": "#231F20",
+        "text_size_px": 14,
+        "text_weight": 500,
+        "padding_x_px": 24,
+        "padding_y_px": 12,
+        "border_radius_px": 999,
+        "border": "1.5px solid #231F20",
+        "hover_bg": "rgba(35,31,32,0.05)"
+      },
+      "on_dark": {
+        "bg": "#FFFFFF",
+        "text_color": "#231F20",
+        "outline_border": "1.5px solid rgba(255,255,255,0.5)",
+        "outline_text": "#FFFFFF"
+      },
+      "on_gradient": {
+        "bg": "#231F20",
+        "text_color": "#EBE2D6",
+        "outline_border": "1.5px solid #231F20",
+        "outline_text": "#231F20"
+      }
+    },
+    "badge_tag": {
+      "padding_x_px": 12,
+      "padding_y_px": 4,
+      "border_radius_px": 999,
+      "font_size_px": 11,
+      "font_weight": 700,
+      "variants": {
+        "coral": { "bg": "#FF6F55", "text": "#FFFFFF" },
+        "green": { "bg": "#14B672", "text": "#FFFFFF" },
+        "cream": { "bg": "#EBE2D6", "text": "#231F20" },
+        "dark": { "bg": "#231F20", "text": "#EBE2D6" },
+        "outline": { "bg": "transparent", "text": "#231F20", "border": "1px solid #C5C4C3" }
+      }
+    },
+    "footer": {
+      "bg": "#231F20",
+      "text_color_primary": "#EBE2D6",
+      "text_color_secondary": "#9A9596",
+      "padding_x_px": 64,
+      "padding_y_px": 48,
+      "logo_color": "#DDD5CA",
+      "links_color": "#EBE2D6",
+      "links_hover_color": "#FFFFFF",
+      "border_top": "none",
+      "layout": "Logo left or center top. Links row. Copyright + location bottom.",
+      "note": "Dark inverse footer. Cream text. Secondary info in decorative mid gray (OK here because it's on dark bg at 4.2:1 large text)."
+    },
+    "modal": {
+      "overlay_bg": "rgba(35,31,32,0.5)",
+      "bg": "#FFFFFF",
+      "border_radius_px": 16,
+      "padding_px": 32,
+      "max_width_px": 520,
+      "shadow": "0 8px 32px rgba(35,31,32,0.12)",
+      "close_button": "top-right, 24x24, #231F20",
+      "title_size": "h3 (24px)",
+      "note": "Modals are the exception where shadows are used — they must visually float above the overlay."
+    },
+    "toast": {
+      "bg": "#231F20",
+      "text_color": "#EBE2D6",
+      "border_radius_px": 12,
+      "padding_x_px": 24,
+      "padding_y_px": 16,
+      "font_size_px": 14,
+      "position": "bottom-center or top-center",
+      "shadow": "0 4px 16px rgba(35,31,32,0.15)",
+      "success_accent": "#14B672",
+      "error_accent": "#FF6F55",
+      "info_accent": "#56A4CB",
+      "note": "Dark pill-shaped notifications. Accent color as left border or icon tint."
+    },
+    "avatar": {
+      "shape": "circle",
+      "sizes_px": [24, 32, 40, 56, 80],
+      "fallback_bg": "#C47CF1",
+      "fallback_text_color": "#FFFFFF",
+      "fallback_font_weight": 700,
+      "border": "2px solid #FFFFFF",
+      "note": "Circular avatars. Fallback shows initials on violet background."
+    },
+    "divider": {
+      "color": "#C5C4C3",
+      "thickness_px": 1,
+      "style": "solid",
+      "on_dark_color": "#4A4545",
+      "note": "Thin, subtle. Uses decorative light gray. On dark backgrounds use dark neutral."
+    },
+    "table": {
+      "header_bg": "#EBE2D6",
+      "header_font_weight": 700,
+      "header_font_size_px": 14,
+      "row_bg": "#FFFFFF",
+      "row_alt_bg": "#F8F5F0",
+      "row_hover_bg": "#EBE2D6",
+      "cell_padding_x_px": 16,
+      "cell_padding_y_px": 12,
+      "border": "1px solid #C5C4C3",
+      "border_radius_px": 12,
+      "text_color": "#231F20",
+      "secondary_text_color": "#6B6566",
+      "note": "Warm-tinted table. Cream header, alternating white/warm rows. Rounded outer container."
+    }
+  },
+
+  "anti_patterns": {
+    "confidence": "confirmed",
+    "description": "What HOSQ is NOT. AI should check generated output against these and correct any matches.",
+    "visual": [
+      "No Material Design shadows or elevation system",
+      "No cold/blue-gray color palettes",
+      "No tight, dense, information-heavy layouts (no dashboards-as-default)",
+      "No rounded-corner device mockups or screenshot frames",
+      "No stock-photo-style imagery (smiling people at desks, handshakes)",
+      "No sharp geometric patterns (hexagons, triangles, grid overlays) as decoration",
+      "No gradients applied to text",
+      "No neon/fluorescent colors outside the brand palette",
+      "No glassmorphism, neumorphism, or frosted-glass effects",
+      "No 3D renders or isometric illustrations"
+    ],
+    "typographic": [
+      "No monospace fonts in UI (code blocks excepted)",
+      "No display/decorative fonts besides Austin Cy",
+      "No all-caps body text (only category labels are uppercase)",
+      "No justified text alignment",
+      "No text smaller than 12px"
+    ],
+    "tonal": [
+      "No startup-bro language ('disrupt', 'crush it', '10x', 'game-changer')",
+      "No corporate jargon ('synergy', 'leverage', 'paradigm shift')",
+      "No aggressive sales language ('limited time!', 'act now!', 'don't miss out!')",
+      "No emoji in professional materials",
+      "No exclamation marks in headlines or CTAs"
+    ],
+    "brands_hosq_is_NOT_like": [
+      { "brand": "Stripe", "reason": "Too minimal, too cold, too developer-focused" },
+      { "brand": "Notion", "reason": "Too utilitarian, too tool-like, lacks art-world warmth" },
+      { "brand": "Canva", "reason": "Too playful, too colorful, too consumer-casual" },
+      { "brand": "TikTok", "reason": "Too energetic, too fast, too youth-focused" }
+    ],
+    "brands_hosq_IS_like": [
+      { "brand": "Frieze (art fair)", "reason": "Editorial, cultural, art-world sophistication" },
+      { "brand": "Monocle", "reason": "Clean typography, warm palette, intellectual tone" },
+      { "brand": "Serpentine Galleries", "reason": "Cultural institution with modern digital presence" },
+      { "brand": "Murmure (design studio)", "reason": "Art-forward, experimental visuals with professional rigor" }
+    ]
+  },
+
+  "brand_voice": {
+    "confidence": "confirmed",
+    "description": "Tone and copy guidelines for AI-generated text that accompanies HOSQ design outputs.",
+    "personality": {
+      "primary_trait": "Intellectual",
+      "secondary_traits": ["Warm", "Unhurried", "Precise", "Culturally aware"],
+      "tone_keywords": ["thoughtful", "declarative", "editorial", "confident", "quiet authority"],
+      "NOT_keywords": ["excited", "casual", "salesy", "technical", "corporate"]
+    },
+    "writing_rules": {
+      "case": "Prefer lowercase for display text and CTAs ('subscribe & join', 'get started'). Sentence case for body. UPPERCASE only for category labels (LECTURE, PARTNER, CONCERT).",
+      "punctuation": "Periods for complete sentences. No exclamation marks. Em-dashes (—) preferred over semicolons for elegant pauses. Use the en-dash (–) for ranges.",
+      "length": "Headlines: 2-6 words. Subheads: 5-12 words. Body: short paragraphs (2-3 sentences max). Let the design breathe.",
+      "vocabulary": "Use art-world and cultural vocabulary naturally: 'curator', 'practice', 'discourse', 'residency', 'commissioning', 'programme'. Avoid tech jargon unless describing HOSQ-AI specifically.",
+      "cta_style": "Soft, invitational CTAs. 'get started', 'learn more', 'subscribe & join', 'explore'. Never 'Buy now!', 'Sign up FREE!', 'Don't miss out!'."
+    },
+    "voice_examples": {
+      "good_headline": "cultural intelligence as a service",
+      "bad_headline": "Revolutionize Your Grant Writing with AI!",
+      "good_body": "HOSQ-AI helps creators think through and refine cultural projects into structured, investment-ready proposals.",
+      "bad_body": "Our amazing AI tool will supercharge your grant applications and help you win more funding than ever before!",
+      "good_cta": "explore programmes",
+      "bad_cta": "Start Your FREE Trial Now!"
+    }
+  },
+
+  "constraints": {
+    "confidence": "confirmed",
+    "description": "Machine-readable do/don't rules. AI MUST check every output against this list. Rules are ordered by severity.",
+    "rules": [
+      { "id": "C01", "category": "logo", "rule": "never_colorize_logo", "allowed": false, "severity": "critical", "description": "Logo must be #231F20 (dark) or #DDD5CA (light) ONLY. Never apply brand colors (coral, violet, green) to the logo." },
+      { "id": "C02", "category": "logo", "rule": "never_separate_logo_parts", "allowed": false, "severity": "critical", "description": "Logo is always a complete unit: diamond prism icon + horizontal rule + 'hosq' wordmark. Never use icon alone. Never use wordmark alone." },
+      { "id": "C03", "category": "logo", "rule": "logo_always_lowercase", "allowed": false, "severity": "critical", "description": "The wordmark is always 'hosq' in lowercase. Never 'HOSQ', 'Hosq', or other capitalizations in the logo itself. (Brand name in text can be uppercase.)" },
+      { "id": "C04", "category": "color", "rule": "no_pure_white_as_page_bg", "allowed": false, "severity": "high", "description": "Primary page/section background must be #EBE2D6 (warm cream), NOT #FFFFFF. White is only for elevated cards, overlays, and alternating sections." },
+      { "id": "C05", "category": "color", "rule": "no_cold_gray_neutrals", "allowed": false, "severity": "high", "description": "All neutrals must be warm-tinted. Never use blue-gray, cool-gray, or pure gray (#808080, #666, #999). Use the warm neutral ramp: #231F20 → #4A4545 → #6B6566 → #9A9596 → #C5C4C3 → #EBE2D6." },
+      { "id": "C06", "category": "color", "rule": "no_mid_gray_for_readable_text", "allowed": false, "severity": "high", "description": "Never use #9A9596 or #C5C4C3 for readable text on cream/white backgrounds. These are DECORATIVE ONLY (borders, dividers, disabled states). Use #6B6566 for secondary readable text." },
+      { "id": "C07", "category": "color", "rule": "white_on_coral_size_minimum", "allowed": "conditional", "severity": "high", "description": "White (#FFFFFF) text on coral (#FF6F55) is allowed ONLY for bold text 18px+ or regular text 24px+. Below these sizes use #231F20 on coral instead." },
+      { "id": "C08", "category": "color", "rule": "white_on_green_size_minimum", "allowed": "conditional", "severity": "high", "description": "White (#FFFFFF) text on green (#14B672) is allowed ONLY for bold text 18px+ or regular text 24px+. Below these sizes use #231F20 on green instead." },
+      { "id": "C09", "category": "typography", "rule": "no_austin_cy_in_product", "allowed": false, "severity": "critical", "description": "Austin Cy is EDITORIAL ONLY (landing pages, posters, print). Never use Austin Cy in SMM posts, presentations, UI, apps, forms, dashboards, or documentation. Use Cera Pro Bold instead." },
+      { "id": "C10", "category": "typography", "rule": "austin_cy_never_for_body", "allowed": false, "severity": "critical", "description": "Austin Cy is ONLY for display h1 headlines at 36px+. Never use for h2-h6, body text, captions, labels, or any text below 36px." },
+      { "id": "C11", "category": "typography", "rule": "no_serif_body_text", "allowed": false, "severity": "high", "description": "Body text is always Cera Pro (sans-serif). Never use Austin Cy, Georgia, Times, or any serif font for paragraphs, descriptions, or running text." },
+      { "id": "C12", "category": "layout", "rule": "no_drop_shadows_static", "allowed": false, "severity": "high", "description": "No drop shadows on static UI elements (cards, containers, sections, nav). Separation is achieved through background color contrast ONLY. Exceptions: hover state shadows (temporary), modals (must float), select dropdowns (must float), toasts (must float)." },
+      { "id": "C13", "category": "layout", "rule": "no_borders_on_cards", "allowed": false, "severity": "medium", "description": "Cards never have visible borders. Use background color contrast with parent section. On white section: cream card. On cream section: white card." },
+      { "id": "C14", "category": "layout", "rule": "sections_alternate_backgrounds", "allowed": true, "severity": "high", "description": "Page sections MUST alternate between #FFFFFF and #EBE2D6 backgrounds. Never two white or two cream sections in a row." },
+      { "id": "C15", "category": "layout", "rule": "generous_spacing", "allowed": true, "severity": "high", "description": "HOSQ uses airy visual density. Section padding minimum 96px vertical. Card padding minimum 24px. Never create dense, cramped layouts. When in doubt, add more whitespace." },
+      { "id": "C16", "category": "layout", "rule": "pill_shape_for_interactive", "allowed": true, "severity": "medium", "description": "All buttons, tags, and badges use fully-rounded pill shape (border-radius: 999px). Never use rectangular or slightly-rounded buttons." },
+      { "id": "C17", "category": "visual", "rule": "no_geometric_shapes_in_visuals", "allowed": false, "severity": "medium", "description": "Brand visual elements use organic biomorphic forms (spheres, blobs, radiating shapes) with grain texture. Never use sharp geometric shapes (triangles, hexagons, grid patterns) for decorative elements." },
+      { "id": "C18", "category": "visual", "rule": "no_gradient_text", "allowed": false, "severity": "medium", "description": "Text is always solid color. Never apply gradient fills, rainbow effects, or color-shifting to text." },
+      { "id": "C19", "category": "visual", "rule": "grain_texture_on_visuals", "allowed": true, "severity": "medium", "description": "Brand visual backgrounds should include grain/noise texture. This is a key brand differentiator. Apply via SVG filters or CSS noise overlay." },
+      { "id": "C20", "category": "tone", "rule": "no_emoji_in_ui", "allowed": false, "severity": "medium", "description": "HOSQ is an art-forward cultural brand. No emoji in UI, headings, buttons, or labels. Emoji may appear only in user-generated content." },
+      { "id": "C21", "category": "tone", "rule": "no_exclamation_marks_in_ui", "allowed": false, "severity": "low", "description": "HOSQ tone is intellectual and unhurried. Avoid exclamation marks in UI text, headlines, and CTAs. Use periods or no punctuation." },
+      { "id": "C22", "category": "tone", "rule": "lowercase_preference", "allowed": true, "severity": "low", "description": "HOSQ prefers lowercase for display text and CTAs ('subscribe & join' not 'Subscribe & Join'). Category labels are the exception (always UPPERCASE). Sentence case for body text." },
+      { "id": "C23", "category": "layout", "rule": "text_left_aligned", "allowed": true, "severity": "medium", "description": "Text is predominantly left-aligned. Center alignment only for: logo placement, partner logos, and short single-line CTAs. Never center-align paragraphs or multi-line headings." },
+      { "id": "C24", "category": "color", "rule": "no_additional_colors", "allowed": false, "severity": "high", "description": "Do not introduce colors outside the defined palette. No random blues, yellows, oranges, or reds. All colors must come from the brand spec." },
+      { "id": "C25", "category": "smm", "rule": "smm_grid_mandatory", "allowed": true, "severity": "high", "description": "All SMM posts MUST follow the standard grid: category label top-left, logo bottom-center, venue bottom-left, URL bottom-right. This is non-negotiable." }
+    ]
+  },
+
+  "motion": {
+    "confidence": "confirmed",
+    "approach": "smooth_confident",
+    "description": "300ms ease-out transitions. Unhurried, confident motion that reflects HOSQ's airy brand character. Not fast, not slow — deliberate.",
+    "timing": {
+      "default_duration_ms": 300,
+      "default_easing": "cubic-bezier(0.25, 0.46, 0.45, 0.94)",
+      "fast_duration_ms": 150,
+      "fast_easing": "ease",
+      "slow_duration_ms": 500,
+      "slow_easing": "cubic-bezier(0.22, 1, 0.36, 1)",
+      "usage_note": "Default (300ms) for buttons, cards, color changes. Fast (150ms) for active/pressed states. Slow (500ms) for scroll-triggered entrance animations."
+    },
+    "hover_states": {
+      "button_primary": {
+        "transform": "translateY(-1px)",
+        "bg_change": "#FF6F55 → #E8604A",
+        "shadow": "0 4px 16px rgba(255,111,85,0.25)",
+        "transition": "all 300ms cubic-bezier(0.25, 0.46, 0.45, 0.94)"
+      },
+      "button_secondary": {
+        "bg_change": "#EBE2D6 → #DDD5CA",
+        "transition": "background 300ms ease"
+      },
+      "button_outline": {
+        "bg_change": "transparent → rgba(35,31,32,0.05)",
+        "transition": "background 300ms ease"
+      },
+      "card": {
+        "transform": "translateY(-4px)",
+        "shadow": "0 8px 24px rgba(35,31,32,0.08)",
+        "transition": "all 300ms cubic-bezier(0.25, 0.46, 0.45, 0.94)",
+        "note": "Shadow on hover is the ONE exception to 'no shadows' rule — it's temporary and provides interaction feedback."
+      },
+      "nav_link": {
+        "color_change": "#4A4545 → #231F20",
+        "transition": "color 300ms ease"
+      },
+      "text_link": {
+        "color_change": "#231F20 → #FF6F55",
+        "underline_animation": "width 0→100%, coral (#FF6F55), 1.5px, from left",
+        "underline_duration_ms": 400,
+        "underline_easing": "cubic-bezier(0.25, 0.46, 0.45, 0.94)"
+      }
+    },
+    "active_states": {
+      "button": {
+        "transform": "translateY(0)",
+        "bg_primary": "#D55540",
+        "transition": "all 150ms ease"
+      }
+    },
+    "focus_states": {
+      "outline": "2px solid #231F20",
+      "outline_offset": "2px",
+      "border_radius": "inherit",
+      "transition": "outline-offset 150ms ease",
+      "note": "Dark near-black focus ring, 2px offset. Visible on all backgrounds. Never use browser default blue."
+    },
+    "scroll_animations": {
+      "entrance_type": "fade-in-up",
+      "entrance_distance_px": 24,
+      "entrance_duration_ms": 600,
+      "entrance_easing": "cubic-bezier(0.22, 1, 0.36, 1)",
+      "stagger_delay_ms": 100,
+      "trigger": "element enters viewport at 80% scroll position",
+      "note": "Subtle fade-in-up for sections and cards as they scroll into view. Small distance (24px) — never dramatic. Stagger children by 100ms for sequential reveal."
+    },
+    "page_transitions": {
+      "type": "fade",
+      "duration_ms": 300,
+      "easing": "ease",
+      "note": "Simple opacity fade between pages. No slide or scale effects."
+    },
+    "reduced_motion": {
+      "prefers_reduced_motion": true,
+      "fallback": "Disable all transforms and scroll animations. Keep color transitions only at 150ms. Respect user accessibility preferences.",
+      "note": "Always wrap motion in @media (prefers-reduced-motion: no-preference). Users who need reduced motion should get instant state changes with no transforms."
+    },
+    "css_snippet": "/* HOSQ Motion Tokens */\n:root {\n  --motion-default: 300ms cubic-bezier(0.25, 0.46, 0.45, 0.94);\n  --motion-fast: 150ms ease;\n  --motion-slow: 500ms cubic-bezier(0.22, 1, 0.36, 1);\n}\n\n@media (prefers-reduced-motion: reduce) {\n  *, *::before, *::after {\n    animation-duration: 0.01ms !important;\n    transition-duration: 0.01ms !important;\n  }\n}"
+  },
+
+  "smm_templates": {
+    "confidence": "confirmed",
+    "source": "hosq LECTURE TEMPLATES 2025.pdf, Post Cover 2026.png, hosq insta labs/lectors/curators/partners/concert TEMPLATE.ai files",
+    "aspect_ratios": {
+      "square": { "width": 1080, "height": 1080, "label": "Instagram Feed / General", "usage": "Primary format for most post types" },
+      "vertical": { "width": 1080, "height": 1920, "label": "Instagram Stories / Reels", "usage": "Full-screen vertical format" },
+      "horizontal": { "width": 1456, "height": 816, "label": "Facebook / Twitter / Landscape", "usage": "Wide cover format, often uses split composition (content left, white/visual right)" }
+    },
+    "layout_grid": {
+      "description": "All SMM templates share a consistent spatial grid anchored by fixed zones.",
+      "zones": {
+        "category_label": { "position": "top-left", "margin_top_pct": 4, "margin_left_pct": 5 },
+        "main_content": { "position": "upper-left quadrant", "margin_top_pct": 12, "margin_left_pct": 5, "max_width_pct": 85 },
+        "logo": { "position": "bottom-center", "margin_bottom_pct": 8 },
+        "venue": { "position": "bottom-left", "margin_bottom_pct": 3, "margin_left_pct": 5 },
+        "url": { "position": "bottom-right", "margin_bottom_pct": 3, "margin_right_pct": 5 }
+      }
+    },
+    "content_types": {
+      "event_cover": {
+        "description": "Primary event announcement post. Most common template type.",
+        "elements": ["category_label", "event_title", "speaker_name", "date_time", "logo", "venue", "url"],
+        "background_variants": [
+          { "name": "visual", "bg": "#E8DCD4 with grain organic visual overlay", "text_color": "#231F20" },
+          { "name": "clean_white", "bg": "#FFFFFF", "text_color": "#231F20" },
+          { "name": "ghost", "bg": "#FFFFFF", "text_color": "#DDD5CA" }
+        ],
+        "typography_hierarchy": [
+          { "element": "category_label", "role": "category_label", "example": "LECTURE" },
+          { "element": "event_title", "role": "smm_title", "example": "Basic Sound Synthesis #2" },
+          { "element": "speaker_name", "role": "smm_speaker", "example": "Shahen Khandkaryan\naka Shhau" },
+          { "element": "date", "role": "smm_date", "example": "May 21" },
+          { "element": "time", "role": "smm_footer", "example": "15:00" },
+          { "element": "venue", "role": "smm_footer", "example": "Komitas Conservatory" },
+          { "element": "url", "role": "smm_footer", "example": "hosq.co" }
+        ]
+      },
+      "speaker_bio": {
+        "description": "Speaker biography / description card. Text-heavy with inline bold for names and key terms.",
+        "elements": ["category_label", "body_text_with_bold", "logo", "venue", "url"],
+        "background": "#EBE2D6",
+        "text_color": "#231F20",
+        "typography_hierarchy": [
+          { "element": "category_label", "role": "category_label", "example": "LECTURE" },
+          { "element": "body_text", "role": "smm_body", "example": "**Maria Cristina Didero** is an Italian curator, author, and design scholar..." },
+          { "element": "venue", "role": "smm_footer", "example": "Komitas Conservatory" },
+          { "element": "url", "role": "smm_footer", "example": "hosq.co" }
+        ],
+        "note": "Names and key terms are set in Cera Pro Bold inline within Regular body text. This creates emphasis without disrupting the reading flow."
+      },
+      "speaker_quote": {
+        "description": "Pull quote or statement card from a speaker. Large bold text, minimal elements.",
+        "elements": ["category_label", "quote_text", "logo", "venue", "url"],
+        "background": "#EBE2D6",
+        "text_color": "#231F20",
+        "typography_hierarchy": [
+          { "element": "category_label", "role": "category_label", "example": "LECTURE" },
+          { "element": "quote_text", "role": "smm_quote", "example": "A lecture in Yerevan to connect with the Armenian international design scene..." },
+          { "element": "venue", "role": "smm_footer", "example": "Komitas Conservatory" },
+          { "element": "url", "role": "smm_footer", "example": "hosq.co" }
+        ]
+      },
+      "speaker_portrait": {
+        "description": "Full-bleed portrait photo with minimal text overlay.",
+        "elements": ["speaker_name_overlay", "role_label", "url"],
+        "background": "full-bleed photograph with warm tone",
+        "text_color": "#231F20",
+        "typography_hierarchy": [
+          { "element": "speaker_name", "role": "category_label", "example": "MARINA\nDAVYDOVA", "note": "Uppercase, bold, top-left corner" },
+          { "element": "role", "role": "smm_footer", "example": "Curator", "note": "Bottom-left corner" },
+          { "element": "url", "role": "smm_footer", "example": "hosq.co", "note": "Bottom-right corner" }
+        ],
+        "photo_treatment": "Portraits use a warm, desaturated tone that harmonizes with the cream/blush brand palette. Soft, editorial lighting. Neutral or warm-toned backgrounds."
+      },
+      "partner_logo": {
+        "description": "Partner organization showcase. Single centered logo with partner label.",
+        "elements": ["category_label", "partner_logo_centered", "partner_name", "partner_url"],
+        "background": "#EBE2D6",
+        "text_color": "#231F20",
+        "typography_hierarchy": [
+          { "element": "category_label", "role": "category_label", "example": "PARTNER" },
+          { "element": "partner_name", "role": "smm_footer", "example": "The State Philharmonia of Armenia, Yerevan" },
+          { "element": "partner_url", "role": "smm_footer", "example": "babajanyanhall.org" }
+        ]
+      },
+      "subscribe_cta": {
+        "description": "Subscribe / follow / join call-to-action card. Split composition with white content area and vibrant visual.",
+        "elements": ["url_header", "cta_title", "description_text", "category_tags", "logo", "location", "url"],
+        "background_variants": [
+          { "name": "split_white_visual", "description": "Left half white, right half full-bleed brand visual (violet + grain organic shapes)" },
+          { "name": "full_visual", "description": "Full-bleed brand visual background" }
+        ],
+        "text_color": "#231F20",
+        "typography_hierarchy": [
+          { "element": "url_header", "role": "smm_footer", "example": "hosq.co", "note": "Top-left of visual area" },
+          { "element": "cta_title", "role": "smm_title", "example": "subscribe\n& join" },
+          { "element": "description", "role": "smm_body", "example": "hosq is an international cultural organization fostering the creative industry and honoring talents." },
+          { "element": "category_tags", "role": "smm_date", "example": "foundation | institution | space" },
+          { "element": "location", "role": "smm_footer", "example": "Armenia, Yerevan" }
+        ]
+      }
+    },
+    "ghost_variant": {
+      "description": "Every template has a 'ghost' variant where all text is rendered in #DDD5CA on white background. This serves as a visual template/placeholder showing the layout structure without content. Used internally for design handoff.",
+      "text_color": "#DDD5CA",
+      "background": "#FFFFFF",
+      "confidence": "confirmed"
+    },
+    "horizontal_split_pattern": {
+      "description": "Horizontal (landscape) templates use a distinctive split: content occupies the left ~55% on a blush/pink background with grain visual overlay; the right ~45% is pure white. This creates a strong visual anchor while maintaining breathing room.",
+      "content_side": "left",
+      "content_bg": "#E8DCD4",
+      "empty_side": "right",
+      "empty_bg": "#FFFFFF",
+      "confidence": "confirmed"
+    },
+    "category_labels_observed": ["LECTURE", "PARTNER", "CONCERT"],
+    "note": "The SMM system is highly modular. Each content type follows the same spatial grid (category top-left, logo bottom-center, venue bottom-left, URL bottom-right) while varying the central content area. This makes the system extremely predictable for AI generation — any new content type can be created by filling the established zones."
+  },
+
+  "responsive": {
+    "confidence": "confirmed",
+    "approach": "fluid_system",
+    "description": "Full responsive system with 4 breakpoints, fluid type using clamp(), and adaptive spacing. Mobile-first approach.",
+    "breakpoints": {
+      "mobile": { "min_width": 0, "max_width": 639, "label": "Mobile", "columns": 4, "gutter_px": 16, "margin_px": 16 },
+      "tablet": { "min_width": 640, "max_width": 1023, "label": "Tablet", "columns": 8, "gutter_px": 20, "margin_px": 32 },
+      "desktop": { "min_width": 1024, "max_width": 1439, "label": "Desktop", "columns": 12, "gutter_px": 24, "margin_px": 64 },
+      "wide": { "min_width": 1440, "max_width": null, "label": "Wide", "columns": 12, "gutter_px": 24, "margin_px": "auto (max-width: 1200px centered)" }
+    },
+    "fluid_type_scale": {
+      "description": "Type scale values at each breakpoint. Use CSS clamp() for fluid interpolation between mobile and desktop.",
+      "display": {
+        "mobile_px": 40, "tablet_px": 56, "desktop_px": 72,
+        "clamp": "clamp(40px, 5vw + 16px, 72px)"
+      },
+      "h1": {
+        "mobile_px": 28, "tablet_px": 36, "desktop_px": 48,
+        "clamp": "clamp(28px, 3.5vw + 10px, 48px)"
+      },
+      "h2": {
+        "mobile_px": 24, "tablet_px": 30, "desktop_px": 36,
+        "clamp": "clamp(24px, 2.5vw + 10px, 36px)"
+      },
+      "h3": {
+        "mobile_px": 20, "tablet_px": 22, "desktop_px": 24,
+        "clamp": "clamp(20px, 1.5vw + 10px, 24px)"
+      },
+      "h4": {
+        "mobile_px": 18, "tablet_px": 19, "desktop_px": 20,
+        "clamp": "clamp(18px, 1vw + 12px, 20px)"
+      },
+      "body_lg": {
+        "mobile_px": 16, "tablet_px": 17, "desktop_px": 18,
+        "clamp": "clamp(16px, 0.5vw + 14px, 18px)"
+      },
+      "body": { "mobile_px": 16, "tablet_px": 16, "desktop_px": 16, "clamp": "16px" },
+      "small": { "mobile_px": 14, "tablet_px": 14, "desktop_px": 14, "clamp": "14px" },
+      "caption": { "mobile_px": 12, "tablet_px": 12, "desktop_px": 12, "clamp": "12px" }
+    },
+    "fluid_spacing": {
+      "description": "Key spacing values at each breakpoint. Section padding and margins scale down on mobile.",
+      "section_padding_y": {
+        "mobile_px": 48, "tablet_px": 64, "desktop_px": 96,
+        "clamp": "clamp(48px, 8vw, 96px)"
+      },
+      "section_padding_x": {
+        "mobile_px": 16, "tablet_px": 32, "desktop_px": 64,
+        "clamp": "clamp(16px, 5vw, 64px)"
+      },
+      "card_padding": {
+        "mobile_px": 16, "tablet_px": 20, "desktop_px": 24,
+        "clamp": "clamp(16px, 2vw, 24px)"
+      },
+      "hero_padding_y": {
+        "mobile_px": 48, "tablet_px": 64, "desktop_px": 96,
+        "clamp": "clamp(48px, 8vw, 96px)"
+      },
+      "hero_min_height": {
+        "mobile_px": 400, "tablet_px": 480, "desktop_px": 560
+      },
+      "content_gap": {
+        "mobile_px": 16, "tablet_px": 20, "desktop_px": 24,
+        "clamp": "clamp(16px, 2vw, 24px)"
+      }
+    },
+    "grid_behavior": {
+      "mobile": {
+        "columns": 4,
+        "cards_per_row": 1,
+        "nav": "hamburger menu",
+        "hero_text_size": "display at 40px, left-aligned",
+        "footer": "stacked, centered"
+      },
+      "tablet": {
+        "columns": 8,
+        "cards_per_row": 2,
+        "nav": "hamburger or compact horizontal",
+        "hero_text_size": "display at 56px, left-aligned",
+        "footer": "2-column"
+      },
+      "desktop": {
+        "columns": 12,
+        "cards_per_row": "3 (or 2 for wide cards)",
+        "nav": "full horizontal with CTA",
+        "hero_text_size": "display at 72px, left-aligned, max-width 650px",
+        "footer": "3-4 column"
+      },
+      "wide": {
+        "columns": 12,
+        "cards_per_row": "3-4",
+        "nav": "full horizontal, centered within max-width",
+        "hero_text_size": "display at 72px, centered content max-width 1200px",
+        "footer": "4 column"
+      }
+    },
+    "css_snippet": "/* HOSQ Responsive Type Scale */\n:root {\n  --fluid-display: clamp(40px, 5vw + 16px, 72px);\n  --fluid-h1: clamp(28px, 3.5vw + 10px, 48px);\n  --fluid-h2: clamp(24px, 2.5vw + 10px, 36px);\n  --fluid-h3: clamp(20px, 1.5vw + 10px, 24px);\n  --fluid-h4: clamp(18px, 1vw + 12px, 20px);\n  --fluid-body-lg: clamp(16px, 0.5vw + 14px, 18px);\n  --fluid-section-py: clamp(48px, 8vw, 96px);\n  --fluid-section-px: clamp(16px, 5vw, 64px);\n  --fluid-card-padding: clamp(16px, 2vw, 24px);\n}"
+  },
+
+  "css_custom_properties": ":root {\n  /* === HOSQ Brand Colors === */\n  --brand-primary: #FF6F55;\n  --brand-secondary: #C47CF1;\n  --brand-accent: #14B672;\n  --brand-accent-blue: #56A4CB;\n  --brand-accent-pink: #E770C3;\n\n  /* Neutrals (warm-tinted) */\n  --brand-neutral-darkest: #231F20;\n  --brand-neutral-dark: #4A4545;\n  --brand-neutral-readable-mid: #6B6566;\n  --brand-neutral-mid: #9A9596; /* DECORATIVE ONLY */\n  --brand-neutral-light: #C5C4C3; /* DECORATIVE ONLY */\n  --brand-neutral-lightest: #EBE2D6;\n\n  /* Backgrounds */\n  --brand-bg-page: #FFFFFF;\n  --brand-bg-surface: #EBE2D6;\n  --brand-bg-surface-warm: #F1E8DB;\n  --brand-bg-surface-blush: #E8DCD4;\n  --brand-bg-elevated: #FFFFFF;\n  --brand-bg-inverse: #231F20;\n\n  /* Semantic */\n  --brand-success: #14B672;\n  --brand-warning: #F0C3B3;\n  --brand-error: #FF6F55;\n  --brand-info: #56A4CB;\n\n  /* Gradients */\n  --brand-gradient-primary: linear-gradient(135deg, #FF6F55, #C47CF1);\n  --brand-gradient-full: linear-gradient(135deg, #FF6F55, #C47CF1, #14B672);\n  --brand-gradient-surface: linear-gradient(180deg, #F1E8DB, #EBE2D6);\n\n  /* === Typography === */\n  --brand-font-display: 'Austin Cy', Georgia, 'Times New Roman', serif;\n  --brand-font-heading: 'Cera Pro', 'DM Sans', 'Inter', Arial, sans-serif;\n  --brand-font-body: 'Cera Pro', 'DM Sans', 'Inter', Arial, sans-serif;\n\n  /* Type Scale: 72→48→36→24→20→18→16→14→12 */\n  --brand-display-size: 72px;\n  --brand-display-weight: 700;\n  --brand-display-line-height: 1.05;\n  --brand-display-letter-spacing: -0.02em;\n\n  --brand-h1-size: 48px;\n  --brand-h1-weight: 700;\n  --brand-h1-line-height: 1.1;\n  --brand-h1-letter-spacing: -0.01em;\n\n  --brand-h2-size: 36px;\n  --brand-h2-weight: 700;\n  --brand-h2-line-height: 1.15;\n  --brand-h2-letter-spacing: -0.01em;\n\n  --brand-h3-size: 24px;\n  --brand-h3-weight: 700;\n  --brand-h3-line-height: 1.3;\n  --brand-h3-letter-spacing: 0;\n\n  --brand-h4-size: 20px;\n  --brand-h4-weight: 500;\n  --brand-h4-line-height: 1.3;\n  --brand-h4-letter-spacing: 0;\n\n  --brand-body-lg-size: 18px;\n  --brand-body-lg-weight: 400;\n  --brand-body-lg-line-height: 1.6;\n\n  --brand-body-size: 16px;\n  --brand-body-weight: 400;\n  --brand-body-line-height: 1.6;\n  --brand-body-letter-spacing: 0;\n\n  --brand-small-size: 14px;\n  --brand-small-weight: 400;\n  --brand-small-line-height: 1.5;\n\n  --brand-caption-size: 12px;\n  --brand-caption-weight: 400;\n  --brand-caption-line-height: 1.5;\n  --brand-caption-letter-spacing: 0.02em;\n\n  /* === Spacing === */\n  --brand-space-3xs: 2px;\n  --brand-space-2xs: 4px;\n  --brand-space-xs: 8px;\n  --brand-space-sm: 12px;\n  --brand-space-md: 16px;\n  --brand-space-lg: 24px;\n  --brand-space-xl: 32px;\n  --brand-space-2xl: 48px;\n  --brand-space-3xl: 64px;\n  --brand-space-4xl: 96px;\n  --brand-space-5xl: 128px;\n\n  /* === Layout === */\n  --brand-radius-none: 0;\n  --brand-radius-sm: 4px;\n  --brand-radius-md: 8px;\n  --brand-radius-lg: 16px;\n  --brand-radius-pill: 999px;\n  --brand-max-width: 1200px;\n  --brand-grid-columns: 12;\n  --brand-grid-gutter: 24px;\n\n  /* === SMM Template === */\n  --brand-smm-ghost-text: #DDD5CA;\n  --brand-bg-surface-blush: #E8DCD4;\n  --brand-smm-category-size: 18px;\n  --brand-smm-category-weight: 700;\n  --brand-smm-category-tracking: 0.12em;\n}",
+
+  "prompt_fragments": {
+    "description": "Ready-to-use prompt snippets that AI can inject into generation tasks to ensure on-brand output.",
+    "landing_page": "Build a HOSQ landing page. Use warm cream (#EBE2D6) as the default page background — never pure white. Hero section uses the brand gradient (coral #FF6F55 → violet #C47CF1 at 135°) with an optional blurred organic shape. Hero headline in Austin Cy Bold at clamp(40px, 5vw+16px, 72px), all other text in Cera Pro. Body text #231F20, secondary text #6B6566. Pill-shaped buttons (border-radius: 999px). Sections alternate white/cream backgrounds. No drop shadows on cards — contrast through background color only. Cards on white sections are cream; cards on cream sections are white. 12px border-radius on cards, 8px on inputs. Transitions at 300ms ease-out. Mobile-first with 4 breakpoints. Tone: intellectual, unhurried, lowercase CTAs.",
+    "smm_post": "Create a HOSQ social media post. Use the SMM grid: category label (uppercase, bold, 0.12em tracking) top-left. Main title in Cera Pro Bold, very large. Speaker/subtitle in Cera Pro Regular. Logo (hosq diamond + wordmark) bottom-center. Venue bottom-left. URL 'hosq.co' bottom-right. Background: warm cream #EBE2D6 for text cards, soft blush #E8DCD4 for visual cards with grain overlay. All text #231F20. NO Austin Cy in SMM — only Cera Pro. Square: 1080×1080. Vertical: 1080×1920. Horizontal: 1456×816.",
+    "website_section": "Create a HOSQ website section. Background alternates: if previous section was white, use cream #EBE2D6 (and vice versa). Section padding: clamp(48px, 8vw, 96px) vertical. Section title in Cera Pro Bold 36px (h2). Content in 12-column grid, max-width 1200px. Cards use 12px radius, 24px padding, no shadows, no borders. Tags are pill-shaped (11px, bold, 999px radius). Link hover: color shifts to coral #FF6F55 with animated underline.",
+    "presentation_slide": "Create a HOSQ presentation slide. Background: warm cream #EBE2D6. Title in Cera Pro Medium 62pt. Body in Cera Pro Regular. All text #231F20. Logo in bottom-right corner in black (#231F20). NO Austin Cy — presentations are product context, Cera Pro only. Generous margins (48px all sides). Use pill-shaped tags for categories.",
+    "email_header": "Create a HOSQ email header. This is editorial context — headline can use Austin Cy Bold at 36px+. Body in Cera Pro Regular. Background options: brand gradient (coral→violet), solid coral, or warm cream. Text always #231F20. Logo centered or left. CTA pill button. Warm, intellectual tone.",
+    "poster": "Create a HOSQ poster. Editorial context — display headline in Austin Cy Bold 72px+. Organic biomorphic shapes with heavy grain/noise texture as background visual. Color palette: coral #FF6F55, violet #C47CF1, emerald #14B672. Text #231F20. Logo (complete unit: diamond + wordmark) in black or light beige #DDD5CA. HOSQ event posters use the signature split composition: 50/50 coral/violet with organic shapes overlapping the divide."
+  },
+
+  "font_face_declarations": "@font-face {\n  font-family: 'Austin Cy';\n  src: url('./fonts/Austin Cy-Bold.woff') format('woff'),\n       url('./fonts/Austin Cy-Bold.otf') format('opentype');\n  font-weight: 700;\n  font-style: normal;\n  font-display: swap;\n}\n\n@font-face {\n  font-family: 'Cera Pro';\n  src: url('./fonts/Cera Pro Regular.woff') format('woff'),\n       url('./fonts/Cera Pro Regular.otf') format('opentype');\n  font-weight: 400;\n  font-style: normal;\n  font-display: swap;\n}\n\n@font-face {\n  font-family: 'Cera Pro';\n  src: url('./fonts/Cera Pro Medium.woff') format('woff'),\n       url('./fonts/Cera Pro Medium.otf') format('opentype');\n  font-weight: 500;\n  font-style: normal;\n  font-display: swap;\n}\n\n@font-face {\n  font-family: 'Cera Pro';\n  src: url('./fonts/Cera Pro Bold.woff') format('woff'),\n       url('./fonts/Cera Pro Bold.otf') format('opentype');\n  font-weight: 700;\n  font-style: normal;\n  font-display: swap;\n}"
+}

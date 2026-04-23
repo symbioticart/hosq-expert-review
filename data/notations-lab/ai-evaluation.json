@@ -1,0 +1,167 @@
+{
+  "projectId": "notations-lab",
+  "status": "evaluated",
+  "summary": "A two-week interdisciplinary laboratory and festival held in Yerevan, Armenia, bringing together sound artists, musicians, visual artists, and performers to explore the intersection of Armenian classical heritage and contemporary experimental practice. The program included workshops on performance theory, folk recordings as digital instruments, and notation systems, alongside collaborative creation sessions that resulted in new works, installations, and music releases. With 1,000 on-site and 2 million online participants, the project fostered international artistic exchange and strengthened Armenia's emerging cultural infrastructure. Key outcomes included an album based on Armenian Khaz notation research, collaborative installations at the State Philharmonia, and expanded professional networks connecting Armenian artists with European cultural policy frameworks.",
+  "finalScore": 72,
+  "finalScoreMax": 100,
+  "metrics": [
+    {
+      "metricId": "cultural-vitality",
+      "score": 4,
+      "scoreMax": 5,
+      "pros": [
+        "Strong cultural originality with documented boundary-breaking outcomes (improvisation firsts, cross-disciplinary work, architectural mapping innovation)",
+        "Direct linking to Armenian heritage research (khaz notation) anchors the project in meaningful cultural context (album)",
+        "Multiple local partnerships with named Armenian artists and organizations embedded in ecosystem",
+        "Structured research methodology (observe-research-implement) applied to laboratory design"
+      ],
+      "cons": [
+        "Audience create and cultural problem not explicitly articulated beyond infrastructure gaps",
+        "Co-authorship power dynamics and formal partnership structures on co-design with school partners unclear",
+        "Research sources and step-by-step process methodology underdeveloped in artifacts",
+        "Contextual claims about Armenian music scene lack supporting data or evidence"
+      ]
+    },
+    {
+      "metricId": "creative-economy",
+      "score": 3,
+      "scoreMax": 5,
+      "pros": [
+        "Strong market integration with proven distribution (Bandcamp release) and exceptional digital reach (2M online audience)",
+        "Demonstrated revenue potential through album sales and documented commercial outputs",
+        "Multiple local partnerships with named Armenian artists and organizations providing employment-adjacent opportunities",
+        "Financial model of methodology coupled with integrated local economic support"
+      ],
+      "cons": [
+        "Financial sustainability model unclear beyond singular monetization moment",
+        "Financial innovation remains surface-level without structural difference from established models"
+      ]
+    },
+    {
+      "metricId": "social-inclusion",
+      "score": 4,
+      "scoreMax": 5,
+      "pros": [
+        "Exceptional community co-creation with participant-initiated collaborations and public outputs",
+        "Strong mechanisms for inclusion of Armenian women, underrepresented participant transformation into ongoing collaborators",
+        "Meaningful multicultural engagement bringing Armenian heritage with international precedents",
+        "Bilingual operation with diverse stakeholder engagement"
+      ],
+      "cons": [
+        "No documented accessibility provisions for physical, economic, or digital dimensions",
+        "Limited evidence of marginalized voices or systematic outreach",
+        "No safeguards against co-design imposition or sponsorship dynamics"
+      ]
+    },
+    {
+      "metricId": "artistic-quality",
+      "score": 4,
+      "scoreMax": 5,
+      "pros": [
+        "Strong contemporary art forms with multiple radical outputs (installation, mapping, digital release)",
+        "Clear curatorial methodology with documented participant transformation",
+        "Credible team with international partnerships and realized collaborations",
+        "Policy-focused critical discourse through review sessions and international exchange"
+      ],
+      "cons": [
+        "Missing project budget or workflow implementation specifics",
+        "No published critique loops on open-call format and structural support systems"
+      ]
+    },
+    {
+      "metricId": "heritage-environment",
+      "score": 3,
+      "scoreMax": 5,
+      "pros": [
+        "Concrete heritage research outputs (Khaz notation album) demonstrates structured engagement with Armenian intangible heritage",
+        "Methodological approach to folk recordings provides model for heritage integration",
+        "Real-time interactive performance components demonstrate live transformation of traditional materials into public-facing work"
+      ],
+      "cons": [
+        "No documented partnerships with heritage bodies or formal custodians of Armenian musical tradition",
+        "Site-meaningfulness and venue choice versus traditional/environmental resonance not articulated",
+        "Heritage preservation component focuses on reinterpretation rather than conservation",
+        "No location choice rationale or environmental criteria documented"
+      ]
+    },
+    {
+      "metricId": "digitality",
+      "score": 4,
+      "scoreMax": 5,
+      "pros": [
+        "Strong multi-platform digital presence with completed artifacts (Bandcamp, YouTube, Google Drive)",
+        "Technological innovation through architectural mapping and algorithm-based sound transformation",
+        "Real-time interactive performance components demonstrated",
+        "Accessible distribution through open channels and social media integration"
+      ],
+      "cons": [
+        "Limited documentation of R&D technical specifications or novel interaction mechanisms",
+        "No evidence of sustained user participation loops or interactive online platforms",
+        "Overall 2M online audience suggests reach but audience participation mechanisms underspecified"
+      ]
+    },
+    {
+      "metricId": "internationality",
+      "score": 4,
+      "scoreMax": 5,
+      "pros": [
+        "Exceptional trackable partner portfolio with confirmed artists from Georgia, Russia, China, Germany, Italy",
+        "Deep multi-cultural representation evidenced through co-created outputs (installations, albums, collaborations)",
+        "Transferable cross-cultural exchange model and concrete open-call and co-production structures",
+        "Transferability claims with documented replication interest and artistic infrastructure"
+      ],
+      "cons": [
+        "Transferability remains conceptual with no concrete replication agreements or defined long-term plans",
+        "No evidence of meaningful pedagogy mechanisms or learning outcomes for international participants",
+        "Documented relationship building shows networking but not lasting infrastructure for follow-on production structures",
+        "Institutional relationships lack long-term partnership mechanics, continuous coverage, or governance detail"
+      ]
+    },
+    {
+      "metricId": "capacity-building",
+      "score": 4,
+      "scoreMax": 5,
+      "pros": [
+        "Exceptional skill transfer outcomes with multiple documented cases of participants acquiring new competencies and producing concrete works",
+        "Strong educational design with confirmed project instruction and structured pedagogical approaches across disciplines",
+        "Demonstrated ecosystem impact beyond immediate participants, with ripple effects into broader Armenian cultural infrastructure",
+        "Institutional partnerships lock formal agreements in defined long-term roles beyond the laboratory period",
+        "No evidence of governance, community infrastructure, or funding mechanisms for ongoing sustainability",
+        "Single-event format without documented infrastructure for ongoing community",
+        "Zero educational or capacity building components in project design"
+      ],
+      "cons": []
+    },
+    {
+      "metricId": "participation",
+      "score": 4,
+      "scoreMax": 5,
+      "pros": [
+        "Exceptional active engagement evidenced by participant breakthroughs (first improvisation, cross-disciplinary creation)",
+        "Strong cross-disciplinary inclusivity allowing artists to work outside habitual roles",
+        "Structured participatory formats (Round Robin, Total Jam) with documented creative mechanism"
+      ],
+      "cons": [
+        "Dialogue depth not evidenced beyond session descriptions; no documented feedback loops or published outcomes",
+        "Process transparency limited: internal structure exists but not communicated publicly or in application materials",
+        "Inclusivity limited to skill-set diversity; no evidence of broader accessibility considerations"
+      ]
+    },
+    {
+      "metricId": "resonance",
+      "score": 4,
+      "scoreMax": 5,
+      "pros": [
+        "Exceptional media traction with 2M online reach and comprehensive documentation assets",
+        "Strong institutional validation through State Philharmonia, Moscow Conservatory, and EU Parliament involvement",
+        "Proven continuation through released album and documented organizational interest in reprise",
+        "Clear professionalization strategy with 2 release series and international network presence"
+      ],
+      "cons": [
+        "No evidence of risk mitigation protocols for complex logistical events with international institutions",
+        "Absence of communication strategy for managing expectations around unevenly-funded national partnerships",
+        "Risk mitigation planning for potential disruption or criticism not addressed in documentation"
+      ]
+    }
+  ]
+}
