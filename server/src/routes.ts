@@ -21,10 +21,6 @@ interface MetricDef {
   letter: string;
   weight: number;
   nameEn: string;
-  what: string;
-  how: string;
-  scale: { score: number; label: string }[];
-  subindices: { id: string; name: string; description?: string }[];
 }
 
 interface AiEval {

@@ -247,7 +247,7 @@ function MetricEditor({
         <h3 className="text-sm font-bold text-ink mb-4">
           Your score for this metric
         </h3>
-        <ScoreScale value={score} onChange={handleScore} scale={metric.scale} />
+        <ScoreScale value={score} onChange={handleScore} rubric={metric.vectorRubric} />
       </section>
 
       <section className="mb-8">

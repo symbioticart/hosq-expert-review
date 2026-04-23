@@ -6,53 +6,75 @@
       "weight": 0.13,
       "nameEn": "Cultural Vitality",
       "what": "Thematic relevance, cultural originality, local embedding and the depth of artistic research behind the project.",
-      "how": "Give a single 0–5 score for the whole vector based on the evidence present in the project materials. Use the level definitions below. Remember: 3 is a competent baseline, 5 requires concrete artefacts and independent evidence. Do not inflate — strictness is helpful.",
-      "scale": [
-        {
-          "score": 0,
-          "label": "Not addressed in the materials"
-        },
-        {
-          "score": 1,
-          "label": "Only claims / very weak signals"
-        },
-        {
-          "score": 2,
-          "label": "Generic or minor mentions"
-        },
-        {
-          "score": 3,
-          "label": "Competent baseline — basic criteria met"
-        },
-        {
-          "score": 4,
-          "label": "Strong evidence with minor gaps"
-        },
-        {
-          "score": 5,
-          "label": "Rigorous + multiple independent artefacts"
-        }
+      "scoringDiscipline": "Score inflation is a critical failure. A score of 0–2 is not a punishment — it is an accurate reflection of weak or missing evidence. Most real-world proposals do not excel in every subindex. Expect the average score across subindices to be 2–3, not 4–5. Score 3 is the baseline for a competent proposal that meets basic criteria without distinction — not a low score.\n\nDo not round up out of sympathy, do not give benefit of the doubt, and do not infer quality from intent. If the materials do not demonstrate it, the score must reflect that absence. A strict evaluator who under-scores by 0.5 is more useful than a lenient one who over-scores by 1.\n\nIf a subindex topic is simply not present in the materials assign score 0 without hesitation. Do not fabricate relevance, do not stretch adjacent content to cover an absent topic, and do not soften the score to avoid an empty-looking result. Score 0 is the correct professional judgment when the materials provide nothing to evaluate.",
+      "ceilingRules": [
+        "No evidence items at all for a subindex => score 0.",
+        "No strength=2 or 3 evidence => max 3.",
+        "<2 total evidence items => max 3, unless exactly one strength=3 => max 4.",
+        "Independence not met => max 4.",
+        "Claims-only => max 3.",
+        "Contradiction affecting subindex => score -1 and confidence max \"med\"."
       ],
+      "vectorRubric": {
+        "0": "The project materials do not address theme, originality, local connection or artistic research at all.",
+        "1": "Only claims — theme unarticulated, novelty asserted without basis, decorative local mention, no research layer.",
+        "2": "Generic theme, minor formal variation, surface-level local reference, references-only research. Mostly claims, no mechanisms.",
+        "3": "Clear theme with some context linkage, some original elements, local partners or place present, research actions mentioned. Competent baseline; mechanisms weak, evidence thin.",
+        "4": "Strong theme → context/audience chain, clear differentiator, real involvement mechanisms with local actors, method + sources present. Missing artefacts or full proof.",
+        "5": "Full theme → context → audience chain + culturally meaningful novelty + meaningful co-authorship with partners + structured research (method, sources, steps, artefacts). Multiple independent strength-3 items."
+      },
       "subindices": [
         {
           "id": "A1",
           "name": "Thematic relevance",
-          "description": "theme quality + linkage to context/problem/audience"
+          "description": "theme quality + linkage to context/problem/audience",
+          "rubric": {
+            "0": "not addressed; absent from materials",
+            "1": "vague theme; no context/problem/audience anchors",
+            "2": "generic; weak linkage; mostly claims",
+            "3": "clear theme + some linkage; limited anchors",
+            "4": "strong linkage + (>=1 strength=2) OR (two solid contextual anchors); missing sources/data or full problem→audience chain",
+            "5": "clear theme + strong context/problem/audience chain + artifacts/sources/institutional anchors"
+          }
         },
         {
           "id": "A2",
           "name": "Cultural originality",
-          "description": "novelty in proposition/form/method, not generic"
+          "description": "novelty in proposition/form/method, not generic",
+          "rubric": {
+            "0": "not addressed; absent from materials",
+            "1": "generic; novelty only claimed",
+            "2": "minor variation; weak differentiator; mostly claims",
+            "3": "some original elements; weak integration or weak evidence",
+            "4": "clear differentiator + integration; lacks mechanism/artifact proof or cultural significance articulation",
+            "5": "culturally meaningful novelty + (>=1 strength=3) OR (two strength=2)"
+          }
         },
         {
           "id": "A3",
           "name": "Connection to local cultural fabric",
-          "description": "local embedding, partners, co-creation"
+          "description": "local embedding, partners, co-creation",
+          "rubric": {
+            "0": "not addressed; absent from materials",
+            "1": "decorative local mention; no actors/mechanisms",
+            "2": "local mention + weak involvement; unclear power; mostly claims",
+            "3": "local partners/place present; mechanisms unclear",
+            "4": "clear involvement mechanisms; weak proof or unclear co-authorship power",
+            "5": "meaningful local partners/co-authors + concrete mechanisms + (strength=3 OR two strength=2)"
+          }
         },
         {
           "id": "A4",
           "name": "Depth of artistic research",
-          "description": "research process: method/sources/steps/artifacts"
+          "description": "research process: method/sources/steps/artifacts",
+          "rubric": {
+            "0": "not addressed; absent from materials",
+            "1": "no research layer",
+            "2": "references/inspiration only; no method/sources/process",
+            "3": "research actions mentioned; shallow method/outputs",
+            "4": "method + sources present; lacks artifacts or influence trace on artistic decisions",
+            "5": "structured research (question/method/sources/steps/artifacts) + explicit influence on artistic decisions + (strength=3 OR two strength=2)"
+          }
         }
       ]
     },
@@ -62,53 +84,75 @@
       "weight": 0.12,
       "nameEn": "Creative Economy",
       "what": "Economic sustainability, job creation, value-chain integration and financial innovation.",
-      "how": "Give a single 0–5 score for the whole vector based on the evidence present in the project materials. Use the level definitions below. Remember: 3 is a competent baseline, 5 requires concrete artefacts and independent evidence. Do not inflate — strictness is helpful.",
-      "scale": [
-        {
-          "score": 0,
-          "label": "Not addressed in the materials"
-        },
-        {
-          "score": 1,
-          "label": "Only claims / very weak signals"
-        },
-        {
-          "score": 2,
-          "label": "Generic or minor mentions"
-        },
-        {
-          "score": 3,
-          "label": "Competent baseline — basic criteria met"
-        },
-        {
-          "score": 4,
-          "label": "Strong evidence with minor gaps"
-        },
-        {
-          "score": 5,
-          "label": "Rigorous + multiple independent artefacts"
-        }
+      "scoringDiscipline": "Score inflation is a critical failure. A score of 0–2 is not a punishment — it is an accurate reflection of weak or missing evidence. Most real-world proposals do not excel in every subindex. Expect the average score across subindices to be 2–3, not 4–5. Score 3 is the baseline for a competent proposal that meets basic criteria without distinction — not a low score.\n\nDo not round up out of sympathy, do not give benefit of the doubt, and do not infer quality from intent. If the materials do not demonstrate it, the score must reflect that absence. A strict evaluator who under-scores by 0.5 is more useful than a lenient one who over-scores by 1.\n\nIf a subindex topic is simply not present in the materials assign score 0 without hesitation. Do not fabricate relevance, do not stretch adjacent content to cover an absent topic, and do not soften the score to avoid an empty-looking result. Score 0 is the correct professional judgment when the materials provide nothing to evaluate.",
+      "ceilingRules": [
+        "No evidence items at all for a subindex => score 0.",
+        "No strength=2 or 3 evidence => max 3.",
+        "<2 total evidence items => max 3, unless exactly one strength=3 => max 4.",
+        "Independence not met => max 4.",
+        "Claims-only => max 3.",
+        "Contradiction affecting subindex => score -1 and confidence max \"med\"."
       ],
+      "vectorRubric": {
+        "0": "No financial logic, employment dimension, market links or funding mechanism in the materials.",
+        "1": "Only 'will be sustainable' claims, no jobs, no market/distribution, pure grant dependence with no structure.",
+        "2": "Basic revenue idea, vague jobs claims, generic 'market/partners' language, minor financing variations. No numbers, no mechanisms.",
+        "3": "Coherent model with some numbers, named roles and channels, one described novel mechanism. Competent baseline; cost assumptions, commitments and proof are gap-y.",
+        "4": "Credible economics, clear job-creation plan, concrete distribution mechanics, real innovative financing — each with at least one mechanism-level evidence item. Validation/artefacts still missing.",
+        "5": "Validated economics + confirmed paid staffing + confirmed market/distribution access + proven or contracted innovative financing. Budgets, contracts, partner letters or prior traction present."
+      },
       "subindices": [
         {
           "id": "B1",
           "name": "Economic sustainability",
-          "description": "revenue model, diversified income, cost logic, runway"
+          "description": "revenue model, diversified income, cost logic, runway",
+          "rubric": {
+            "0": "not addressed; absent from materials",
+            "1": "no financial logic; vague \"will be sustainable\"",
+            "2": "basic revenue idea; missing costs/pricing; mostly claims",
+            "3": "coherent model with some numbers or structure; gaps in costs/assumptions",
+            "4": "credible model + (>=1 strength=2) OR (two solid numeric anchors); missing validation/commitments",
+            "5": "validated economics + artifacts/commitments (>=1 strength=3 OR two strength=2) + clear cost/revenue chain"
+          }
         },
         {
           "id": "B2",
           "name": "Jobs/Employment potential",
-          "description": "jobs created, paid roles, meaningful work opportunities"
+          "description": "jobs created, paid roles, meaningful work opportunities",
+          "rubric": {
+            "0": "not addressed; absent from materials",
+            "1": "no employment dimension",
+            "2": "vague jobs claims; no roles/volume/timeline",
+            "3": "roles described or some hiring plan; weak detail/commitments",
+            "4": "clear job creation mechanisms + (>=1 strength=2); missing proof or scale certainty",
+            "5": "confirmed paid roles/partners or funded staffing plan (strength=3 OR two strength=2) + credible scale and timing"
+          }
         },
         {
           "id": "B3",
           "name": "Integration into creative value chain",
-          "description": "distribution, platforms, market links, sales channels"
+          "description": "distribution, platforms, market links, sales channels",
+          "rubric": {
+            "0": "not addressed; absent from materials",
+            "1": "no market/distribution links",
+            "2": "generic \"partners/market\" claims; no channels",
+            "3": "channels/platforms named; weak mechanics or proof",
+            "4": "concrete go-to-market/distribution mechanics + (>=1 strength=2); limited proof or traction",
+            "5": "confirmed distribution/market access (strength=3 OR two strength=2) + clear conversion path"
+          }
         },
         {
           "id": "B4",
           "name": "Financial innovation",
-          "description": "novel funding models, partnerships, financing mechanisms"
+          "description": "novel funding models, partnerships, financing mechanisms",
+          "rubric": {
+            "0": "not addressed; absent from materials",
+            "1": "none; standard grant dependence with no structure",
+            "2": "minor variations; mostly claims",
+            "3": "some novel mechanism described; limited detail or evidence",
+            "4": "clear innovative financing/partnership mechanism + (>=1 strength=2); weak proof",
+            "5": "proven/contracted innovative financing (strength=3 OR two strength=2) + credible governance of flows"
+          }
         }
       ]
     },
@@ -118,53 +162,75 @@
       "weight": 0.08,
       "nameEn": "Social Inclusion",
       "what": "Representation of marginalised voices, accessibility, community engagement and multilingual/multicultural reach.",
-      "how": "Give a single 0–5 score for the whole vector based on the evidence present in the project materials. Use the level definitions below. Remember: 3 is a competent baseline, 5 requires concrete artefacts and independent evidence. Do not inflate — strictness is helpful.",
-      "scale": [
-        {
-          "score": 0,
-          "label": "Not addressed in the materials"
-        },
-        {
-          "score": 1,
-          "label": "Only claims / very weak signals"
-        },
-        {
-          "score": 2,
-          "label": "Generic or minor mentions"
-        },
-        {
-          "score": 3,
-          "label": "Competent baseline — basic criteria met"
-        },
-        {
-          "score": 4,
-          "label": "Strong evidence with minor gaps"
-        },
-        {
-          "score": 5,
-          "label": "Rigorous + multiple independent artefacts"
-        }
+      "scoringDiscipline": "Score inflation is a critical failure. A score of 0–2 is not a punishment — it is an accurate reflection of weak or missing evidence. Most real-world proposals do not excel in every subindex. Expect the average score across subindices to be 2–3, not 4–5. Score 3 is the baseline for a competent proposal that meets basic criteria without distinction — not a low score.\n\nDo not round up out of sympathy, do not give benefit of the doubt, and do not infer quality from intent. If the materials do not demonstrate it, the score must reflect that absence. A strict evaluator who under-scores by 0.5 is more useful than a lenient one who over-scores by 1.\n\nIf a subindex topic is simply not present in the materials assign score 0 without hesitation. Do not fabricate relevance, do not stretch adjacent content to cover an absent topic, and do not soften the score to avoid an empty-looking result. Score 0 is the correct professional judgment when the materials provide nothing to evaluate.",
+      "ceilingRules": [
+        "No evidence items at all for a subindex => score 0.",
+        "No strength=2 or 3 evidence => max 3.",
+        "<2 total evidence items => max 3, unless exactly one strength=3 => max 4.",
+        "Independence not met => max 4.",
+        "Claims-only => max 3.",
+        "Contradiction affecting subindex => score -1 and confidence max \"med\"."
       ],
+      "vectorRubric": {
+        "0": "No inclusion, accessibility, community-engagement or cultural-diversity dimension in the materials.",
+        "1": "Generic inclusion talk, no access provisions, audience is passive, single-language with no diversity design.",
+        "2": "Target groups named but without agency; 'open to all' language; 'we will engage community' claims; diversity mentioned without implementation.",
+        "3": "Clear target groups with some design choices, some accessibility measures, participatory activities listed, some multilingual or cultural elements. Proof limited, governance unclear.",
+        "4": "Strong inclusion design, defined accessibility mechanisms, real co-creation structures, deliberate multilingual/multicultural design — each with mechanism-level evidence. Delivery proof thin.",
+        "5": "Representation with real agency + verified accessibility across physical/economic/digital + community co-authorship with partners + delivered translation/multilingual outputs. Strength-3 artefacts."
+      },
       "subindices": [
         {
           "id": "C1",
           "name": "Representation of marginalized voices",
-          "description": "target groups, agency, voice, not tokenism"
+          "description": "target groups, agency, voice, not tokenism",
+          "rubric": {
+            "0": "not addressed; absent from materials",
+            "1": "no target groups; generic inclusion talk",
+            "2": "groups mentioned; unclear agency/mechanism; mostly claims",
+            "3": "clear target groups + some design choices; limited proof",
+            "4": "strong inclusion design + (>=1 strength=2) OR (two concrete anchors); weak proof of delivery/agency power",
+            "5": "meaningful representation with agency + artifacts/partners (strength=3 OR two strength=2) + safeguards against tokenism"
+          }
         },
         {
           "id": "C2",
           "name": "Accessibility for broad audiences",
-          "description": "physical, economic, digital access"
+          "description": "physical, economic, digital access",
+          "rubric": {
+            "0": "not addressed; absent from materials",
+            "1": "no access provisions",
+            "2": "generic \"open to all\"; no details",
+            "3": "some access measures (pricing, ramps, online access) but incomplete",
+            "4": "clear accessibility mechanisms + (>=1 strength=2); gaps in verification or coverage",
+            "5": "verified accessibility (strength=3 OR two strength=2) + coverage across physical/economic/digital as relevant"
+          }
         },
         {
           "id": "C3",
           "name": "Mechanisms for local community engagement",
-          "description": "co-creation, participation structures"
+          "description": "co-creation, participation structures",
+          "rubric": {
+            "0": "not addressed; absent from materials",
+            "1": "audience passive only; no engagement layer",
+            "2": "vague \"engage community\" claims",
+            "3": "some participatory activities; unclear governance",
+            "4": "defined co-creation/engagement mechanisms + (>=1 strength=2); limited proof",
+            "5": "community co-authorship + concrete mechanisms + artifacts/partners (strength=3 OR two strength=2)"
+          }
         },
         {
           "id": "C4",
           "name": "Multilingualism and multiculturality",
-          "description": "languages used, cultural codes, inclusion design"
+          "description": "languages used, cultural codes, inclusion design",
+          "rubric": {
+            "0": "not addressed; absent from materials",
+            "1": "single-language, no cultural inclusion design",
+            "2": "mentions diversity; no implementation",
+            "3": "some languages/cultural codes present; weak mechanisms",
+            "4": "clear multilingual/multicultural design + (>=1 strength=2); limited proof of deliverables",
+            "5": "delivered translation/multilingual outputs or contracted providers (strength=3 OR two strength=2) + coherent cultural mediation"
+          }
         }
       ]
     },
@@ -174,53 +240,75 @@
       "weight": 0.14,
       "nameEn": "Artistic Quality",
       "what": "Curatorial and artistic concept, team competence, contemporary forms and critical potential.",
-      "how": "Give a single 0–5 score for the whole vector based on the evidence present in the project materials. Use the level definitions below. Remember: 3 is a competent baseline, 5 requires concrete artefacts and independent evidence. Do not inflate — strictness is helpful.",
-      "scale": [
-        {
-          "score": 0,
-          "label": "Not addressed in the materials"
-        },
-        {
-          "score": 1,
-          "label": "Only claims / very weak signals"
-        },
-        {
-          "score": 2,
-          "label": "Generic or minor mentions"
-        },
-        {
-          "score": 3,
-          "label": "Competent baseline — basic criteria met"
-        },
-        {
-          "score": 4,
-          "label": "Strong evidence with minor gaps"
-        },
-        {
-          "score": 5,
-          "label": "Rigorous + multiple independent artefacts"
-        }
+      "scoringDiscipline": "Score inflation is a critical failure. A score of 0–2 is not a punishment — it is an accurate reflection of weak or missing evidence. Most real-world proposals do not excel in every subindex. Expect the average score across subindices to be 2–3, not 4–5. Score 3 is the baseline for a competent proposal that meets basic criteria without distinction — not a low score.\n\nDo not round up out of sympathy, do not give benefit of the doubt, and do not infer quality from intent. If the materials do not demonstrate it, the score must reflect that absence. A strict evaluator who under-scores by 0.5 is more useful than a lenient one who over-scores by 1.\n\nIf a subindex topic is simply not present in the materials assign score 0 without hesitation. Do not fabricate relevance, do not stretch adjacent content to cover an absent topic, and do not soften the score to avoid an empty-looking result. Score 0 is the correct professional judgment when the materials provide nothing to evaluate.",
+      "ceilingRules": [
+        "No evidence items at all for a subindex => score 0.",
+        "No strength=2 or 3 evidence => max 3.",
+        "<2 total evidence items => max 3, unless exactly one strength=3 => max 4.",
+        "Independence not met => max 4.",
+        "Claims-only => max 3.",
+        "Contradiction affecting subindex => score -1 and confidence max \"med\"."
       ],
+      "vectorRubric": {
+        "0": "No concept, team information, contemporary forms or critical dimension in the materials.",
+        "1": "Concept unclear or absent, team unknown, only conventional forms, no critical/discursive layer.",
+        "2": "Basic concept stated, team names listed without roles, digital/performance mentioned in passing, generic 'raises awareness' claims.",
+        "3": "Clear concept with partial curatorial logic, bios and roles present, some contemporary forms described, clear themes with some discourse plan. Anchors and execution evidence limited.",
+        "4": "Strong concept + curatorial logic, credible roles and experience, contemporary forms with production mechanisms, defined discourse triggers and public programme. Proof limited.",
+        "5": "Concept excellence with realised outputs + verified team track record + prototypes/confirmed tech or venues + evidenced critical engagement (prior debate coverage, confirmed panels, commissioned texts)."
+      },
       "subindices": [
         {
           "id": "D1",
           "name": "Curatorial and artistic concept",
-          "description": "clarity, strength, internal logic"
+          "description": "clarity, strength, internal logic",
+          "rubric": {
+            "0": "not addressed; absent from materials",
+            "1": "unclear; generic; no coherent statement",
+            "2": "basic idea; weak articulation; mostly claims",
+            "3": "clear concept; partial curatorial logic; limited anchors",
+            "4": "strong concept + curatorial logic + (>=1 strength=2) OR (two strong anchors); limited proof of execution",
+            "5": "concept excellence + evidence of realized outputs/production readiness (strength=3 OR two strength=2) + coherent artistic rationale"
+          }
         },
         {
           "id": "D2",
           "name": "Team competence",
-          "description": "track record, roles, capacity, credibility"
+          "description": "track record, roles, capacity, credibility",
+          "rubric": {
+            "0": "not addressed; absent from materials",
+            "1": "team absent/unknown",
+            "2": "names listed; no roles/track record",
+            "3": "some bios/roles; weak proof or uneven capacity",
+            "4": "clear roles + credible experience + (>=1 strength=2); limited proof/commitments",
+            "5": "strong verified track record/commitments (strength=3 OR two strength=2) + team covers key competencies"
+          }
         },
         {
           "id": "D3",
           "name": "Use of contemporary art forms",
-          "description": "digital/performance/experimental relevance and execution"
+          "description": "digital/performance/experimental relevance and execution",
+          "rubric": {
+            "0": "not addressed; absent from materials",
+            "1": "conventional only; no contemporary forms",
+            "2": "mentions digital/performance; no implementation detail",
+            "3": "some contemporary forms described; weak integration or detail",
+            "4": "clear contemporary forms with production mechanisms (>=1 strength=2); limited proof",
+            "5": "strong contemporary execution evidenced by prototypes/confirmed tech/venues (strength=3 OR two strength=2) + coherent integration"
+          }
         },
         {
           "id": "D4",
           "name": "Critical potential",
-          "description": "reflection, debate, challenge, discourse triggers"
+          "description": "reflection, debate, challenge, discourse triggers",
+          "rubric": {
+            "0": "not addressed; absent from materials",
+            "1": "no critical layer",
+            "2": "generic \"raises awareness\"; mostly claims",
+            "3": "clear questions/themes; some audience discourse plan",
+            "4": "defined discourse triggers + public program/mediation mechanisms (>=1 strength=2); limited proof",
+            "5": "evidenced critical engagement (prior debate coverage, confirmed panels, curatorial essays, commissioned texts) (strength=3 OR two strength=2) + clear theory-to-public chain"
+          }
         }
       ]
     },
@@ -230,48 +318,62 @@
       "weight": 0.1,
       "nameEn": "Heritage & Environment",
       "what": "Engagement with intangible heritage, meaningfulness of place and environmental sensitivity.",
-      "how": "Give a single 0–5 score for the whole vector based on the evidence present in the project materials. Use the level definitions below. Remember: 3 is a competent baseline, 5 requires concrete artefacts and independent evidence. Do not inflate — strictness is helpful.",
-      "scale": [
-        {
-          "score": 0,
-          "label": "Not addressed in the materials"
-        },
-        {
-          "score": 1,
-          "label": "Only claims / very weak signals"
-        },
-        {
-          "score": 2,
-          "label": "Generic or minor mentions"
-        },
-        {
-          "score": 3,
-          "label": "Competent baseline — basic criteria met"
-        },
-        {
-          "score": 4,
-          "label": "Strong evidence with minor gaps"
-        },
-        {
-          "score": 5,
-          "label": "Rigorous + multiple independent artefacts"
-        }
+      "scoringDiscipline": "Score inflation is a critical failure. A score of 0–2 is not a punishment — it is an accurate reflection of weak or missing evidence. Most real-world proposals do not excel in every subindex. Expect the average score across subindices to be 2–3, not 4–5. Score 3 is the baseline for a competent proposal that meets basic criteria without distinction — not a low score.\n\nDo not round up out of sympathy, do not give benefit of the doubt, and do not infer quality from intent. If the materials do not demonstrate it, the score must reflect that absence. A strict evaluator who under-scores by 0.5 is more useful than a lenient one who over-scores by 1.\n\nIf a subindex topic is simply not present in the materials assign score 0 without hesitation. Do not fabricate relevance, do not stretch adjacent content to cover an absent topic, and do not soften the score to avoid an empty-looking result. Score 0 is the correct professional judgment when the materials provide nothing to evaluate.",
+      "ceilingRules": [
+        "No evidence items at all for a subindex => score 0.",
+        "No strength=2 or 3 evidence => max 3.",
+        "<2 total evidence items => max 3, unless exactly one strength=3 => max 4.",
+        "Independence not met => max 4.",
+        "Claims-only => max 3.",
+        "Contradiction affecting subindex => score -1 and confidence max \"med\"."
       ],
+      "vectorRubric": {
+        "0": "No heritage layer, no site-specific logic and no environmental considerations in the materials.",
+        "1": "No heritage work, generic venue (not place-based), no sustainability consideration.",
+        "2": "Heritage referenced without method, place mentioned decoratively, generic 'eco-friendly' claims.",
+        "3": "Heritage elements present, some site-specific logic, some environmental measures listed. Methods weak, verification absent.",
+        "4": "Clear heritage mechanisms + site-specific concept with real mechanisms + defined sustainability mechanisms, each with at least one mechanism-level item. Proof and permissions thin.",
+        "5": "Structured heritage engagement with artefacts and partners + strong site integration (with permissions) + verified environmental approach with measurable practices across key footprint drivers."
+      },
       "subindices": [
         {
           "id": "E1",
           "name": "Intangible heritage",
-          "description": "traditions, cultural memory, language, practices"
+          "description": "traditions, cultural memory, language, practices",
+          "rubric": {
+            "0": "not addressed; absent from materials",
+            "1": "no heritage layer",
+            "2": "heritage referenced; no method/partners",
+            "3": "heritage elements present; weak method/outputs",
+            "4": "clear heritage work mechanisms + (>=1 strength=2); limited proof/outputs",
+            "5": "structured heritage engagement + artifacts/partners (strength=3 OR two strength=2) + evidence of respectful interpretation"
+          }
         },
         {
           "id": "E2",
           "name": "Place meaningfulness",
-          "description": "site-specific link to history/identity of location"
+          "description": "site-specific link to history/identity of location",
+          "rubric": {
+            "0": "not addressed; absent from materials",
+            "1": "generic location; not place-based",
+            "2": "place mentioned; decorative; no linkage",
+            "3": "some site-specific logic; weak method",
+            "4": "clear site-specific concept + mechanisms (>=1 strength=2); limited proof/permissions",
+            "5": "strong site integration + artifacts/permissions/partners (strength=3 OR two strength=2) + explicit influence on artistic decisions"
+          }
         },
         {
           "id": "E3",
           "name": "Environmental sensitivity",
-          "description": "sustainability, resources, materials, footprint"
+          "description": "sustainability, resources, materials, footprint",
+          "rubric": {
+            "0": "not addressed; absent from materials",
+            "1": "no sustainability consideration",
+            "2": "generic \"eco-friendly\" claims",
+            "3": "some measures listed; incomplete and unverified",
+            "4": "defined sustainability mechanisms + (>=1 strength=2); limited verification/coverage",
+            "5": "verified environmental approach (strength=3 OR two strength=2) + measurable practices across key footprint drivers"
+          }
         }
       ]
     },
@@ -281,53 +383,75 @@
       "weight": 0.1,
       "nameEn": "Digitality",
       "what": "Digital representation, technological innovation, digital accessibility and data/interactivity loops.",
-      "how": "Give a single 0–5 score for the whole vector based on the evidence present in the project materials. Use the level definitions below. Remember: 3 is a competent baseline, 5 requires concrete artefacts and independent evidence. Do not inflate — strictness is helpful.",
-      "scale": [
-        {
-          "score": 0,
-          "label": "Not addressed in the materials"
-        },
-        {
-          "score": 1,
-          "label": "Only claims / very weak signals"
-        },
-        {
-          "score": 2,
-          "label": "Generic or minor mentions"
-        },
-        {
-          "score": 3,
-          "label": "Competent baseline — basic criteria met"
-        },
-        {
-          "score": 4,
-          "label": "Strong evidence with minor gaps"
-        },
-        {
-          "score": 5,
-          "label": "Rigorous + multiple independent artefacts"
-        }
+      "scoringDiscipline": "Score inflation is a critical failure. A score of 0–2 is not a punishment — it is an accurate reflection of weak or missing evidence. Most real-world proposals do not excel in every subindex. Expect the average score across subindices to be 2–3, not 4–5. Score 3 is the baseline for a competent proposal that meets basic criteria without distinction — not a low score.\n\nDo not round up out of sympathy, do not give benefit of the doubt, and do not infer quality from intent. If the materials do not demonstrate it, the score must reflect that absence. A strict evaluator who under-scores by 0.5 is more useful than a lenient one who over-scores by 1.\n\nIf a subindex topic is simply not present in the materials assign score 0 without hesitation. Do not fabricate relevance, do not stretch adjacent content to cover an absent topic, and do not soften the score to avoid an empty-looking result. Score 0 is the correct professional judgment when the materials provide nothing to evaluate.",
+      "ceilingRules": [
+        "No evidence items at all for a subindex => score 0.",
+        "No strength=2 or 3 evidence => max 3.",
+        "<2 total evidence items => max 3, unless exactly one strength=3 => max 4.",
+        "Independence not met => max 4.",
+        "Claims-only => max 3.",
+        "Contradiction affecting subindex => score -1 and confidence max \"med\"."
       ],
+      "vectorRubric": {
+        "0": "The project has no digital layer at all.",
+        "1": "No digital outputs, no technological novelty, no real access path, content is entirely static.",
+        "2": "Generic website/social mention, novelty claimed without method, 'online access' stated vaguely, interactivity claimed without implementation.",
+        "3": "Defined digital outputs, some innovative elements, some digital channels described, some interactive/data features listed. Detail partial, validation weak.",
+        "4": "Clear digital deliverables + innovation mechanisms (R&D steps, experimentation) + defined access mechanics (platforms, UX, onboarding) + clear interactive/data mechanisms — each with mechanism-level evidence.",
+        "5": "Evidenced digital delivery + validated innovation with prototypes/demos + verified low-friction access + working interactive/data components with meaningful user loops. Demos, analytics or documented R&D present."
+      },
       "subindices": [
         {
           "id": "F1",
           "name": "Digital representation format",
-          "description": "online presence, digital exhibition, documentation"
+          "description": "online presence, digital exhibition, documentation",
+          "rubric": {
+            "0": "not addressed; absent from materials",
+            "1": "no digital layer",
+            "2": "generic website/social mention; unclear deliverables",
+            "3": "defined digital outputs; partial detail",
+            "4": "clear digital deliverables + mechanisms (>=1 strength=2); limited proof",
+            "5": "evidenced digital delivery (strength=3 OR two strength=2) + coherent documentation/distribution plan"
+          }
         },
         {
           "id": "F2",
           "name": "Technological innovation",
-          "description": "use of new tech, R&D, novel digital formats"
+          "description": "use of new tech, R&D, novel digital formats",
+          "rubric": {
+            "0": "not addressed; absent from materials",
+            "1": "none; off-the-shelf only, no novelty",
+            "2": "novelty claimed; no method",
+            "3": "some innovative elements; weak detail/validation",
+            "4": "clear innovation mechanisms (R&D steps, experimentation) + (>=1 strength=2); limited proof",
+            "5": "validated innovation with prototypes/demos or documented R&D outputs (strength=3 OR two strength=2)"
+          }
         },
         {
           "id": "F3",
           "name": "Accessibility via digital channels",
-          "description": "usability, distribution, onboarding, availability"
+          "description": "usability, distribution, onboarding, availability",
+          "rubric": {
+            "0": "not addressed; absent from materials",
+            "1": "no access path",
+            "2": "vague \"online access\"; no UX/distribution detail",
+            "3": "some channels described; gaps in ease/availability",
+            "4": "defined access mechanics (platforms, UX, onboarding) + (>=1 strength=2); limited proof",
+            "5": "verified accessibility (strength=3 OR two strength=2) + low-friction access across target audiences"
+          }
         },
         {
           "id": "F4",
           "name": "Data/interactivity",
-          "description": "user interaction, data-driven components, participation loops"
+          "description": "user interaction, data-driven components, participation loops",
+          "rubric": {
+            "0": "not addressed; absent from materials",
+            "1": "static only",
+            "2": "interactivity claimed; no implementation",
+            "3": "some interactive/data features described; limited detail",
+            "4": "clear interactive/data mechanisms + (>=1 strength=2); limited proof",
+            "5": "working interactive/data components evidenced (strength=3 OR two strength=2) + meaningful user loop"
+          }
         }
       ]
     },
@@ -337,53 +461,75 @@
       "weight": 0.11,
       "nameEn": "Internationality",
       "what": "International partners, multi-cultural representation, depth of cross-cultural exchange and transferability.",
-      "how": "Give a single 0–5 score for the whole vector based on the evidence present in the project materials. Use the level definitions below. Remember: 3 is a competent baseline, 5 requires concrete artefacts and independent evidence. Do not inflate — strictness is helpful.",
-      "scale": [
-        {
-          "score": 0,
-          "label": "Not addressed in the materials"
-        },
-        {
-          "score": 1,
-          "label": "Only claims / very weak signals"
-        },
-        {
-          "score": 2,
-          "label": "Generic or minor mentions"
-        },
-        {
-          "score": 3,
-          "label": "Competent baseline — basic criteria met"
-        },
-        {
-          "score": 4,
-          "label": "Strong evidence with minor gaps"
-        },
-        {
-          "score": 5,
-          "label": "Rigorous + multiple independent artefacts"
-        }
+      "scoringDiscipline": "Score inflation is a critical failure. A score of 0–2 is not a punishment — it is an accurate reflection of weak or missing evidence. Most real-world proposals do not excel in every subindex. Expect the average score across subindices to be 2–3, not 4–5. Score 3 is the baseline for a competent proposal that meets basic criteria without distinction — not a low score.\n\nDo not round up out of sympathy, do not give benefit of the doubt, and do not infer quality from intent. If the materials do not demonstrate it, the score must reflect that absence. A strict evaluator who under-scores by 0.5 is more useful than a lenient one who over-scores by 1.\n\nIf a subindex topic is simply not present in the materials assign score 0 without hesitation. Do not fabricate relevance, do not stretch adjacent content to cover an absent topic, and do not soften the score to avoid an empty-looking result. Score 0 is the correct professional judgment when the materials provide nothing to evaluate.",
+      "ceilingRules": [
+        "No evidence items at all for a subindex => score 0.",
+        "No strength=2 or 3 evidence => max 3.",
+        "<2 total evidence items => max 3, unless exactly one strength=3 => max 4.",
+        "Independence not met => max 4.",
+        "Claims-only => max 3.",
+        "Contradiction affecting subindex => score -1 and confidence max \"med\"."
       ],
+      "vectorRubric": {
+        "0": "No international layer in the materials.",
+        "1": "No international partners, mono-cultural, no exchange (only export/marketing), project is site-locked.",
+        "2": "Generic 'international' claims, diversity asserted, 'exchange' claimed, 'scalable' asserted — all without specifics.",
+        "3": "Named partners, multiple cultures present in programme, some interaction formats described, some replication thinking. Roles, depth and packaging weak.",
+        "4": "Concrete partner mechanisms + clear multi-cultural design + defined exchange mechanisms (co-creation, residencies, dialogue) + modular replication design — each with mechanism-level evidence.",
+        "5": "Confirmed international partners/commitments + evidenced non-tokenistic representation + deep exchange with co-production structures + evidenced transferability (pilots, toolkits, contracted hosts)."
+      },
       "subindices": [
         {
           "id": "G1",
           "name": "International partners",
-          "description": "partners from other countries, formal ties"
+          "description": "partners from other countries, formal ties",
+          "rubric": {
+            "0": "not addressed; absent from materials",
+            "1": "none",
+            "2": "generic \"international\" claims; no partner identities",
+            "3": "partners named; weak roles/evidence",
+            "4": "concrete partner mechanisms + (>=1 strength=2); limited proof",
+            "5": "confirmed international partners/commitments (strength=3 OR two strength=2) + clear roles"
+          }
         },
         {
           "id": "G2",
           "name": "Representation of different cultures",
-          "description": "multiple cultural identities in content/participants"
+          "description": "multiple cultural identities in content/participants",
+          "rubric": {
+            "0": "not addressed; absent from materials",
+            "1": "mono-cultural, no diversity layer",
+            "2": "diversity claimed; no specifics",
+            "3": "multiple cultures present; limited detail",
+            "4": "clear multi-cultural representation design + (>=1 strength=2); limited proof of delivery",
+            "5": "evidenced representation (program lineup, confirmed participants) (strength=3 OR two strength=2) + non-tokenistic integration"
+          }
         },
         {
           "id": "G3",
           "name": "Cross-cultural exchange potential",
-          "description": "depth of interaction, not just presence"
+          "description": "depth of interaction, not just presence",
+          "rubric": {
+            "0": "not addressed; absent from materials",
+            "1": "no exchange; only export/marketing",
+            "2": "exchange claimed; no interaction design",
+            "3": "some interaction formats; weak depth/measurement",
+            "4": "defined exchange mechanisms (co-creation, residencies, dialogue) + (>=1 strength=2); limited proof",
+            "5": "deep exchange evidenced by co-production structures/outputs (strength=3 OR two strength=2) + reciprocal benefits clear in materials"
+          }
         },
         {
           "id": "G4",
           "name": "Transferability to other countries",
-          "description": "replicable model, translation, modularity"
+          "description": "replicable model, translation, modularity",
+          "rubric": {
+            "0": "not addressed; absent from materials",
+            "1": "one-off, site-locked",
+            "2": "vague \"scalable\" claim",
+            "3": "some replication thought; weak packaging",
+            "4": "clear modular replication design + (>=1 strength=2); limited proof/pilots",
+            "5": "evidenced transferability (pilots, replication toolkit, contracted hosts) (strength=3 OR two strength=2) + minimal dependence on unique local constraints"
+          }
         }
       ]
     },
@@ -393,53 +539,75 @@
       "weight": 0.11,
       "nameEn": "Capacity Building",
       "what": "Educational component, skills transfer, institutional ties and ecosystem sustainability.",
-      "how": "Give a single 0–5 score for the whole vector based on the evidence present in the project materials. Use the level definitions below. Remember: 3 is a competent baseline, 5 requires concrete artefacts and independent evidence. Do not inflate — strictness is helpful.",
-      "scale": [
-        {
-          "score": 0,
-          "label": "Not addressed in the materials"
-        },
-        {
-          "score": 1,
-          "label": "Only claims / very weak signals"
-        },
-        {
-          "score": 2,
-          "label": "Generic or minor mentions"
-        },
-        {
-          "score": 3,
-          "label": "Competent baseline — basic criteria met"
-        },
-        {
-          "score": 4,
-          "label": "Strong evidence with minor gaps"
-        },
-        {
-          "score": 5,
-          "label": "Rigorous + multiple independent artefacts"
-        }
+      "scoringDiscipline": "Score inflation is a critical failure. A score of 0–2 is not a punishment — it is an accurate reflection of weak or missing evidence. Most real-world proposals do not excel in every subindex. Expect the average score across subindices to be 2–3, not 4–5. Score 3 is the baseline for a competent proposal that meets basic criteria without distinction — not a low score.\n\nDo not round up out of sympathy, do not give benefit of the doubt, and do not infer quality from intent. If the materials do not demonstrate it, the score must reflect that absence. A strict evaluator who under-scores by 0.5 is more useful than a lenient one who over-scores by 1.\n\nIf a subindex topic is simply not present in the materials assign score 0 without hesitation. Do not fabricate relevance, do not stretch adjacent content to cover an absent topic, and do not soften the score to avoid an empty-looking result. Score 0 is the correct professional judgment when the materials provide nothing to evaluate.",
+      "ceilingRules": [
+        "No evidence items at all for a subindex => score 0.",
+        "No strength=2 or 3 evidence => max 3.",
+        "<2 total evidence items => max 3, unless exactly one strength=3 => max 4.",
+        "Independence not met => max 4.",
+        "Claims-only => max 3.",
+        "Contradiction affecting subindex => score -1 and confidence max \"med\"."
       ],
+      "vectorRubric": {
+        "0": "No learning, skills, institutional-tie or continuation dimension in the materials.",
+        "1": "No education component, no skills stated, no institutional ties, no continuation plan.",
+        "2": "Vague 'learning' mention, generic 'skills' claim, generic 'collaboration' statement, 'community will remain' claim. No structure.",
+        "3": "Some workshops described, specific skills named, institutions named, some continuation elements. Curricula, methods and governance are weak.",
+        "4": "Structured educational mechanisms + clear skill-building with outputs + defined partnership mechanisms + defined post-project mechanisms (platform, governance, funding) — each with mechanism-level evidence.",
+        "5": "Evidenced education delivery with partners + evidenced skill transfer (portfolios, certifications, partner validation) + confirmed long-term institutional agreements + evidenced sustainability infrastructure."
+      },
       "subindices": [
         {
           "id": "H1",
           "name": "Educational component",
-          "description": "workshops, trainings, learning formats"
+          "description": "workshops, trainings, learning formats",
+          "rubric": {
+            "0": "not addressed; absent from materials",
+            "1": "none",
+            "2": "vague learning mention; no structure",
+            "3": "some workshops described; weak curriculum detail",
+            "4": "structured educational mechanisms + (>=1 strength=2); limited proof",
+            "5": "evidenced education delivery/partners (strength=3 OR two strength=2) + coherent learning design"
+          }
         },
         {
           "id": "H2",
           "name": "Skills transferred to participants",
-          "description": "specific competencies, outputs, assessment"
+          "description": "specific competencies, outputs, assessment",
+          "rubric": {
+            "0": "not addressed; absent from materials",
+            "1": "no skills stated",
+            "2": "generic \"skills\" claims",
+            "3": "specific skills named; weak method/assessment",
+            "4": "clear skill-building mechanism + outputs + (>=1 strength=2); limited proof",
+            "5": "evidenced skill transfer (artifacts, portfolios, certifications, partner validation) (strength=3 OR two strength=2)"
+          }
         },
         {
           "id": "H3",
           "name": "Institutional relationship development",
-          "description": "long-term ties between orgs"
+          "description": "long-term ties between orgs",
+          "rubric": {
+            "0": "not addressed; absent from materials",
+            "1": "none",
+            "2": "generic \"collaboration\" claims",
+            "3": "institutions named; weak long-term mechanics",
+            "4": "defined partnership mechanisms + (>=1 strength=2); limited proof",
+            "5": "confirmed long-term institutional agreements (strength=3 OR two strength=2) + roles and continuity explicit"
+          }
         },
         {
           "id": "H4",
           "name": "Ecosystem sustainability beyond project",
-          "description": "community, continuity, infrastructure"
+          "description": "community, continuity, infrastructure",
+          "rubric": {
+            "0": "not addressed; absent from materials",
+            "1": "no continuation",
+            "2": "vague \"community will remain\"",
+            "3": "some continuation elements; weak infrastructure",
+            "4": "defined post-project mechanisms (community, platform, governance, funding) + (>=1 strength=2); limited proof",
+            "5": "evidenced sustainability infrastructure (strength=3 OR two strength=2) + credible continuity without constant new grants"
+          }
         }
       ]
     },
@@ -449,53 +617,75 @@
       "weight": 0.06,
       "nameEn": "Participation",
       "what": "Engagement level, dialogue depth, process transparency and inclusivity of formats.",
-      "how": "Give a single 0–5 score for the whole vector based on the evidence present in the project materials. Use the level definitions below. Remember: 3 is a competent baseline, 5 requires concrete artefacts and independent evidence. Do not inflate — strictness is helpful.",
-      "scale": [
-        {
-          "score": 0,
-          "label": "Not addressed in the materials"
-        },
-        {
-          "score": 1,
-          "label": "Only claims / very weak signals"
-        },
-        {
-          "score": 2,
-          "label": "Generic or minor mentions"
-        },
-        {
-          "score": 3,
-          "label": "Competent baseline — basic criteria met"
-        },
-        {
-          "score": 4,
-          "label": "Strong evidence with minor gaps"
-        },
-        {
-          "score": 5,
-          "label": "Rigorous + multiple independent artefacts"
-        }
+      "scoringDiscipline": "Score inflation is a critical failure. A score of 0–2 is not a punishment — it is an accurate reflection of weak or missing evidence. Most real-world proposals do not excel in every subindex. Expect the average score across subindices to be 2–3, not 4–5. Score 3 is the baseline for a competent proposal that meets basic criteria without distinction — not a low score.\n\nDo not round up out of sympathy, do not give benefit of the doubt, and do not infer quality from intent. If the materials do not demonstrate it, the score must reflect that absence. A strict evaluator who under-scores by 0.5 is more useful than a lenient one who over-scores by 1.\n\nIf a subindex topic is simply not present in the materials assign score 0 without hesitation. Do not fabricate relevance, do not stretch adjacent content to cover an absent topic, and do not soften the score to avoid an empty-looking result. Score 0 is the correct professional judgment when the materials provide nothing to evaluate.",
+      "ceilingRules": [
+        "No evidence items at all for a subindex => score 0.",
+        "No strength=2 or 3 evidence => max 3.",
+        "<2 total evidence items => max 3, unless exactly one strength=3 => max 4.",
+        "Independence not met => max 4.",
+        "Claims-only => max 3.",
+        "Contradiction affecting subindex => score -1 and confidence max \"med\"."
       ],
+      "vectorRubric": {
+        "0": "No participation or dialogue dimension at all.",
+        "1": "Audience is passive only, no dialogue, process opaque, one-size-fits-all with exclusion risks ignored.",
+        "2": "Engagement claimed, generic 'discussion' claim, vague process mention, 'inclusive' claim — all without design.",
+        "3": "Some participatory formats + dialogue formats listed + some stages described + some adaptations for different audiences. Depth weak, detail incomplete.",
+        "4": "Clear engagement mechanisms + dialogue/feedback mechanisms + transparency mechanisms (roadmap, decision logic) + inclusive participation design — each with mechanism-level evidence.",
+        "5": "Evidenced high-engagement formats + evidenced dialogue depth (documented feedback use, published outputs) + evidenced transparency (public timeline, governance, open updates) + evidenced inclusivity (access adaptations, multi-mode)."
+      },
       "subindices": [
         {
           "id": "I1",
           "name": "Audience engagement level",
-          "description": "active participation, not just attendance"
+          "description": "active participation, not just attendance",
+          "rubric": {
+            "0": "not addressed; absent from materials",
+            "1": "passive only",
+            "2": "engagement claimed; no design",
+            "3": "some participatory formats; weak detail",
+            "4": "clear engagement mechanisms + (>=1 strength=2); limited proof",
+            "5": "evidenced high engagement formats and readiness (strength=3 OR two strength=2) + credible facilitation capacity"
+          }
         },
         {
           "id": "I2",
           "name": "Depth of dialogue with public",
-          "description": "meaningful discussion, feedback loops"
+          "description": "meaningful discussion, feedback loops",
+          "rubric": {
+            "0": "not addressed; absent from materials",
+            "1": "no dialogue",
+            "2": "generic \"discussion\" claim",
+            "3": "dialogue formats listed; weak depth/feedback structure",
+            "4": "clear dialogue/feedback mechanisms + (>=1 strength=2); limited proof",
+            "5": "evidenced dialogue depth (curated discussions, documented feedback use, published outputs) (strength=3 OR two strength=2)"
+          }
         },
         {
           "id": "I3",
           "name": "Process transparency",
-          "description": "stages, choices, logic communicated"
+          "description": "stages, choices, logic communicated",
+          "rubric": {
+            "0": "not addressed; absent from materials",
+            "1": "opaque; no process info",
+            "2": "vague process mention",
+            "3": "some stages described; incomplete",
+            "4": "clear transparency mechanisms (roadmap, decision logic, open comms) + (>=1 strength=2); limited proof",
+            "5": "evidenced transparency (published timeline, governance, open updates) (strength=3 OR two strength=2)"
+          }
         },
         {
           "id": "I4",
           "name": "Inclusivity of participation formats",
-          "description": "adaptation for different audiences"
+          "description": "adaptation for different audiences",
+          "rubric": {
+            "0": "not addressed; absent from materials",
+            "1": "one-size-fits-all; exclusion risks ignored",
+            "2": "generic \"inclusive\" claim",
+            "3": "some adaptations; incomplete",
+            "4": "clear inclusive participation design + (>=1 strength=2); limited proof",
+            "5": "evidenced inclusivity (access adaptations, multiple modes, facilitation for diverse groups) (strength=3 OR two strength=2)"
+          }
         }
       ]
     },
@@ -505,53 +695,75 @@
       "weight": 0.05,
       "nameEn": "Resonance",
       "what": "Media potential, reputational value, risk awareness and post-project continuation effects.",
-      "how": "Give a single 0–5 score for the whole vector based on the evidence present in the project materials. Use the level definitions below. Remember: 3 is a competent baseline, 5 requires concrete artefacts and independent evidence. Do not inflate — strictness is helpful.",
-      "scale": [
-        {
-          "score": 0,
-          "label": "Not addressed in the materials"
-        },
-        {
-          "score": 1,
-          "label": "Only claims / very weak signals"
-        },
-        {
-          "score": 2,
-          "label": "Generic or minor mentions"
-        },
-        {
-          "score": 3,
-          "label": "Competent baseline — basic criteria met"
-        },
-        {
-          "score": 4,
-          "label": "Strong evidence with minor gaps"
-        },
-        {
-          "score": 5,
-          "label": "Rigorous + multiple independent artefacts"
-        }
+      "scoringDiscipline": "Score inflation is a critical failure. A score of 0–2 is not a punishment — it is an accurate reflection of weak or missing evidence. Most real-world proposals do not excel in every subindex. Expect the average score across subindices to be 2–3, not 4–5. Score 3 is the baseline for a competent proposal that meets basic criteria without distinction — not a low score.\n\nDo not round up out of sympathy, do not give benefit of the doubt, and do not infer quality from intent. If the materials do not demonstrate it, the score must reflect that absence. A strict evaluator who under-scores by 0.5 is more useful than a lenient one who over-scores by 1.\n\nIf a subindex topic is simply not present in the materials assign score 0 without hesitation. Do not fabricate relevance, do not stretch adjacent content to cover an absent topic, and do not soften the score to avoid an empty-looking result. Score 0 is the correct professional judgment when the materials provide nothing to evaluate.",
+      "ceilingRules": [
+        "No evidence items at all for a subindex => score 0.",
+        "No strength=2 or 3 evidence => max 3.",
+        "<2 total evidence items => max 3, unless exactly one strength=3 => max 4.",
+        "Independence not met => max 4.",
+        "Claims-only => max 3.",
+        "Contradiction affecting subindex => score -1 and confidence max \"med\"."
       ],
+      "vectorRubric": {
+        "0": "No resonance dimension (media, reputation, risk, continuation) in the materials.",
+        "1": "No media angle, no reputational signalling, risk ignored or naive provocation, strictly one-off.",
+        "2": "'We will promote' claims, vague prestige language, risk acknowledged vaguely, vague continuation ideas.",
+        "3": "Some media packaging, some institutional or brand signals, risk noted with partial mitigation, some follow-up ideas. Plans weak, proof thin.",
+        "4": "Clear media mechanisms + reputational mechanisms (endorsements, positioning) + explicit risk assessment with mitigation + defined continuation mechanisms — each with mechanism-level evidence.",
+        "5": "Evidenced media traction or committed partners/assets + evidenced status lift via institutions/prior recognition + evidenced preparedness (protocols, moderation plans, stakeholder mapping) + evidenced continuation commitments (venues, productised outputs)."
+      },
       "subindices": [
         {
           "id": "J1",
           "name": "Media potential",
-          "description": "storyability, visibility, press/social packaging"
+          "description": "storyability, visibility, press/social packaging",
+          "rubric": {
+            "0": "not addressed; absent from materials",
+            "1": "no media angle",
+            "2": "generic \"we will promote\" claims",
+            "3": "some packaging elements; weak plan",
+            "4": "clear media mechanisms + (>=1 strength=2); limited proof/partners",
+            "5": "evidenced media traction or committed partners/assets (strength=3 OR two strength=2) + strong narrative hook"
+          }
         },
         {
           "id": "J2",
           "name": "Reputational value",
-          "description": "status lift for organizers/artists, institutional signaling"
+          "description": "status lift for organizers/artists, institutional signaling",
+          "rubric": {
+            "0": "not addressed; absent from materials",
+            "1": "no status effect articulated",
+            "2": "vague prestige claims",
+            "3": "some institutional/brand signals; weak proof",
+            "4": "clear reputational mechanisms (partners, endorsements, positioning) + (>=1 strength=2); limited proof",
+            "5": "evidenced status lift via institutions/partners or prior recognition in materials (strength=3 OR two strength=2)"
+          }
         },
         {
           "id": "J3",
           "name": "Risk of misunderstanding/scandal",
-          "description": "taboo/provocation and preparedness"
+          "description": "taboo/provocation and preparedness",
+          "rubric": {
+            "0": "not addressed; absent from materials",
+            "1": "ignores risk; potential naive provocation",
+            "2": "acknowledges risk vaguely; no plan",
+            "3": "risk noted; partial mitigation",
+            "4": "clear risk assessment + mitigation mechanisms (>=1 strength=2); limited proof of preparedness",
+            "5": "evidenced preparedness (protocols, stakeholder mapping, moderation plan) (strength=3 OR two strength=2) + clear boundaries and intent"
+          }
         },
         {
           "id": "J4",
           "name": "Post-effect/continuation potential",
-          "description": "spin-offs, follow-up formats, scalability of impact"
+          "description": "spin-offs, follow-up formats, scalability of impact",
+          "rubric": {
+            "0": "not addressed; absent from materials",
+            "1": "one-off; no continuation",
+            "2": "vague continuation claim",
+            "3": "some follow-up ideas; weak roadmap/resources",
+            "4": "defined continuation mechanisms + (>=1 strength=2); limited proof/commitments",
+            "5": "evidenced continuation commitments (venues, partners, productized outputs) (strength=3 OR two strength=2) + plausible sustained trajectory"
+          }
         }
       ]
     }

@@ -1,24 +1,26 @@
-import type { MetricScale } from "../lib/types";
+import type { RubricLevels } from "../lib/types";
 import { cn } from "../lib/util";
 
 interface Props {
   value: number | null;
   onChange: (v: number) => void;
-  scale: MetricScale[];
+  rubric: RubricLevels;
 }
 
-export function ScoreScale({ value, onChange, scale }: Props) {
-  const selected = scale.find((s) => s.score === value);
+const LEVELS = [0, 1, 2, 3, 4, 5] as const;
+
+export function ScoreScale({ value, onChange, rubric }: Props) {
+  const selected = value != null ? rubric[String(value) as "0"] : null;
   return (
     <div>
       <div className="flex flex-wrap gap-2">
-        {scale.map((s) => {
-          const active = value === s.score;
+        {LEVELS.map((n) => {
+          const active = value === n;
           return (
             <button
-              key={s.score}
+              key={n}
               type="button"
-              onClick={() => onChange(s.score)}
+              onClick={() => onChange(n)}
               aria-pressed={active}
               className={cn(
                 "h-14 w-14 rounded-pill font-bold text-xl transition border-2",
@@ -27,15 +29,15 @@ export function ScoreScale({ value, onChange, scale }: Props) {
                   : "bg-transparent text-ink border-ink/20 hover:border-ink",
               )}
             >
-              {s.score}
+              {n}
             </button>
           );
         })}
       </div>
       {selected && (
-        <div className="mt-3 text-sm text-muted">
-          <strong className="text-ink mr-2">{selected.score}</strong>
-          {selected.label}
+        <div className="mt-3 text-sm text-ink/80 leading-relaxed">
+          <strong className="text-ink mr-2">{value}</strong>
+          {selected}
         </div>
       )}
     </div>

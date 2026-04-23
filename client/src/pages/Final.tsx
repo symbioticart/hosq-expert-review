@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { Link, useParams } from "react-router-dom";
 
 import { FinalRadar } from "../components/FinalRadar";
@@ -22,6 +22,16 @@ export default function Final() {
     fetchSummary(expertId, project.id).then(setSummary).catch(console.error);
   }, [project, expertId]);
 
+  const reportDate = useMemo(
+    () =>
+      new Date().toLocaleDateString("en-GB", {
+        year: "numeric",
+        month: "long",
+        day: "numeric",
+      }),
+    [],
+  );
+
   if (loading || !manifest || !metrics) {
     return <div className="p-8 text-muted">Loading…</div>;
   }
@@ -33,8 +43,8 @@ export default function Final() {
     );
   }
 
-  const expertFinal = summary?.expertFinal;          // 0..5
-  const aiFinal     = summary?.aiFinal;              // 0..100
+  const expertFinal = summary?.expertFinal;
+  const aiFinal     = summary?.aiFinal;
   const aiFinalMax  = summary?.aiFinalMax ?? 100;
   const aiNormalised = aiFinal != null ? (aiFinal / aiFinalMax) * 5 : null;
   const delta =
@@ -52,41 +62,57 @@ export default function Final() {
   }));
 
   return (
-    <div className="min-h-screen bg-cream">
-      <Header />
-      <main className="max-w-[1200px] mx-auto px-10 py-16">
+    <div className="min-h-screen bg-cream print:bg-white">
+      <div className="no-print"><Header /></div>
+
+      <main className="max-w-[1200px] mx-auto px-10 py-12 print:px-0 print:py-0 print:max-w-none">
         <Link to={`/project/${project.slug}`} className="no-print text-xs text-muted hover:text-ink transition">
           ← Back to review
         </Link>
 
-        <div className="mt-6">
-          <div className="text-[11px] uppercase tracking-[0.3em] text-muted mb-2">Project</div>
-          <h1 className="font-bold text-[72px] leading-[0.95] text-ink max-w-4xl">
-            {project.name}
-          </h1>
-          <p className="mt-6 text-lg text-muted">Expert review summary</p>
-        </div>
+        <header className="mt-6 pb-6 border-b border-hairline print:mt-0">
+          <div className="flex items-start justify-between gap-6 flex-wrap">
+            <div>
+              <div className="text-[11px] uppercase tracking-[0.3em] text-muted mb-2">
+                HOSQ Expert Review
+              </div>
+              <h1 className="font-bold text-[56px] leading-[0.95] text-ink max-w-4xl print:text-[36px]">
+                {project.name}
+              </h1>
+            </div>
+            <div className="text-right text-xs text-muted leading-relaxed">
+              <div><span className="text-muted/70">Expert ID</span> <span className="text-ink font-mono">{expertId || "—"}</span></div>
+              <div><span className="text-muted/70">Date</span> <span className="text-ink">{reportDate}</span></div>
+              <div>
+                <span className="text-muted/70">Progress</span>{" "}
+                <span className="text-ink">
+                  {summary?.expertProgress ?? 0} / {summary?.totalMetrics ?? 10}
+                </span>
+              </div>
+            </div>
+          </div>
+        </header>
 
-        <section className="mt-16 grid grid-cols-1 md:grid-cols-2 gap-8">
-          <div className="bg-white rounded-card p-8 border-l-[6px] border-coral">
-            <div className="text-xs uppercase tracking-wider text-muted mb-2">Your score</div>
-            <div className="text-[84px] font-bold text-coral leading-none">
+        <section className="mt-10 grid grid-cols-1 md:grid-cols-2 gap-8 print:grid-cols-2 print:gap-4 break-inside-avoid">
+          <div className="bg-white rounded-card p-8 border-l-[6px] border-coral print:p-4">
+            <div className="text-xs uppercase tracking-wider text-muted mb-2">Expert score</div>
+            <div className="text-[84px] font-bold text-coral leading-none print:text-[56px]">
               {fmtScore(expertFinal)}
               <span className="text-2xl text-muted font-normal">/5</span>
             </div>
             <div className="mt-3 text-sm text-muted">
-              based on {summary?.expertProgress ?? 0} of {summary?.totalMetrics ?? 10} metrics (weighted)
+              weighted across {summary?.expertProgress ?? 0} of {summary?.totalMetrics ?? 10} metrics
             </div>
             <div className="mt-6">
               <FinalRadar data={radarExpert} color="#FF6F55" />
             </div>
           </div>
 
-          <div className="bg-white rounded-card p-8 border-l-[6px] border-violet">
+          <div className="bg-white rounded-card p-8 border-l-[6px] border-violet print:p-4">
             <div className="text-xs uppercase tracking-wider text-muted mb-2">AI score</div>
             {summary?.aiStatus === "evaluated" && aiFinal != null ? (
               <>
-                <div className="text-[84px] font-bold text-violet leading-none">
+                <div className="text-[84px] font-bold text-violet leading-none print:text-[56px]">
                   {aiFinal}
                   <span className="text-2xl text-muted font-normal">/{aiFinalMax}</span>
                 </div>
@@ -107,8 +133,8 @@ export default function Final() {
         </section>
 
         {delta != null && (
-          <div className="mt-10 inline-flex items-center gap-3 px-5 py-3 rounded-pill bg-white">
-            <span className="text-xs uppercase tracking-wider text-muted">Delta (you − AI)</span>
+          <div className="mt-8 inline-flex items-center gap-3 px-5 py-3 rounded-pill bg-white border border-hairline break-inside-avoid">
+            <span className="text-xs uppercase tracking-wider text-muted">Delta (expert − AI)</span>
             <span
               className={cn(
                 "font-bold text-lg",
@@ -120,8 +146,15 @@ export default function Final() {
           </div>
         )}
 
-        <section className="mt-16">
-          <h2 className="font-bold text-2xl text-ink mb-6">Metric breakdown</h2>
+        {summary?.aiSummary && (
+          <section className="mt-10 bg-white rounded-card p-6 border-l-[4px] border-violet break-inside-avoid">
+            <h3 className="text-[10px] uppercase tracking-wider text-muted font-bold mb-2">AI summary</h3>
+            <p className="text-sm text-ink/90 leading-relaxed whitespace-pre-wrap">{summary.aiSummary}</p>
+          </section>
+        )}
+
+        <section className="mt-12 print:mt-8 print:break-before-page">
+          <h2 className="font-bold text-2xl text-ink mb-6 print:text-xl">Metric breakdown</h2>
           <div className="bg-white rounded-card overflow-hidden">
             {byMetric.map((m, i) => (
               <MetricRow
@@ -129,6 +162,7 @@ export default function Final() {
                 index={i}
                 letter={m.letter}
                 name={m.nameEn}
+                weight={m.weight}
                 expertScore={m.expertScore}
                 expertComment={m.expertComment}
                 aiScore={m.aiScore}
@@ -139,6 +173,10 @@ export default function Final() {
           </div>
         </section>
 
+        <footer className="mt-12 pt-4 border-t border-hairline hidden print:block text-[10px] text-muted text-center">
+          HOSQ Expert Review · {project.name} · Expert {expertId || "—"} · {reportDate}
+        </footer>
+
         <div className="mt-12 no-print flex gap-3 flex-wrap">
           <Link
             to={`/project/${project.slug}`}
@@ -148,14 +186,14 @@ export default function Final() {
           </Link>
           <Link
             to="/"
-            className="px-6 py-3 rounded-pill bg-ink text-cream hover:bg-coral transition text-sm font-medium"
+            className="px-6 py-3 rounded-pill bg-white border border-hairline text-ink hover:border-coral transition text-sm font-medium"
           >
             All projects
           </Link>
           <button
             type="button"
             onClick={() => window.print()}
-            className="px-6 py-3 rounded-pill bg-white border border-hairline text-ink hover:border-coral transition text-sm font-medium"
+            className="px-6 py-3 rounded-pill bg-ink text-cream hover:bg-coral transition text-sm font-medium"
           >
             Export PDF
           </button>
@@ -169,6 +207,7 @@ function MetricRow({
   index,
   letter,
   name,
+  weight,
   expertScore,
   expertComment,
   aiScore,
@@ -178,6 +217,7 @@ function MetricRow({
   index: number;
   letter: string;
   name: string;
+  weight: number;
   expertScore: number | null;
   expertComment: string | null;
   aiScore: number | null;
@@ -188,18 +228,21 @@ function MetricRow({
   const delta = expertScore != null && aiScore != null ? expertScore - aiScore : null;
 
   return (
-    <div className={cn("border-t border-hairline", index === 0 && "border-t-0")}>
+    <div className={cn("border-t border-hairline break-inside-avoid", index === 0 && "border-t-0")}>
       <button
         type="button"
         onClick={() => setOpen((v) => !v)}
-        className="w-full flex items-center gap-4 px-5 py-4 text-left hover:bg-zebra transition"
+        className="w-full flex items-center gap-4 px-5 py-4 text-left hover:bg-zebra transition print:hover:bg-transparent"
       >
         <span className="shrink-0 flex items-center justify-center h-8 w-8 rounded-pill bg-ink text-cream text-xs font-bold">
           {letter}
         </span>
-        <span className="flex-1 font-medium text-ink">{name}</span>
-        <span className="text-sm">
-          <span className="text-muted mr-1">You</span>
+        <span className="flex-1 min-w-0">
+          <div className="font-medium text-ink truncate">{name}</div>
+          <div className="text-[11px] text-muted">weight {weight.toFixed(2)}</div>
+        </span>
+        <span className="text-sm shrink-0">
+          <span className="text-muted mr-1">Expert</span>
           <span className="font-bold text-coral mr-3">
             {expertScore != null ? expertScore.toFixed(0) : "—"}
           </span>
@@ -220,38 +263,39 @@ function MetricRow({
             </span>
           )}
         </span>
-        <span className="text-muted shrink-0">{open ? "▲" : "▼"}</span>
+        <span className="text-muted shrink-0 no-print">{open ? "▲" : "▼"}</span>
       </button>
-      {open && (
-        <div className="px-5 pb-5 bg-zebra/40">
-          {expertComment && (
-            <div className="mb-4">
-              <h4 className="text-[10px] uppercase tracking-wider text-muted mb-1">Your comment</h4>
-              <p className="text-sm text-ink/90 whitespace-pre-wrap">{expertComment}</p>
-            </div>
+
+      <div className={cn("px-5 pb-5 bg-zebra/40 print:bg-white print:px-3 print:pb-3", !open && "hidden print:block")}>
+        <div className="mb-4">
+          <h4 className="text-[10px] uppercase tracking-wider text-muted mb-1">Expert comment</h4>
+          {expertComment ? (
+            <p className="text-sm text-ink/90 whitespace-pre-wrap">{expertComment}</p>
+          ) : (
+            <p className="text-sm text-muted italic">No comment.</p>
           )}
-          <div className="grid md:grid-cols-2 gap-4">
-            <div>
-              <h4 className="text-[10px] uppercase tracking-wider text-green font-bold mb-1">Strengths</h4>
-              <ul className="space-y-1 text-sm">
-                {aiPros.length === 0 ? <li className="text-muted italic">—</li> :
-                  aiPros.map((p, i) => (
-                    <li key={i} className="flex gap-2"><span className="text-green shrink-0">●</span><span className="text-ink/90">{p}</span></li>
-                  ))}
-              </ul>
-            </div>
-            <div>
-              <h4 className="text-[10px] uppercase tracking-wider text-coral font-bold mb-1">Weaknesses</h4>
-              <ul className="space-y-1 text-sm">
-                {aiCons.length === 0 ? <li className="text-muted italic">—</li> :
-                  aiCons.map((c, i) => (
-                    <li key={i} className="flex gap-2"><span className="text-coral shrink-0">●</span><span className="text-ink/90">{c}</span></li>
-                  ))}
-              </ul>
-            </div>
+        </div>
+        <div className="grid md:grid-cols-2 gap-4 print:grid-cols-2">
+          <div>
+            <h4 className="text-[10px] uppercase tracking-wider text-green font-bold mb-1">AI strengths</h4>
+            <ul className="space-y-1 text-sm">
+              {aiPros.length === 0 ? <li className="text-muted italic">—</li> :
+                aiPros.map((p, i) => (
+                  <li key={i} className="flex gap-2"><span className="text-green shrink-0">●</span><span className="text-ink/90">{p}</span></li>
+                ))}
+            </ul>
+          </div>
+          <div>
+            <h4 className="text-[10px] uppercase tracking-wider text-coral font-bold mb-1">AI weaknesses</h4>
+            <ul className="space-y-1 text-sm">
+              {aiCons.length === 0 ? <li className="text-muted italic">—</li> :
+                aiCons.map((c, i) => (
+                  <li key={i} className="flex gap-2"><span className="text-coral shrink-0">●</span><span className="text-ink/90">{c}</span></li>
+                ))}
+            </ul>
           </div>
         </div>
-      )}
+      </div>
     </div>
   );
 }

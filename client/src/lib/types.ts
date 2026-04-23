@@ -8,15 +8,13 @@ export interface Manifest {
   projects: ProjectSummary[];
 }
 
-export interface MetricScale {
-  score: number;
-  label: string;
-}
+export type RubricLevels = Record<"0" | "1" | "2" | "3" | "4" | "5", string>;
 
 export interface SubIndex {
   id: string;
   name: string;
   description?: string;
+  rubric: RubricLevels;
 }
 
 export interface MetricDef {
@@ -25,8 +23,9 @@ export interface MetricDef {
   weight: number;
   nameEn: string;
   what: string;
-  how: string;
-  scale: MetricScale[];
+  scoringDiscipline: string;
+  ceilingRules: string[];
+  vectorRubric: RubricLevels;
   subindices: SubIndex[];
 }
 
