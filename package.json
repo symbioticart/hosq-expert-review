@@ -3,8 +3,8 @@
   "private": true,
   "version": "0.1.0",
   "scripts": {
-    "install:all": "cd server && npm install && cd ../client && npm install",
-    "build": "cd client && npm install && npm run build && cd ../server && npm install && npm run build",
+    "install:all": "cd server && npm install --include=dev && cd ../client && npm install --include=dev",
+    "build": "cd client && npm install --include=dev && npm run build && cd ../server && npm install --include=dev && npm run build",
     "start": "cd server && npm run start",
     "dev:client": "cd client && npm run dev",
     "dev:server": "cd server && npm run dev",
