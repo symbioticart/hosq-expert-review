@@ -93,7 +93,7 @@ export default function Final() {
           </div>
         </header>
 
-        <section className="mt-10 grid grid-cols-1 md:grid-cols-2 gap-8 print:grid-cols-2 print:gap-4 break-inside-avoid">
+        <section className="mt-10 grid grid-cols-1 md:grid-cols-2 gap-8 print:grid-cols-1 print:gap-4 break-inside-avoid">
           <div className="bg-white rounded-card p-8 border-l-[6px] border-coral print:p-4">
             <div className="text-xs uppercase tracking-wider text-muted mb-2">Expert score</div>
             <div className="text-[84px] font-bold text-coral leading-none print:text-[56px]">
@@ -108,11 +108,11 @@ export default function Final() {
             </div>
           </div>
 
-          <div className="bg-white rounded-card p-8 border-l-[6px] border-violet print:p-4">
+          <div className="no-print bg-white rounded-card p-8 border-l-[6px] border-violet">
             <div className="text-xs uppercase tracking-wider text-muted mb-2">AI score</div>
             {summary?.aiStatus === "evaluated" && aiFinal != null ? (
               <>
-                <div className="text-[84px] font-bold text-violet leading-none print:text-[56px]">
+                <div className="text-[84px] font-bold text-violet leading-none">
                   {aiFinal}
                   <span className="text-2xl text-muted font-normal">/{aiFinalMax}</span>
                 </div>
@@ -133,7 +133,7 @@ export default function Final() {
         </section>
 
         {delta != null && (
-          <div className="mt-8 inline-flex items-center gap-3 px-5 py-3 rounded-pill bg-white border border-hairline break-inside-avoid">
+          <div className="no-print mt-8 inline-flex items-center gap-3 px-5 py-3 rounded-pill bg-white border border-hairline break-inside-avoid">
             <span className="text-xs uppercase tracking-wider text-muted">Delta (expert − AI)</span>
             <span
               className={cn(
@@ -147,7 +147,7 @@ export default function Final() {
         )}
 
         {summary?.aiSummary && (
-          <section className="mt-10 bg-white rounded-card p-6 border-l-[4px] border-violet break-inside-avoid">
+          <section className="no-print mt-10 bg-white rounded-card p-6 border-l-[4px] border-violet break-inside-avoid">
             <h3 className="text-[10px] uppercase tracking-wider text-muted font-bold mb-2">AI summary</h3>
             <p className="text-sm text-ink/90 leading-relaxed whitespace-pre-wrap">{summary.aiSummary}</p>
           </section>
@@ -246,22 +246,24 @@ function MetricRow({
           <span className="font-bold text-coral mr-3">
             {expertScore != null ? expertScore.toFixed(0) : "—"}
           </span>
-          <span className="text-muted mr-1">AI</span>
-          <span className="font-bold text-violet mr-3">
-            {aiScore != null ? aiScore.toFixed(0) : "—"}
-          </span>
-          {delta != null && (
-            <span
-              className={cn(
-                "font-mono text-xs px-2 py-0.5 rounded-pill",
-                delta === 0 ? "bg-zebra text-muted" :
-                delta > 0   ? "bg-green/10 text-green" :
-                              "bg-coral/10 text-coral",
-              )}
-            >
-              {delta > 0 ? "+" : ""}{delta}
+          <span className="no-print">
+            <span className="text-muted mr-1">AI</span>
+            <span className="font-bold text-violet mr-3">
+              {aiScore != null ? aiScore.toFixed(0) : "—"}
             </span>
-          )}
+            {delta != null && (
+              <span
+                className={cn(
+                  "font-mono text-xs px-2 py-0.5 rounded-pill",
+                  delta === 0 ? "bg-zebra text-muted" :
+                  delta > 0   ? "bg-green/10 text-green" :
+                                "bg-coral/10 text-coral",
+                )}
+              >
+                {delta > 0 ? "+" : ""}{delta}
+              </span>
+            )}
+          </span>
         </span>
         <span className="text-muted shrink-0 no-print">{open ? "▲" : "▼"}</span>
       </button>
@@ -275,7 +277,7 @@ function MetricRow({
             <p className="text-sm text-muted italic">No comment.</p>
           )}
         </div>
-        <div className="grid md:grid-cols-2 gap-4 print:grid-cols-2">
+        <div className="no-print grid md:grid-cols-2 gap-4">
           <div>
             <h4 className="text-[10px] uppercase tracking-wider text-green font-bold mb-1">AI strengths</h4>
             <ul className="space-y-1 text-sm">
