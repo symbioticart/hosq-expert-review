@@ -1,4 +1,5 @@
 import { useEffect, useMemo, useRef, useState } from "react";
+import { Link } from "react-router-dom";
 import { Header } from "../components/Layout";
 import { ProjectCard } from "../components/ProjectCard";
 import { useExpertIdentity } from "../hooks/useExpertId";
@@ -94,19 +95,22 @@ export default function Lobby() {
             browser with the same name.
           </p>
           {expectedTotal > 0 && (
-            <div className="mt-8 max-w-md">
-              <div className="flex items-baseline justify-between text-xs text-muted mb-2">
-                <span>Overall progress</span>
-                <span>
-                  <strong className="text-ink">{scoredTotal}</strong> of {expectedTotal} ratings
-                </span>
+            <div className="mt-8 flex items-end gap-6 flex-wrap">
+              <div className="flex-1 min-w-[260px] max-w-md">
+                <div className="flex items-baseline justify-between text-xs text-muted mb-2">
+                  <span>Overall progress</span>
+                  <span>
+                    <strong className="text-ink">{scoredTotal}</strong> of {expectedTotal} ratings
+                  </span>
+                </div>
+                <div className="h-1.5 rounded-full bg-blush overflow-hidden">
+                  <div
+                    className="h-full bg-coral transition-all"
+                    style={{ width: `${Math.min(100, (scoredTotal / expectedTotal) * 100)}%` }}
+                  />
+                </div>
               </div>
-              <div className="h-1.5 rounded-full bg-blush overflow-hidden">
-                <div
-                  className="h-full bg-coral transition-all"
-                  style={{ width: `${Math.min(100, (scoredTotal / expectedTotal) * 100)}%` }}
-                />
-              </div>
+              <DownloadAllButton done={scoredTotal} total={expectedTotal} />
             </div>
           )}
         </div>
@@ -152,5 +156,31 @@ export default function Lobby() {
         </div>
       </main>
     </div>
+  );
+}
+
+function DownloadAllButton({ done, total }: { done: number; total: number }) {
+  const unlocked = done >= total;
+  const remaining = total - done;
+  const label = "Download all 5 reports (PDF)";
+  if (unlocked) {
+    return (
+      <Link
+        to="/all-reports"
+        className="inline-flex items-center px-5 py-2.5 rounded-pill bg-ink text-cream hover:bg-coral transition text-sm font-medium"
+      >
+        {label}
+      </Link>
+    );
+  }
+  return (
+    <button
+      type="button"
+      disabled
+      title={`Complete ${remaining} more rating${remaining === 1 ? "" : "s"} to unlock (${done}/${total})`}
+      className="inline-flex items-center px-5 py-2.5 rounded-pill bg-white border border-hairline text-muted text-sm font-medium cursor-not-allowed"
+    >
+      {label}
+    </button>
   );
 }

@@ -1,5 +1,6 @@
 import { Navigate, Route, Routes } from "react-router-dom";
 
+import AllReports from "./pages/AllReports";
 import Final from "./pages/Final";
 import Gate from "./pages/Gate";
 import Lobby from "./pages/Lobby";
@@ -20,6 +21,7 @@ export default function App() {
       <Route path="/" element={<RequireExpert><Lobby /></RequireExpert>} />
       <Route path="/project/:slug" element={<RequireExpert><Review /></RequireExpert>} />
       <Route path="/project/:slug/final" element={<RequireExpert><Final /></RequireExpert>} />
+      <Route path="/all-reports" element={<RequireExpert><AllReports /></RequireExpert>} />
       <Route path="*" element={<Navigate to="/" replace />} />
     </Routes>
   );
