@@ -160,27 +160,13 @@ export default function Lobby() {
 }
 
 function DownloadAllButton({ done, total }: { done: number; total: number }) {
-  const unlocked = done >= total;
-  const remaining = total - done;
-  const label = "Download all 5 reports (PDF)";
-  if (unlocked) {
-    return (
-      <Link
-        to="/all-reports"
-        className="inline-flex items-center px-5 py-2.5 rounded-pill bg-ink text-cream hover:bg-coral transition text-sm font-medium"
-      >
-        {label}
-      </Link>
-    );
-  }
+  if (done < total) return null;
   return (
-    <button
-      type="button"
-      disabled
-      title={`Complete ${remaining} more rating${remaining === 1 ? "" : "s"} to unlock (${done}/${total})`}
-      className="inline-flex items-center px-5 py-2.5 rounded-pill bg-white border border-hairline text-muted text-sm font-medium cursor-not-allowed"
+    <Link
+      to="/all-reports"
+      className="inline-flex items-center px-5 py-2.5 rounded-pill bg-ink text-cream hover:bg-coral transition text-sm font-medium"
     >
-      {label}
-    </button>
+      Download all 5 reports (PDF)
+    </Link>
   );
 }

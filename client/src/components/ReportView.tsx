@@ -81,11 +81,11 @@ export function ReportView({
           {summary?.aiStatus === "evaluated" && aiFinal != null ? (
             <>
               <div className="text-[84px] font-bold text-violet leading-none">
-                {aiFinal}
-                <span className="text-2xl text-muted font-normal">/{aiFinalMax}</span>
+                ≈&nbsp;{fmtScore(aiNormalised)}
+                <span className="text-2xl text-muted font-normal">/5</span>
               </div>
               <div className="mt-3 text-sm text-muted">
-                ≈ {fmtScore(aiNormalised)}/5 (normalised)
+                {aiFinal}/{aiFinalMax} raw
               </div>
               <div className="mt-6">
                 <FinalRadar data={radarAi} color="#C47CF1" />
