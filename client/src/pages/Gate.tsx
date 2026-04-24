@@ -90,7 +90,7 @@ export default function Gate() {
             <button
               type="submit"
               disabled={input.trim().length < 2}
-              className="px-6 py-3 rounded-pill bg-ink text-cream hover:bg-coral transition text-sm font-medium disabled:bg-hairline disabled:text-muted disabled:cursor-not-allowed"
+              className="px-6 py-3 rounded-pill bg-coral text-white hover:bg-coral/90 transition text-sm font-medium disabled:bg-hairline disabled:text-muted disabled:cursor-not-allowed"
             >
               Begin →
             </button>

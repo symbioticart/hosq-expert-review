@@ -8,6 +8,7 @@ export default {
         coral:    "#FF6F55",
         violet:   "#C47CF1",
         green:    "#14B672",
+        greenDark:"#0A7A4B",
         blue:     "#56A4CB",
         pink:     "#E770C3",
         ink:      "#231F20",

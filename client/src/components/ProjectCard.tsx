@@ -24,7 +24,7 @@ export function ProjectCard({ project, ratings, totalMetrics, aiFinalScore }: Pr
   const statusBadge: Record<string, { label: string; cls: string }> = {
     new:      { label: "New",         cls: "bg-zebra text-muted" },
     progress: { label: `${scoredMetrics}/${totalMetrics}`, cls: "bg-coral text-white" },
-    done:     { label: "Completed",   cls: "bg-green text-white" },
+    done:     { label: "Completed",   cls: "bg-greenDark text-white" },
   };
   const badge = statusBadge[status];
 

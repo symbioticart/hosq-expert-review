@@ -17,13 +17,15 @@ export function FinalRadar({
   data,
   color,
   dim = false,
+  height = 280,
 }: {
   data: Point[];
   color: string;
   dim?: boolean;
+  height?: number;
 }) {
   return (
-    <ResponsiveContainer width="100%" height={280}>
+    <ResponsiveContainer width="100%" height={height}>
       <RadarChart data={data} outerRadius="75%">
         <PolarGrid stroke="#D9CFC3" />
         <PolarAngleAxis
@@ -33,7 +35,8 @@ export function FinalRadar({
         <PolarRadiusAxis
           angle={90}
           domain={[0, 5]}
-          tick={{ fill: "#D9CFC3", fontSize: 9 }}
+          tickCount={6}
+          tick={{ fill: "#6B6566", fontSize: 9, fontFamily: "Cera Pro" }}
           axisLine={false}
         />
         <Radar

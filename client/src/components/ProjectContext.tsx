@@ -1,15 +1,16 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import type { AiEvaluation, ProjectMeta } from "../lib/types";
 import { cn, mdToBlocks } from "../lib/util";
 
 type Tab = "description" | "data" | "pdf" | "ai";
 
-interface Props {
+interface AsideProps {
   meta: ProjectMeta;
   ai: AiEvaluation;
+  className?: string;
 }
 
-export function ProjectContext({ meta, ai }: Props) {
+export function ProjectContext({ meta, ai, className }: AsideProps) {
   const [tab, setTab] = useState<Tab>("description");
   const [collapsed, setCollapsed] = useState(false);
 
@@ -17,7 +18,7 @@ export function ProjectContext({ meta, ai }: Props) {
 
   if (collapsed) {
     return (
-      <aside className="no-print sticky top-[72px] h-[calc(100vh-72px)] w-12 shrink-0 border-l border-hairline bg-white flex flex-col items-center py-4 gap-4">
+      <aside className={cn("no-print sticky top-[72px] h-[calc(100vh-72px)] w-12 shrink-0 border-l border-hairline bg-white flex flex-col items-center py-4 gap-4", className)}>
         <button
           type="button"
           onClick={() => setCollapsed(false)}
@@ -34,7 +35,86 @@ export function ProjectContext({ meta, ai }: Props) {
     );
   }
 
-  const tabBtn = (k: Tab, label: string, disabled = false) => (
+  return (
+    <aside className={cn("no-print sticky top-[72px] h-[calc(100vh-72px)] w-[380px] shrink-0 border-l border-hairline bg-white flex flex-col", className)}>
+      <TabBar tab={tab} setTab={setTab} aiAvailable={aiAvailable} trailingSlot={
+        <button
+          type="button"
+          onClick={() => setCollapsed(true)}
+          aria-label="Collapse"
+          className="text-muted hover:text-ink transition text-lg ml-2"
+          title="Collapse panel"
+        >
+          ▶
+        </button>
+      } />
+      <TabContent tab={tab} meta={meta} aiAvailable={aiAvailable} />
+    </aside>
+  );
+}
+
+export function ProjectContextDrawer({
+  meta,
+  ai,
+  open,
+  onClose,
+  className,
+}: AsideProps & { open: boolean; onClose: () => void }) {
+  const [tab, setTab] = useState<Tab>("description");
+  const aiAvailable = ai.status === "evaluated" && !!meta.aiAnalysisPdf;
+
+  useEffect(() => {
+    if (!open) return;
+    const onKey = (e: KeyboardEvent) => { if (e.key === "Escape") onClose(); };
+    document.addEventListener("keydown", onKey);
+    document.body.style.overflow = "hidden";
+    return () => {
+      document.removeEventListener("keydown", onKey);
+      document.body.style.overflow = "";
+    };
+  }, [open, onClose]);
+
+  return (
+    <div
+      className={cn("no-print fixed inset-0 z-40 transition-opacity", className, open ? "pointer-events-auto opacity-100" : "pointer-events-none opacity-0")}
+      aria-hidden={!open}
+    >
+      <div className="absolute inset-0 bg-ink/40" onClick={onClose} />
+      <aside
+        className={cn(
+          "absolute top-0 right-0 h-full w-full max-w-[480px] bg-white flex flex-col shadow-xl transition-transform",
+          open ? "translate-x-0" : "translate-x-full",
+        )}
+      >
+        <TabBar tab={tab} setTab={setTab} aiAvailable={aiAvailable} trailingSlot={
+          <button
+            type="button"
+            onClick={onClose}
+            aria-label="Close"
+            className="text-muted hover:text-ink transition text-lg ml-2 px-2"
+            title="Close"
+          >
+            ✕
+          </button>
+        } />
+        <TabContent tab={tab} meta={meta} aiAvailable={aiAvailable} />
+      </aside>
+    </div>
+  );
+}
+
+function TabBar({
+  tab,
+  setTab,
+  aiAvailable,
+  trailingSlot,
+}: {
+  tab: Tab;
+  setTab: (t: Tab) => void;
+  aiAvailable: boolean;
+  trailingSlot?: React.ReactNode;
+}) {
+  const btn = (k: Tab, label: string, disabled = false) => (
     <button
       key={k}
       type="button"
@@ -51,34 +131,35 @@ export function ProjectContext({ meta, ai }: Props) {
       {label}
     </button>
   );
-
   return (
-    <aside className="no-print sticky top-[72px] h-[calc(100vh-72px)] w-[380px] shrink-0 border-l border-hairline bg-white flex flex-col">
-      <div className="flex items-center justify-between px-4 py-3 border-b border-hairline">
-        <div className="flex gap-1 flex-wrap">
-          {tabBtn("description", "Description")}
-          {tabBtn("data", "Data")}
-          {tabBtn("pdf", "PDF")}
-          {tabBtn("ai", "AI analysis", !aiAvailable)}
-        </div>
-        <button
-          type="button"
-          onClick={() => setCollapsed(true)}
-          aria-label="Collapse"
-          className="text-muted hover:text-ink transition text-lg ml-2"
-          title="Collapse panel"
-        >
-          ▶
-        </button>
+    <div className="flex items-center justify-between px-4 py-3 border-b border-hairline">
+      <div className="flex gap-1 flex-wrap">
+        {btn("description", "Description")}
+        {btn("data", "Data")}
+        {btn("pdf", "PDF")}
+        {btn("ai", "AI analysis", !aiAvailable)}
       </div>
+      {trailingSlot}
+    </div>
+  );
+}
 
-      <div className="flex-1 overflow-y-auto p-5">
-        {tab === "description" && <DescriptionView description={meta.description} />}
-        {tab === "data" && <DataTableView columns={meta.tableColumns} rows={meta.tableRows} />}
-        {tab === "pdf" && <PdfView src={meta.sourcePdf} />}
-        {tab === "ai"  && aiAvailable && meta.aiAnalysisPdf && <PdfView src={meta.aiAnalysisPdf} />}
-      </div>
-    </aside>
+function TabContent({
+  tab,
+  meta,
+  aiAvailable,
+}: {
+  tab: Tab;
+  meta: ProjectMeta;
+  aiAvailable: boolean;
+}) {
+  return (
+    <div className="flex-1 overflow-y-auto p-5">
+      {tab === "description" && <DescriptionView description={meta.description} />}
+      {tab === "data" && <DataTableView columns={meta.tableColumns} rows={meta.tableRows} />}
+      {tab === "pdf" && <PdfView src={meta.sourcePdf} />}
+      {tab === "ai"  && aiAvailable && meta.aiAnalysisPdf && <PdfView src={meta.aiAnalysisPdf} />}
+    </div>
   );
 }
 

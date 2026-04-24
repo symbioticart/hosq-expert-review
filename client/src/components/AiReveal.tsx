@@ -15,14 +15,14 @@ export function AiReveal({ visible, ai, notEvaluated, aiAnalysisPdf }: Props) {
       <div className="mt-6 rounded-card bg-blush p-6">
         <div className="text-xs uppercase tracking-wider text-muted mb-1">AI evaluation</div>
         <p className="text-sm text-ink/80">
-          AI analysis is not available for this project.
+          AI analysis not available.
         </p>
       </div>
     );
   }
 
-  const normalised = (ai.score / ai.scoreMax) * 5;
   const scorePct = (ai.score / ai.scoreMax) * 100;
+  const rawHundred = Math.round(scorePct);
 
   return (
     <div className="mt-6 rounded-card bg-blush p-6 animate-fade-in">
@@ -36,18 +36,18 @@ export function AiReveal({ visible, ai, notEvaluated, aiAnalysisPdf }: Props) {
             {ai.score}
             <span className="text-base text-muted font-normal">/{ai.scoreMax}</span>
           </div>
-          <div className="mt-2 h-1 w-24 bg-hairline rounded-full overflow-hidden">
+          <div className="mt-2 h-1 w-24 bg-hairline rounded-full overflow-hidden ml-auto">
             <div className="h-full bg-violet" style={{ width: `${scorePct}%` }} />
           </div>
           <div className="mt-1 text-[10px] text-muted">
-            ≈ {normalised.toFixed(1)}/5
+            ≈ {rawHundred}/100 raw
           </div>
         </div>
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
         <div>
-          <h4 className="text-[11px] uppercase tracking-wider text-green font-bold mb-2">
+          <h4 className="text-[11px] uppercase tracking-wider text-greenDark font-bold mb-2">
             Strengths
           </h4>
           <ul className="space-y-1.5">

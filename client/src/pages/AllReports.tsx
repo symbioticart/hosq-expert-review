@@ -54,6 +54,12 @@ export default function AllReports() {
     return () => window.clearTimeout(t);
   }, [reports, printed]);
 
+  useEffect(() => {
+    const onAfter = () => navigate("/", { replace: true });
+    window.addEventListener("afterprint", onAfter);
+    return () => window.removeEventListener("afterprint", onAfter);
+  }, [navigate]);
+
   if (loading || !manifest || !metrics) {
     return <div className="p-8 text-muted">Loading…</div>;
   }

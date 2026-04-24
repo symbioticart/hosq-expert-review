@@ -38,17 +38,17 @@ export function ReportView({
 
   return (
     <section className={cn(!firstOnPage && "print:break-before-page")}>
-      <header className="mt-6 pb-6 border-b border-hairline print:mt-0">
+      <header className="mt-6 pb-6 border-b border-hairline print:mt-0 print:pb-2">
         <div className="flex items-start justify-between gap-6 flex-wrap">
           <div>
-            <div className="text-[11px] uppercase tracking-[0.3em] text-muted mb-2">
+            <div className="text-[11px] uppercase tracking-[0.3em] text-muted mb-2 print:mb-1">
               HOSQ Expert Review
             </div>
-            <h1 className="font-bold text-[56px] leading-[0.95] text-ink max-w-4xl print:text-[36px]">
+            <h1 className="font-bold text-[56px] leading-[0.95] text-ink max-w-4xl print:text-[26px]">
               {project.name}
             </h1>
           </div>
-          <div className="text-right text-xs text-muted leading-relaxed">
+          <div className="text-right text-xs text-muted leading-relaxed print:text-[10px]">
             <div><span className="text-muted/70">Expert ID</span> <span className="text-ink font-mono">{expertId || "—"}</span></div>
             <div><span className="text-muted/70">Date</span> <span className="text-ink">{reportDate}</span></div>
             <div>
@@ -61,17 +61,24 @@ export function ReportView({
         </div>
       </header>
 
-      <div className="mt-10 grid grid-cols-1 md:grid-cols-2 gap-8 print:grid-cols-1 print:gap-4 break-inside-avoid">
-        <div className="bg-white rounded-card p-8 border-l-[6px] border-coral print:p-4">
-          <div className="text-xs uppercase tracking-wider text-muted mb-2">Expert score</div>
-          <div className="text-[84px] font-bold text-coral leading-none print:text-[56px]">
-            {fmtScore(expertFinal)}
-            <span className="text-2xl text-muted font-normal">/5</span>
+      <div className="mt-10 grid grid-cols-1 md:grid-cols-2 gap-8 print:mt-3 print:grid-cols-1 print:gap-2 break-inside-avoid">
+        <div className="bg-white rounded-card p-8 border-l-[6px] border-coral print:p-3 print:border-l-[4px]">
+          <div className="flex items-baseline justify-between gap-4">
+            <div>
+              <div className="text-xs uppercase tracking-wider text-muted mb-2 print:mb-0">Expert score</div>
+              <div className="text-[84px] font-bold text-coral leading-none print:text-[40px]">
+                {fmtScore(expertFinal)}
+                <span className="text-2xl text-muted font-normal print:text-sm">/5</span>
+              </div>
+              <div className="mt-3 text-sm text-muted print:mt-1 print:text-[10px]">
+                weighted across {summary?.expertProgress ?? 0} of {summary?.totalMetrics ?? 10} metrics
+              </div>
+            </div>
+            <div className="hidden print:block w-[55%] -my-2">
+              <FinalRadar data={radarExpert} color="#FF6F55" height={150} />
+            </div>
           </div>
-          <div className="mt-3 text-sm text-muted">
-            weighted across {summary?.expertProgress ?? 0} of {summary?.totalMetrics ?? 10} metrics
-          </div>
-          <div className="mt-6">
+          <div className="mt-6 print:hidden">
             <FinalRadar data={radarExpert} color="#FF6F55" />
           </div>
         </div>
@@ -94,7 +101,7 @@ export function ReportView({
           ) : (
             <>
               <div className="text-[84px] font-bold text-muted leading-none">—</div>
-              <div className="mt-3 text-sm text-muted">AI analysis not available</div>
+              <div className="mt-3 text-sm text-muted">AI analysis not available.</div>
             </>
           )}
         </div>
@@ -106,7 +113,7 @@ export function ReportView({
           <span
             className={cn(
               "font-bold text-lg",
-              delta > 0.3 ? "text-green" : delta < -0.3 ? "text-coral" : "text-ink",
+              delta > 0.3 ? "text-greenDark" : delta < -0.3 ? "text-coral" : "text-ink",
             )}
           >
             {delta > 0 ? "+" : ""}{delta.toFixed(2)}
@@ -121,8 +128,8 @@ export function ReportView({
         </div>
       )}
 
-      <div className="mt-12 print:mt-8 print:break-before-page">
-        <h2 className="font-bold text-2xl text-ink mb-6 print:text-xl">Metric breakdown</h2>
+      <div className="mt-12 print:mt-3">
+        <h2 className="font-bold text-2xl text-ink mb-6 print:text-sm print:mb-1 print:uppercase print:tracking-wider print:text-muted">Metric breakdown</h2>
         <div className="bg-white rounded-card overflow-hidden">
           {byMetric.map((m, i) => (
             <MetricRow
@@ -142,7 +149,7 @@ export function ReportView({
         </div>
       </div>
 
-      <footer className="mt-12 pt-4 border-t border-hairline hidden print:block text-[10px] text-muted text-center">
+      <footer className="mt-4 pt-2 border-t border-hairline hidden print:block text-[9px] text-muted text-center">
         HOSQ Expert Review · {project.name} · Expert {expertId || "—"} · {reportDate}
       </footer>
     </section>
@@ -180,18 +187,18 @@ function MetricRow({
       <button
         type="button"
         onClick={() => setOpen((v) => !v)}
-        className="w-full flex items-center gap-4 px-5 py-4 text-left hover:bg-zebra transition print:hover:bg-transparent"
+        className="w-full flex items-center gap-4 px-5 py-4 text-left hover:bg-zebra transition print:hover:bg-transparent print:py-1 print:px-2 print:gap-2"
       >
-        <span className="shrink-0 flex items-center justify-center h-8 w-8 rounded-pill bg-ink text-cream text-xs font-bold">
+        <span className="shrink-0 flex items-center justify-center h-8 w-8 rounded-pill bg-ink text-cream text-xs font-bold print:h-5 print:w-5 print:text-[9px]">
           {letter}
         </span>
         <span className="flex-1 min-w-0">
-          <div className="font-medium text-ink truncate">{name}</div>
-          <div className="text-[11px] text-muted">weight {weight.toFixed(2)}</div>
+          <div className="font-medium text-ink truncate print:text-[10px] print:leading-tight">{name}</div>
+          <div className="text-[11px] text-muted print:hidden">weight {weight.toFixed(2)}</div>
         </span>
-        <span className="text-sm shrink-0">
-          <span className="text-muted mr-1">Expert</span>
-          <span className="font-bold text-coral mr-3">
+        <span className="text-sm shrink-0 print:text-[10px]">
+          <span className="text-muted mr-1 print:hidden">Expert</span>
+          <span className="font-bold text-coral mr-3 print:mr-0">
             {expertScore != null ? expertScore.toFixed(0) : "—"}
           </span>
           <span className="no-print">
@@ -204,7 +211,7 @@ function MetricRow({
                 className={cn(
                   "font-mono text-xs px-2 py-0.5 rounded-pill",
                   delta === 0 ? "bg-zebra text-muted" :
-                  delta > 0   ? "bg-green/10 text-green" :
+                  delta > 0   ? "bg-green/10 text-greenDark" :
                                 "bg-coral/10 text-coral",
                 )}
               >
@@ -216,18 +223,18 @@ function MetricRow({
         <span className="text-muted shrink-0 no-print">{open ? "▲" : "▼"}</span>
       </button>
 
-      <div className={cn("px-5 pb-5 bg-zebra/40 print:bg-white print:px-3 print:pb-3", !open && "hidden print:block")}>
-        <div className="mb-4">
-          <h4 className="text-[10px] uppercase tracking-wider text-muted mb-1">Expert comment</h4>
+      <div className={cn("px-5 pb-5 bg-zebra/40 print:bg-white print:px-2 print:pb-1", !open && "hidden", expertComment && "print:block")}>
+        <div className="mb-4 print:mb-0">
+          <h4 className="text-[10px] uppercase tracking-wider text-muted mb-1 print:hidden">Expert comment</h4>
           {expertComment ? (
-            <p className="text-sm text-ink/90 whitespace-pre-wrap">{expertComment}</p>
+            <p className="text-sm text-ink/90 whitespace-pre-wrap print:text-[9px] print:leading-snug print:pl-7">{expertComment}</p>
           ) : (
             <p className="text-sm text-muted italic">No comment.</p>
           )}
         </div>
         <div className="no-print grid md:grid-cols-2 gap-4">
           <div>
-            <h4 className="text-[10px] uppercase tracking-wider text-green font-bold mb-1">AI strengths</h4>
+            <h4 className="text-[10px] uppercase tracking-wider text-greenDark font-bold mb-1">AI strengths</h4>
             <ul className="space-y-1 text-sm">
               {aiPros.length === 0 ? <li className="text-muted italic">—</li> :
                 aiPros.map((p, i) => (

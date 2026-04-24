@@ -30,7 +30,7 @@ export function MetricStepper({ metrics, ratings, activeMetricId, projectSlug }:
               className={cn(
                 "shrink-0 flex items-center justify-center h-7 w-7 rounded-pill text-xs font-bold",
                 isActive ? "bg-coral text-white" :
-                isDone   ? "bg-green text-white" :
+                isDone   ? "bg-greenDark text-white" :
                            "bg-zebra text-muted",
               )}
             >
