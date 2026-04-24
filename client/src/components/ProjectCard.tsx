@@ -78,7 +78,7 @@ export function ProjectCard({ project, ratings, totalMetrics, aiFinalScore }: Pr
       </div>
 
       <div className="mt-auto pt-2">
-        <span className="inline-flex items-center gap-2 px-5 py-2.5 rounded-pill bg-ink text-cream text-sm font-medium transition">
+        <span className="inline-flex items-center gap-2 px-5 py-2.5 rounded-pill bg-ink text-cream text-sm font-medium hover:bg-coral transition-colors">
           {cta}
         </span>
       </div>
