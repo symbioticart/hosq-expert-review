@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from "react";
+import { createPortal } from "react-dom";
 import { useExpertIdentity } from "../hooks/useExpertId";
 import { submitFeedback } from "../lib/api";
 import { cn } from "../lib/util";
@@ -47,10 +48,10 @@ export function FeedbackButton() {
         type="button"
         onClick={() => setOpen(true)}
         className="no-print inline-flex items-center gap-1.5 px-3 py-1 rounded-pill border border-hairline bg-white text-xs text-ink hover:border-coral hover:text-coral transition"
-        title="Report a bug or request a feature"
+        title="Request a feature, report a bug, or share an idea"
       >
         <span aria-hidden>✦</span>
-        Feedback
+        Request a feature
       </button>
       {open && <FeedbackModal onClose={() => setOpen(false)} />}
     </>
@@ -59,7 +60,7 @@ export function FeedbackButton() {
 
 function FeedbackModal({ onClose }: { onClose: () => void }) {
   const { expert } = useExpertIdentity();
-  const [kind, setKind] = useState<Kind>("bug");
+  const [kind, setKind] = useState<Kind>("feature");
   const [message, setMessage] = useState("");
   const [status, setStatus] = useState<"idle" | "sending" | "done" | "queued" | "error">("idle");
   const [err, setErr] = useState<string | null>(null);
@@ -128,12 +129,12 @@ function FeedbackModal({ onClose }: { onClose: () => void }) {
 
   const done = status === "done" || status === "queued";
 
-  return (
-    <div className="no-print fixed inset-0 z-50 flex items-center justify-center p-4" aria-modal="true" role="dialog">
+  return createPortal(
+    <div className="no-print fixed inset-0 z-[100] flex items-center justify-center p-4 overflow-y-auto" aria-modal="true" role="dialog">
       <div className="absolute inset-0 bg-ink/40" onClick={onClose} />
-      <div className="relative w-full max-w-[520px] bg-white rounded-card shadow-xl overflow-hidden">
+      <div className="relative w-full max-w-[520px] my-auto bg-white rounded-card shadow-xl overflow-hidden">
         <div className="flex items-center justify-between px-5 py-4 border-b border-hairline">
-          <h2 className="font-bold text-ink text-lg">Send feedback</h2>
+          <h2 className="font-bold text-ink text-lg">Share your feedback</h2>
           <button type="button" onClick={onClose} aria-label="Close" className="text-muted hover:text-ink text-lg">✕</button>
         </div>
 
@@ -208,7 +209,8 @@ function FeedbackModal({ onClose }: { onClose: () => void }) {
           </div>
         )}
       </div>
-    </div>
+    </div>,
+    document.body,
   );
 }
 

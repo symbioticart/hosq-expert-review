@@ -34,37 +34,40 @@ export function ScoreScale({ value, onChange, rubric }: Props) {
         })}
       </div>
 
-      <div className="mt-4 rounded-card border border-hairline bg-white/60 divide-y divide-hairline">
-        <div className="px-4 py-2 text-[10px] uppercase tracking-wider text-muted font-medium">
+      <div className="mt-5">
+        <div className="text-[10px] uppercase tracking-wider text-muted/80 font-medium mb-2">
           How to pick a score (0–5)
         </div>
-        {LEVELS.map((n) => {
-          const active = value === n;
-          return (
-            <button
-              key={n}
-              type="button"
-              onClick={() => onChange(n)}
-              aria-pressed={active}
-              className={cn(
-                "w-full flex items-start gap-3 text-left px-4 py-2.5 transition",
-                active ? "bg-coral/10" : "hover:bg-zebra/60",
-              )}
-            >
-              <span
-                className={cn(
-                  "shrink-0 flex items-center justify-center h-6 w-6 rounded-pill text-xs font-bold",
-                  active ? "bg-coral text-white" : "bg-ink text-cream",
-                )}
-              >
-                {n}
-              </span>
-              <span className={cn("text-sm leading-snug", active ? "text-ink" : "text-ink/80")}>
-                {rubric[String(n) as "0"]}
-              </span>
-            </button>
-          );
-        })}
+        <ul className="space-y-1">
+          {LEVELS.map((n) => {
+            const active = value === n;
+            return (
+              <li key={n}>
+                <button
+                  type="button"
+                  onClick={() => onChange(n)}
+                  aria-pressed={active}
+                  className={cn(
+                    "w-full flex items-start gap-3 text-left py-0.5 rounded-sm transition hover:text-ink",
+                    active ? "text-ink" : "text-muted",
+                  )}
+                >
+                  <span
+                    className={cn(
+                      "shrink-0 font-mono text-[11px] font-bold w-4 text-right pt-[2px]",
+                      active ? "text-ink" : "text-muted/70",
+                    )}
+                  >
+                    {n}
+                  </span>
+                  <span className={cn("text-[13px] leading-snug", active && "font-medium")}>
+                    {rubric[String(n) as "0"]}
+                  </span>
+                </button>
+              </li>
+            );
+          })}
+        </ul>
       </div>
     </div>
   );
