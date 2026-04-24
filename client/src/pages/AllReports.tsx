@@ -1,9 +1,9 @@
 import { useEffect, useMemo, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 
+import { CompactCommentsDigest, CompactDashboard } from "../components/CompactReport";
 import { Header } from "../components/Layout";
-import { ReportView } from "../components/ReportView";
-import { useExpertId } from "../hooks/useExpertId";
+import { useExpertId, useExpertIdentity } from "../hooks/useExpertId";
 import { useProjectsAndMetrics } from "../hooks/useProjects";
 import { fetchSummary } from "../lib/api";
 import type { ProjectSummary, ProjectSummaryResponse } from "../lib/types";
@@ -13,6 +13,7 @@ type Loaded = { project: ProjectSummary; summary: ProjectSummaryResponse };
 export default function AllReports() {
   const navigate = useNavigate();
   const [expertId] = useExpertId();
+  const { expert } = useExpertIdentity();
   const { manifest, metrics, loading } = useProjectsAndMetrics();
   const [reports, setReports] = useState<Loaded[] | null>(null);
   const [err, setErr] = useState<string | null>(null);
@@ -84,12 +85,12 @@ export default function AllReports() {
     <div className="min-h-screen bg-cream print:bg-white">
       <div className="no-print"><Header /></div>
 
-      <main className="max-w-[1200px] mx-auto px-10 py-12 print:px-0 print:py-0 print:max-w-none">
+      <main className="max-w-[1100px] mx-auto px-10 py-10 print:px-0 print:py-0 print:max-w-none">
         <div className="no-print flex items-center justify-between mb-8 flex-wrap gap-3">
           <Link to="/" className="text-xs text-muted hover:text-ink transition">← All projects</Link>
           <div className="flex items-center gap-3 flex-wrap">
             <span className="text-xs text-muted">
-              {reports.length} reports · Expert {expertId || "—"}
+              {reports.length} reports · Expert {expert?.name ?? expertId ?? "—"}
             </span>
             <button
               type="button"
@@ -108,16 +109,18 @@ export default function AllReports() {
           </div>
         </div>
 
-        {reports.map((r, i) => (
-          <ReportView
-            key={r.project.id}
-            project={r.project}
-            summary={r.summary}
-            expertId={expertId}
-            reportDate={reportDate}
-            firstOnPage={i === 0}
-          />
-        ))}
+        <CompactDashboard
+          reports={reports}
+          expertId={expertId}
+          expertName={expert?.name}
+          reportDate={reportDate}
+        />
+        <CompactCommentsDigest
+          reports={reports}
+          expertId={expertId}
+          expertName={expert?.name}
+          reportDate={reportDate}
+        />
       </main>
     </div>
   );

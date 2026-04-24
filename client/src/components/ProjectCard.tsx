@@ -35,10 +35,10 @@ export function ProjectCard({ project, ratings, totalMetrics, aiFinalScore }: Pr
   return (
     <Link
       to={`/project/${project.slug}`}
-      className="group block bg-white rounded-card p-8 border border-transparent hover:border-coral transition no-shadow"
+      className="group flex flex-col h-full bg-white rounded-card p-8 border border-transparent hover:border-coral transition no-shadow"
     >
       <div className="flex items-start justify-between gap-4 mb-5">
-        <h3 className="font-bold text-[22px] leading-tight text-ink line-clamp-2 flex-1">
+        <h3 className="font-bold text-[22px] leading-tight text-ink line-clamp-2 flex-1 min-h-[54px]">
           {project.name}
         </h3>
         <span className={cn("text-xs font-medium px-3 py-1 rounded-pill whitespace-nowrap", badge.cls)}>
@@ -60,23 +60,27 @@ export function ProjectCard({ project, ratings, totalMetrics, aiFinalScore }: Pr
         ))}
       </div>
 
-      {done && (
-        <div className="grid grid-cols-2 gap-4 mb-5 p-4 rounded-card bg-zebra">
-          <div>
-            <div className="text-[10px] uppercase tracking-wide text-muted">You</div>
-            <div className="text-2xl font-bold text-coral">{fmtScore(expertMean)}</div>
-          </div>
-          <div>
-            <div className="text-[10px] uppercase tracking-wide text-muted">AI</div>
-            <div className="text-2xl font-bold text-violet">
-              {aiFinalScore == null ? "—" : fmtScore(aiFinalScore)}
+      <div className="mb-5 min-h-[92px]">
+        {done && (
+          <div className="grid grid-cols-2 gap-4 p-4 rounded-card bg-zebra">
+            <div>
+              <div className="text-[10px] uppercase tracking-wide text-muted">You</div>
+              <div className="text-2xl font-bold text-coral">{fmtScore(expertMean)}</div>
+            </div>
+            <div>
+              <div className="text-[10px] uppercase tracking-wide text-muted">AI</div>
+              <div className="text-2xl font-bold text-violet">
+                {aiFinalScore == null ? "—" : fmtScore(aiFinalScore)}
+              </div>
             </div>
           </div>
-        </div>
-      )}
+        )}
+      </div>
 
-      <div className="mt-6 inline-flex items-center gap-2 px-5 py-2.5 rounded-pill bg-ink text-cream text-sm font-medium group-hover:bg-coral transition">
-        {cta}
+      <div className="mt-auto pt-2">
+        <span className="inline-flex items-center gap-2 px-5 py-2.5 rounded-pill bg-ink text-cream text-sm font-medium group-hover:bg-coral transition">
+          {cta}
+        </span>
       </div>
     </Link>
   );

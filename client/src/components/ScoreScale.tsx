@@ -10,7 +10,6 @@ interface Props {
 const LEVELS = [0, 1, 2, 3, 4, 5] as const;
 
 export function ScoreScale({ value, onChange, rubric }: Props) {
-  const selected = value != null ? rubric[String(value) as "0"] : null;
   return (
     <div>
       <div className="flex flex-wrap gap-2">
@@ -34,12 +33,39 @@ export function ScoreScale({ value, onChange, rubric }: Props) {
           );
         })}
       </div>
-      {selected && (
-        <div className="mt-3 text-sm text-ink/80 leading-relaxed">
-          <strong className="text-ink mr-2">{value}</strong>
-          {selected}
+
+      <div className="mt-4 rounded-card border border-hairline bg-white/60 divide-y divide-hairline">
+        <div className="px-4 py-2 text-[10px] uppercase tracking-wider text-muted font-medium">
+          How to pick a score (0–5)
         </div>
-      )}
+        {LEVELS.map((n) => {
+          const active = value === n;
+          return (
+            <button
+              key={n}
+              type="button"
+              onClick={() => onChange(n)}
+              aria-pressed={active}
+              className={cn(
+                "w-full flex items-start gap-3 text-left px-4 py-2.5 transition",
+                active ? "bg-coral/10" : "hover:bg-zebra/60",
+              )}
+            >
+              <span
+                className={cn(
+                  "shrink-0 flex items-center justify-center h-6 w-6 rounded-pill text-xs font-bold",
+                  active ? "bg-coral text-white" : "bg-ink text-cream",
+                )}
+              >
+                {n}
+              </span>
+              <span className={cn("text-sm leading-snug", active ? "text-ink" : "text-ink/80")}>
+                {rubric[String(n) as "0"]}
+              </span>
+            </button>
+          );
+        })}
+      </div>
     </div>
   );
 }

@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import { Navigate, Route, Routes } from "react-router-dom";
 
 import AllReports from "./pages/AllReports";
@@ -6,6 +7,7 @@ import Gate from "./pages/Gate";
 import Lobby from "./pages/Lobby";
 import Review from "./pages/Review";
 
+import { flushPendingFeedback } from "./components/FeedbackButton";
 import { useExpertIdentity } from "./hooks/useExpertId";
 
 function RequireExpert({ children }: { children: React.ReactNode }) {
@@ -15,6 +17,9 @@ function RequireExpert({ children }: { children: React.ReactNode }) {
 }
 
 export default function App() {
+  useEffect(() => {
+    flushPendingFeedback().catch(() => { /* ignore */ });
+  }, []);
   return (
     <Routes>
       <Route path="/start" element={<Gate />} />

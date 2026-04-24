@@ -1,5 +1,6 @@
 import { Link, useNavigate } from "react-router-dom";
 import { useExpertIdentity } from "../hooks/useExpertId";
+import { FeedbackButton } from "./FeedbackButton";
 
 export function Header({ rightSlot }: { rightSlot?: React.ReactNode }) {
   const { expert, clear } = useExpertIdentity();
@@ -22,6 +23,7 @@ export function Header({ rightSlot }: { rightSlot?: React.ReactNode }) {
         </Link>
         <div className="flex items-center gap-3">
           {rightSlot}
+          <FeedbackButton />
           {expert && (
             <div className="flex items-center gap-2 text-xs text-muted">
               <span>

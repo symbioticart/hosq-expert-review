@@ -1,8 +1,22 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import type { AiEvaluation, ProjectMeta } from "../lib/types";
 import { cn, mdToBlocks } from "../lib/util";
 
 type Tab = "description" | "data" | "pdf" | "ai";
+
+const CTX_WIDTH_KEY = "hosq.ctxWidth";
+const CTX_WIDTH_MIN = 320;
+const CTX_WIDTH_MAX = 720;
+const CTX_WIDTH_DEFAULT = 380;
+
+function readStoredWidth(): number {
+  try {
+    const raw = localStorage.getItem(CTX_WIDTH_KEY);
+    const n = raw ? parseInt(raw, 10) : NaN;
+    if (Number.isFinite(n) && n >= CTX_WIDTH_MIN && n <= CTX_WIDTH_MAX) return n;
+  } catch { /* ignore */ }
+  return CTX_WIDTH_DEFAULT;
+}
 
 interface AsideProps {
   meta: ProjectMeta;
@@ -13,8 +27,38 @@ interface AsideProps {
 export function ProjectContext({ meta, ai, className }: AsideProps) {
   const [tab, setTab] = useState<Tab>("description");
   const [collapsed, setCollapsed] = useState(false);
+  const [width, setWidth] = useState<number>(() => readStoredWidth());
+  const dragStartRef = useRef<{ x: number; w: number } | null>(null);
 
   const aiAvailable = ai.status === "evaluated" && !!meta.aiAnalysisPdf;
+
+  useEffect(() => {
+    const onMove = (e: PointerEvent) => {
+      const d = dragStartRef.current;
+      if (!d) return;
+      const next = Math.min(CTX_WIDTH_MAX, Math.max(CTX_WIDTH_MIN, d.w + (d.x - e.clientX)));
+      setWidth(next);
+    };
+    const onUp = () => {
+      if (!dragStartRef.current) return;
+      dragStartRef.current = null;
+      document.body.style.cursor = "";
+      document.body.style.userSelect = "";
+      try { localStorage.setItem(CTX_WIDTH_KEY, String(Math.round(width))); } catch { /* ignore */ }
+    };
+    window.addEventListener("pointermove", onMove);
+    window.addEventListener("pointerup", onUp);
+    return () => {
+      window.removeEventListener("pointermove", onMove);
+      window.removeEventListener("pointerup", onUp);
+    };
+  }, [width]);
+
+  const startDrag = (e: React.PointerEvent) => {
+    dragStartRef.current = { x: e.clientX, w: width };
+    document.body.style.cursor = "col-resize";
+    document.body.style.userSelect = "none";
+  };
 
   if (collapsed) {
     return (
@@ -36,7 +80,21 @@ export function ProjectContext({ meta, ai, className }: AsideProps) {
   }
 
   return (
-    <aside className={cn("no-print sticky top-[72px] h-[calc(100vh-72px)] w-[380px] shrink-0 border-l border-hairline bg-white flex flex-col", className)}>
+    <aside
+      style={{ width }}
+      className={cn("no-print sticky top-[72px] h-[calc(100vh-72px)] shrink-0 border-l border-hairline bg-white flex-col relative", className ?? "flex")}
+    >
+      <div
+        role="separator"
+        aria-orientation="vertical"
+        aria-label="Resize project context"
+        onPointerDown={startDrag}
+        onDoubleClick={() => { setWidth(CTX_WIDTH_DEFAULT); try { localStorage.setItem(CTX_WIDTH_KEY, String(CTX_WIDTH_DEFAULT)); } catch { /* ignore */ } }}
+        title="Drag to resize · double-click to reset"
+        className="absolute left-0 top-0 h-full w-1.5 -ml-[3px] cursor-col-resize group z-10"
+      >
+        <div className="absolute inset-y-0 left-1/2 -translate-x-1/2 w-px bg-transparent group-hover:bg-coral transition-colors" />
+      </div>
       <TabBar tab={tab} setTab={setTab} aiAvailable={aiAvailable} trailingSlot={
         <button
           type="button"

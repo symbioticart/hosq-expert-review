@@ -29,6 +29,21 @@ db.exec(`
     first_seen  INTEGER NOT NULL,
     last_seen   INTEGER NOT NULL
   );
+
+  CREATE TABLE IF NOT EXISTS feedback (
+    id          INTEGER PRIMARY KEY AUTOINCREMENT,
+    expert_id   TEXT,
+    expert_name TEXT,
+    kind        TEXT    NOT NULL,
+    message     TEXT    NOT NULL,
+    route       TEXT,
+    project_id  TEXT,
+    metric_id   TEXT,
+    user_agent  TEXT,
+    app_version TEXT,
+    created_at  INTEGER NOT NULL
+  );
+  CREATE INDEX IF NOT EXISTS idx_feedback_created ON feedback(created_at DESC);
 `);
 
 export interface RatingRow {
@@ -89,4 +104,52 @@ export function deleteRating(expertId: string, projectId: string, metricId: stri
   db.prepare(`
     DELETE FROM ratings WHERE expert_id = ? AND project_id = ? AND metric_id = ?
   `).run(expertId, projectId, metricId);
+}
+
+export interface FeedbackRow {
+  id: number;
+  expert_id: string | null;
+  expert_name: string | null;
+  kind: string;
+  message: string;
+  route: string | null;
+  project_id: string | null;
+  metric_id: string | null;
+  user_agent: string | null;
+  app_version: string | null;
+  created_at: number;
+}
+
+export function insertFeedback(args: {
+  expertId?: string | null;
+  expertName?: string | null;
+  kind: string;
+  message: string;
+  route?: string | null;
+  projectId?: string | null;
+  metricId?: string | null;
+  userAgent?: string | null;
+  appVersion?: string | null;
+}): FeedbackRow {
+  const now = Date.now();
+  const info = db.prepare(`
+    INSERT INTO feedback (expert_id, expert_name, kind, message, route, project_id, metric_id, user_agent, app_version, created_at)
+    VALUES (@expertId, @expertName, @kind, @message, @route, @projectId, @metricId, @userAgent, @appVersion, @now)
+  `).run({
+    expertId: args.expertId ?? null,
+    expertName: args.expertName ?? null,
+    kind: args.kind,
+    message: args.message,
+    route: args.route ?? null,
+    projectId: args.projectId ?? null,
+    metricId: args.metricId ?? null,
+    userAgent: args.userAgent ?? null,
+    appVersion: args.appVersion ?? null,
+    now,
+  });
+  return db.prepare(`SELECT * FROM feedback WHERE id = ?`).get(info.lastInsertRowid) as FeedbackRow;
+}
+
+export function listFeedback(): FeedbackRow[] {
+  return db.prepare(`SELECT * FROM feedback ORDER BY created_at DESC`).all() as FeedbackRow[];
 }

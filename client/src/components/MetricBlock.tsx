@@ -69,22 +69,6 @@ export function HowBlock({ metric }: { metric: MetricDef }) {
         </div>
       )}
 
-      <div>
-        <h4 className="text-[11px] uppercase tracking-wider text-muted font-medium mb-3">
-          How to pick a score (0–5)
-        </h4>
-        <ol className="space-y-2.5">
-          {LEVEL_KEYS.map((k) => (
-            <li key={k} className="flex gap-3 text-sm leading-snug">
-              <span className="shrink-0 w-6 h-6 rounded-pill bg-ink text-cream text-xs font-bold flex items-center justify-center">
-                {k}
-              </span>
-              <span className="text-ink/85">{metric.vectorRubric[k]}</span>
-            </li>
-          ))}
-        </ol>
-      </div>
-
       {metric.ceilingRules.length > 0 && (
         <div>
           <h4 className="text-[11px] uppercase tracking-wider text-muted font-medium mb-2">

@@ -48,3 +48,22 @@ export const fetchSummary           = (expertId: string, projectId: string) =>
   getJson<ProjectSummaryResponse>(
     `/api/summary/${projectId}?expertId=${encodeURIComponent(expertId)}`,
   );
+
+export async function submitFeedback(body: {
+  expertId?: string | null;
+  expertName?: string | null;
+  kind: "bug" | "feature" | "idea";
+  message: string;
+  route?: string | null;
+  projectId?: string | null;
+  metricId?: string | null;
+  appVersion?: string | null;
+}): Promise<{ feedback: { id: number; createdAt: number } }> {
+  const r = await fetch("/api/feedback", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify(body),
+  });
+  if (!r.ok) throw new Error(`${r.status} /api/feedback`);
+  return r.json();
+}
