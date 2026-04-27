@@ -83,36 +83,47 @@ export function ReportView({
           </div>
         </div>
 
-        <div className="no-print bg-white rounded-card p-8 border-l-[6px] border-violet">
-          <div className="text-xs uppercase tracking-wider text-muted mb-2">AI score</div>
-          {summary?.aiStatus === "evaluated" && aiFinal != null ? (
-            <>
-              <div className="text-[84px] font-bold text-violet leading-none">
-                ≈&nbsp;{fmtScore(aiNormalised)}
-                <span className="text-2xl text-muted font-normal">/5</span>
+        <div className="bg-white rounded-card p-8 border-l-[6px] border-violet print:p-3 print:border-l-[4px]">
+          <div className="flex items-baseline justify-between gap-4">
+            <div>
+              <div className="text-xs uppercase tracking-wider text-muted mb-2 print:mb-0">AI score</div>
+              {summary?.aiStatus === "evaluated" && aiFinal != null ? (
+                <>
+                  <div className="text-[84px] font-bold text-violet leading-none print:text-[40px]">
+                    ≈&nbsp;{fmtScore(aiNormalised)}
+                    <span className="text-2xl text-muted font-normal print:text-sm">/5</span>
+                  </div>
+                  <div className="mt-3 text-sm text-muted print:mt-1 print:text-[10px]">
+                    {aiFinal}/{aiFinalMax} raw
+                  </div>
+                </>
+              ) : (
+                <>
+                  <div className="text-[84px] font-bold text-muted leading-none print:text-[40px]">—</div>
+                  <div className="mt-3 text-sm text-muted print:mt-1 print:text-[10px]">AI analysis not available.</div>
+                </>
+              )}
+            </div>
+            {summary?.aiStatus === "evaluated" && aiFinal != null && (
+              <div className="hidden print:block w-[55%] -my-2">
+                <FinalRadar data={radarAi} color="#C47CF1" height={150} />
               </div>
-              <div className="mt-3 text-sm text-muted">
-                {aiFinal}/{aiFinalMax} raw
-              </div>
-              <div className="mt-6">
-                <FinalRadar data={radarAi} color="#C47CF1" />
-              </div>
-            </>
-          ) : (
-            <>
-              <div className="text-[84px] font-bold text-muted leading-none">—</div>
-              <div className="mt-3 text-sm text-muted">AI analysis not available.</div>
-            </>
+            )}
+          </div>
+          {summary?.aiStatus === "evaluated" && aiFinal != null && (
+            <div className="mt-6 print:hidden">
+              <FinalRadar data={radarAi} color="#C47CF1" />
+            </div>
           )}
         </div>
       </div>
 
       {delta != null && (
-        <div className="no-print mt-8 inline-flex items-center gap-3 px-5 py-3 rounded-pill bg-white border border-hairline break-inside-avoid">
-          <span className="text-xs uppercase tracking-wider text-muted">Delta (expert − AI)</span>
+        <div className="mt-8 inline-flex items-center gap-3 px-5 py-3 rounded-pill bg-white border border-hairline break-inside-avoid print:mt-3 print:px-3 print:py-1 print:text-[10px]">
+          <span className="text-xs uppercase tracking-wider text-muted print:text-[9px]">Delta (expert − AI)</span>
           <span
             className={cn(
-              "font-bold text-lg",
+              "font-bold text-lg print:text-sm",
               delta > 0.3 ? "text-greenDark" : delta < -0.3 ? "text-coral" : "text-ink",
             )}
           >
@@ -122,9 +133,9 @@ export function ReportView({
       )}
 
       {summary?.aiSummary && (
-        <div className="no-print mt-10 bg-white rounded-card p-6 border-l-[4px] border-violet break-inside-avoid">
-          <h3 className="text-[10px] uppercase tracking-wider text-muted font-bold mb-2">AI summary</h3>
-          <p className="text-sm text-ink/90 leading-relaxed whitespace-pre-wrap">{summary.aiSummary}</p>
+        <div className="mt-10 bg-white rounded-card p-6 border-l-[4px] border-violet break-inside-avoid print:mt-3 print:p-3 print:border-l-[3px]">
+          <h3 className="text-[10px] uppercase tracking-wider text-muted font-bold mb-2 print:mb-1">AI summary</h3>
+          <p className="text-sm text-ink/90 leading-relaxed whitespace-pre-wrap print:text-[10px] print:leading-snug">{summary.aiSummary}</p>
         </div>
       )}
 
@@ -196,55 +207,65 @@ function MetricRow({
           <div className="font-medium text-ink truncate print:text-[10px] print:leading-tight">{name}</div>
           <div className="text-[11px] text-muted print:hidden">weight {weight.toFixed(2)}</div>
         </span>
-        <span className="text-sm shrink-0 print:text-[10px]">
-          <span className="text-muted mr-1 print:hidden">Expert</span>
-          <span className="font-bold text-coral mr-3 print:mr-0">
-            {expertScore != null ? expertScore.toFixed(0) : "—"}
+        <span className="text-sm shrink-0 print:text-[10px] flex items-center gap-2">
+          <span>
+            <span className="text-muted mr-1">Expert</span>
+            <span className="font-bold text-coral">
+              {expertScore != null ? expertScore.toFixed(0) : "—"}
+            </span>
           </span>
-          <span className="no-print">
+          <span>
             <span className="text-muted mr-1">AI</span>
-            <span className="font-bold text-violet mr-3">
+            <span className="font-bold text-violet">
               {aiScore != null ? aiScore.toFixed(0) : "—"}
             </span>
-            {delta != null && (
-              <span
-                className={cn(
-                  "font-mono text-xs px-2 py-0.5 rounded-pill",
-                  delta === 0 ? "bg-zebra text-muted" :
-                  delta > 0   ? "bg-green/10 text-greenDark" :
-                                "bg-coral/10 text-coral",
-                )}
-              >
-                {delta > 0 ? "+" : ""}{delta}
-              </span>
-            )}
           </span>
+          {delta != null && (
+            <span
+              className={cn(
+                "font-mono text-xs px-2 py-0.5 rounded-pill print:text-[9px] print:px-1.5",
+                delta === 0 ? "bg-zebra text-muted" :
+                delta > 0   ? "bg-green/10 text-greenDark" :
+                              "bg-coral/10 text-coral",
+              )}
+            >
+              {delta > 0 ? "+" : ""}{delta}
+            </span>
+          )}
         </span>
         <span className="text-muted shrink-0 no-print">{open ? "▲" : "▼"}</span>
       </button>
 
-      <div className={cn("px-5 pb-5 bg-zebra/40 print:bg-white print:px-2 print:pb-1", !open && "hidden", expertComment && "print:block")}>
-        <div className="mb-4 print:mb-0">
-          <h4 className="text-[10px] uppercase tracking-wider text-muted mb-1 print:hidden">Expert comment</h4>
+      {/* Row body — full expert comment + AI strengths/weaknesses side-by-side.
+          Hidden on screen when row is collapsed; ALWAYS visible in print so the
+          downloaded PDF is fully informative. */}
+      <div
+        className={cn(
+          "px-5 pb-5 bg-zebra/40 print:bg-white print:px-2 print:pb-2 print:pt-1",
+          !open && "hidden print:block",
+        )}
+      >
+        <div className="mb-4 print:mb-1">
+          <h4 className="text-[10px] uppercase tracking-wider text-muted mb-1">Expert comment</h4>
           {expertComment ? (
-            <p className="text-sm text-ink/90 whitespace-pre-wrap print:text-[9px] print:leading-snug print:pl-7">{expertComment}</p>
+            <p className="text-sm text-ink/90 whitespace-pre-wrap print:text-[10px] print:leading-snug">{expertComment}</p>
           ) : (
-            <p className="text-sm text-muted italic">No comment.</p>
+            <p className="text-sm text-muted italic print:text-[10px]">No comment.</p>
           )}
         </div>
-        <div className="no-print grid md:grid-cols-2 gap-4">
+        <div className="grid md:grid-cols-2 gap-4 print:gap-3">
           <div>
             <h4 className="text-[10px] uppercase tracking-wider text-greenDark font-bold mb-1">AI strengths</h4>
-            <ul className="space-y-1 text-sm">
+            <ul className="space-y-1 text-sm print:space-y-0.5 print:text-[10px] print:leading-snug">
               {aiPros.length === 0 ? <li className="text-muted italic">—</li> :
                 aiPros.map((p, i) => (
-                  <li key={i} className="flex gap-2"><span className="text-green shrink-0">●</span><span className="text-ink/90">{p}</span></li>
+                  <li key={i} className="flex gap-2"><span className="text-greenDark shrink-0">●</span><span className="text-ink/90">{p}</span></li>
                 ))}
             </ul>
           </div>
           <div>
             <h4 className="text-[10px] uppercase tracking-wider text-coral font-bold mb-1">AI weaknesses</h4>
-            <ul className="space-y-1 text-sm">
+            <ul className="space-y-1 text-sm print:space-y-0.5 print:text-[10px] print:leading-snug">
               {aiCons.length === 0 ? <li className="text-muted italic">—</li> :
                 aiCons.map((c, i) => (
                   <li key={i} className="flex gap-2"><span className="text-coral shrink-0">●</span><span className="text-ink/90">{c}</span></li>

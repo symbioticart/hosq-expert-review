@@ -1,8 +1,9 @@
 import { useEffect, useMemo, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 
-import { CompactCommentsDigest, CompactDashboard } from "../components/CompactReport";
+import { CompactDashboard } from "../components/CompactReport";
 import { Header } from "../components/Layout";
+import { ReportView } from "../components/ReportView";
 import { useExpertId, useExpertIdentity } from "../hooks/useExpertId";
 import { useProjectsAndMetrics } from "../hooks/useProjects";
 import { fetchSummary } from "../lib/api";
@@ -109,18 +110,28 @@ export default function AllReports() {
           </div>
         </div>
 
+        {/* Page 1: at-a-glance dashboard across all 5 projects */}
         <CompactDashboard
           reports={reports}
           expertId={expertId}
           expertName={expert?.name}
           reportDate={reportDate}
         />
-        <CompactCommentsDigest
-          reports={reports}
-          expertId={expertId}
-          expertName={expert?.name}
-          reportDate={reportDate}
-        />
+
+        {/* Pages 2..N: full per-project ReportView (with all metric rows expanded so
+            expert comments + AI strengths/weaknesses print fully). One page per project. */}
+        {reports.map(({ project, summary }, idx) => (
+          <div key={project.id} className="print:break-before-page mt-16 print:mt-0">
+            <ReportView
+              project={project}
+              summary={summary}
+              expertId={expertId}
+              reportDate={reportDate}
+              firstOnPage={idx === 0}
+              defaultOpenRows={true}
+            />
+          </div>
+        ))}
       </main>
     </div>
   );
