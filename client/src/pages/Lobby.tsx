@@ -1,5 +1,4 @@
 import { useEffect, useMemo, useRef, useState } from "react";
-import { Link } from "react-router-dom";
 import { Header } from "../components/Layout";
 import { ProjectCard } from "../components/ProjectCard";
 import { useExpertIdentity } from "../hooks/useExpertId";
@@ -46,8 +45,6 @@ export default function Lobby() {
   }, [ratings]);
 
   const totalMetrics = metrics?.metrics.length ?? 10;
-  const scoredTotal  = ratings.filter((r) => r.metricId !== "final").length;
-  const expectedTotal = (manifest?.projects.length ?? 0) * totalMetrics;
 
   const fileRef = useRef<HTMLInputElement | null>(null);
 
@@ -94,25 +91,6 @@ export default function Lobby() {
             as you rate — and mirrored on the server so you can come back on any
             browser with the same name.
           </p>
-          {expectedTotal > 0 && (
-            <div className="mt-8 flex items-end gap-6 flex-wrap">
-              <div className="flex-1 min-w-[260px] max-w-md">
-                <div className="flex items-baseline justify-between text-xs text-muted mb-2">
-                  <span>Overall progress</span>
-                  <span>
-                    <strong className="text-ink">{scoredTotal}</strong> of {expectedTotal} ratings
-                  </span>
-                </div>
-                <div className="h-1.5 rounded-full bg-blush overflow-hidden">
-                  <div
-                    className="h-full bg-coral transition-all"
-                    style={{ width: `${Math.min(100, (scoredTotal / expectedTotal) * 100)}%` }}
-                  />
-                </div>
-              </div>
-              <DownloadAllButton done={scoredTotal} total={expectedTotal} />
-            </div>
-          )}
         </div>
 
         {loading ? (
@@ -159,14 +137,3 @@ export default function Lobby() {
   );
 }
 
-function DownloadAllButton({ done, total }: { done: number; total: number }) {
-  if (done < total) return null;
-  return (
-    <Link
-      to="/all-reports"
-      className="inline-flex items-center px-5 py-2.5 rounded-pill bg-ink text-cream hover:bg-coral transition text-sm font-medium"
-    >
-      Download all 5 reports (PDF)
-    </Link>
-  );
-}
