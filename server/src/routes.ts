@@ -46,7 +46,7 @@ interface AiEval {
 
 function requireExpertId(req: Request, res: Response): string | null {
   const id = (req.query.expertId as string) || (req.body?.expertId as string);
-  if (!id || typeof id !== "string" || id.length < 4) {
+  if (!id || typeof id !== "string" || id.length < 1 || id.length > 64) {
     res.status(400).json({ error: "expertId required" });
     return null;
   }

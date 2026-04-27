@@ -13,13 +13,23 @@ export default function Final() {
   const [expertId] = useExpertId();
   const { manifest, metrics, loading } = useProjectsAndMetrics();
   const [summary, setSummary] = useState<ProjectSummaryResponse | null>(null);
+  const [err, setErr] = useState<string | null>(null);
 
   const project = manifest?.projects.find((p) => p.slug === slug);
 
   useEffect(() => {
     if (!project) return;
-    fetchSummary(expertId, project.id).then(setSummary).catch(console.error);
+    setErr(null);
+    fetchSummary(expertId, project.id)
+      .then(setSummary)
+      .catch((e) => {
+        setErr(e instanceof Error ? e.message : "Could not load summary.");
+        // eslint-disable-next-line no-console
+        console.error(e);
+      });
   }, [project, expertId]);
+
+  const noRatings = summary != null && (summary.expertProgress ?? 0) === 0;
 
   const reportDate = useMemo(
     () =>
@@ -51,12 +61,37 @@ export default function Final() {
           ← Back to review
         </Link>
 
-        <ReportView
-          project={project}
-          summary={summary}
-          expertId={expertId}
-          reportDate={reportDate}
-        />
+        {err && (
+          <div className="no-print mt-6 rounded-card border border-coral/40 bg-coral/5 p-4 text-sm text-coral">
+            Couldn't load summary: {err}.{" "}
+            <Link to={`/project/${project.slug}`} className="underline">Back to review</Link>
+          </div>
+        )}
+
+        {!err && noRatings && (
+          <div className="no-print mt-10 text-center bg-white rounded-card border border-hairline p-12">
+            <div className="text-4xl mb-2">∅</div>
+            <h2 className="text-h3 font-bold text-ink mb-2">No ratings yet for this project</h2>
+            <p className="text-sm text-muted mb-6">
+              Rate at least one of the 10 metrics to see your weighted score, AI comparison, and breakdown.
+            </p>
+            <Link
+              to={`/project/${project.slug}`}
+              className="inline-flex px-6 py-3 rounded-pill bg-ink text-cream text-sm font-medium hover:bg-coral transition-colors"
+            >
+              Start rating →
+            </Link>
+          </div>
+        )}
+
+        {!err && !noRatings && (
+          <ReportView
+            project={project}
+            summary={summary}
+            expertId={expertId}
+            reportDate={reportDate}
+          />
+        )}
 
         <div className="mt-12 no-print flex gap-3 flex-wrap">
           <Link
