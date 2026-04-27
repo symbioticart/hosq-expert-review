@@ -10,23 +10,30 @@ interface Props {
 }
 
 export function MetricStepper({ metrics, ratings, activeMetricId, projectSlug }: Props) {
-  const scored = new Set(ratings.filter((r) => r.metricId !== "final").map((r) => r.metricId));
+  const scoreById = new Map<string, number>();
+  for (const r of ratings) {
+    if (r.metricId !== "final") scoreById.set(r.metricId, r.score);
+  }
 
   return (
     <nav aria-label="Metrics progress" className="space-y-1">
       {metrics.map((m) => {
         const isActive = m.id === activeMetricId;
-        const isDone   = scored.has(m.id);
+        const score = scoreById.get(m.id);
+        const isDone = score != null;
         return (
           <Link
             key={m.id}
             to={`/project/${projectSlug}?m=${m.id}`}
+            aria-current={isActive ? "page" : undefined}
+            aria-label={`${m.nameEn}${isDone ? ` — rated ${score}/5` : " — not rated"}${isActive ? " (current)" : ""}`}
             className={cn(
-              "group flex items-center gap-3 py-2 pl-3 pr-2 -mx-2 rounded-card transition",
+              "group flex items-center gap-3 py-2 pl-3 pr-2 -mx-2 rounded-card transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-coral",
               isActive ? "bg-blush" : "hover:bg-zebra",
             )}
           >
             <span
+              aria-hidden
               className={cn(
                 "shrink-0 flex items-center justify-center h-7 w-7 rounded-pill text-xs font-bold",
                 isActive ? "bg-coral text-white" :
@@ -38,13 +45,23 @@ export function MetricStepper({ metrics, ratings, activeMetricId, projectSlug }:
             </span>
             <span
               className={cn(
-                "text-sm leading-tight",
-                isActive ? "text-ink font-medium" :
-                isDone   ? "text-muted" : "text-muted",
+                "flex-1 min-w-0 text-sm leading-tight truncate",
+                isActive ? "text-ink font-medium" : "text-muted",
               )}
             >
               {m.nameEn}
             </span>
+            {isDone && (
+              <span
+                aria-hidden
+                className={cn(
+                  "shrink-0 text-[11px] font-mono tabular-nums",
+                  isActive ? "text-coral font-bold" : "text-muted/70",
+                )}
+              >
+                {score}
+              </span>
+            )}
           </Link>
         );
       })}

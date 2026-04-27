@@ -46,7 +46,13 @@ export function ProjectCard({ project, ratings, totalMetrics, aiFinalScore }: Pr
         </span>
       </div>
 
-      <p className="text-xs text-muted mb-5">10 metrics · source PDF · AI analysis</p>
+      <p className="text-xs text-muted mb-5" title="Each project is rated across 10 metrics. The original project document and an AI evaluation are attached.">
+        <span title="Ten weighted criteria you score from 0 to 5">{totalMetrics} metrics</span>
+        <span className="mx-1.5 text-muted/40">·</span>
+        <span title="Original project description PDF">source PDF</span>
+        <span className="mx-1.5 text-muted/40">·</span>
+        <span title="LLM evaluation of the same metrics for comparison">AI analysis</span>
+      </p>
 
       <div className="flex gap-1.5 mb-5">
         {Array.from({ length: totalMetrics }).map((_, i) => (

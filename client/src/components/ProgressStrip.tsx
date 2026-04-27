@@ -47,13 +47,13 @@ export function ProgressStrip() {
 
   return (
     <div className="no-print sticky top-[57px] z-20 bg-cream border-b border-hairline">
-      <div className="max-w-[1400px] mx-auto px-8 py-3 flex items-center gap-6">
-        {/* 1. Goal label */}
-        <div className="shrink-0 hidden sm:block">
+      <div className="max-w-[1400px] mx-auto px-4 md:px-8 py-3 flex flex-col md:flex-row md:items-center gap-3 md:gap-6">
+        {/* 1. Goal label — visible always; on mobile sits above the bar */}
+        <div className="shrink-0 flex md:block items-baseline gap-2 md:gap-0">
           <div className="text-[9px] uppercase tracking-[0.2em] text-muted/80 leading-tight">
             Your goal
           </div>
-          <div className="text-[13px] text-ink font-medium leading-tight mt-0.5">
+          <div className="text-[13px] text-ink font-medium leading-tight md:mt-0.5">
             Rate all {projects.length} projects
           </div>
         </div>

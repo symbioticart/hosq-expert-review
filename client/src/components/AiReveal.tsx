@@ -27,16 +27,16 @@ export function AiReveal({ visible, ai, notEvaluated, aiAnalysisPdf }: Props) {
   return (
     <div className="mt-6 rounded-card bg-blush p-6 animate-fade-in">
       <div className="flex items-start justify-between gap-4 mb-5">
-        <div>
+        <div className="min-w-0">
           <div className="text-xs uppercase tracking-wider text-muted mb-1">AI evaluation</div>
-          <div className="text-sm text-muted">The LLM judge's take on this metric</div>
+          <div className="text-sm text-muted">The AI's assessment of this metric</div>
         </div>
-        <div className="text-right">
+        <div className="text-right shrink-0 min-w-[120px]">
           <div className="text-4xl font-bold text-violet leading-none">
             {ai.score}
             <span className="text-base text-muted font-normal">/{ai.scoreMax}</span>
           </div>
-          <div className="mt-2 h-1 w-24 bg-hairline rounded-full overflow-hidden ml-auto">
+          <div className="mt-2 h-1 w-full bg-hairline rounded-full overflow-hidden">
             <div className="h-full bg-violet" style={{ width: `${scorePct}%` }} />
           </div>
           <div className="mt-1 text-[10px] text-muted">
@@ -56,7 +56,7 @@ export function AiReveal({ visible, ai, notEvaluated, aiAnalysisPdf }: Props) {
             ) : (
               ai.pros.map((p, i) => (
                 <li key={i} className="flex gap-2 text-sm">
-                  <span className="text-green shrink-0 mt-1">●</span>
+                  <span className="text-greenDark shrink-0 mt-1">●</span>
                   <span className="text-ink/90">{p}</span>
                 </li>
               ))

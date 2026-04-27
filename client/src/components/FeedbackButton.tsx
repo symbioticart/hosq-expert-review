@@ -129,13 +129,22 @@ function FeedbackModal({ onClose }: { onClose: () => void }) {
 
   const done = status === "done" || status === "queued";
 
+  // Confirm before discarding a draft if the user typed enough to lose
+  const safeClose = () => {
+    if (!done && message.trim().length > 10) {
+      const ok = confirm("Discard your draft? The text you've typed will be lost.");
+      if (!ok) return;
+    }
+    onClose();
+  };
+
   return createPortal(
     <div className="no-print fixed inset-0 z-[100] flex items-center justify-center p-4 overflow-y-auto" aria-modal="true" role="dialog">
-      <div className="absolute inset-0 bg-ink/40" onClick={onClose} />
+      <div className="absolute inset-0 bg-ink/40" onClick={safeClose} />
       <div className="relative w-full max-w-[520px] my-auto bg-white rounded-card shadow-xl overflow-hidden">
         <div className="flex items-center justify-between px-5 py-4 border-b border-hairline">
           <h2 className="font-bold text-ink text-lg">Share your feedback</h2>
-          <button type="button" onClick={onClose} aria-label="Close" className="text-muted hover:text-ink text-lg">✕</button>
+          <button type="button" onClick={safeClose} aria-label="Close" className="text-muted hover:text-ink text-lg">✕</button>
         </div>
 
         {done ? (
@@ -189,7 +198,7 @@ function FeedbackModal({ onClose }: { onClose: () => void }) {
             <div className="flex items-center justify-end gap-2 pt-1">
               <button
                 type="button"
-                onClick={onClose}
+                onClick={safeClose}
                 className="px-4 py-2 rounded-pill text-sm text-muted hover:text-ink transition"
               >
                 Cancel
@@ -198,8 +207,12 @@ function FeedbackModal({ onClose }: { onClose: () => void }) {
                 type="button"
                 onClick={handleSend}
                 disabled={status === "sending" || message.trim().length < 3}
-                className="px-5 py-2 rounded-pill bg-ink text-cream text-sm font-medium hover:bg-coral transition disabled:bg-hairline disabled:text-muted disabled:cursor-not-allowed"
+                aria-busy={status === "sending"}
+                className="px-5 py-2 rounded-pill bg-ink text-cream text-sm font-medium hover:bg-coral transition disabled:bg-hairline disabled:text-muted disabled:cursor-not-allowed inline-flex items-center gap-2"
               >
+                {status === "sending" && (
+                  <span aria-hidden className="h-3 w-3 rounded-pill border-2 border-cream border-t-transparent animate-spin" />
+                )}
                 {status === "sending" ? "Sending…" : "Send"}
               </button>
             </div>

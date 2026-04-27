@@ -109,13 +109,13 @@ function SubindexDrawer({ subindices }: { subindices: SubIndex[] }) {
       {open && (
         <div className="mt-3 space-y-5">
           {subindices.map((s) => (
-            <div key={s.id} className="border-l-2 border-hairline pl-4">
-              <div className="flex items-baseline gap-2 mb-2">
-                <span className="font-mono text-[11px] font-bold text-coral">{s.id}</span>
-                <span className="font-medium text-ink">{s.name}</span>
+            <div key={s.id} className="border-l-2 border-hairline pl-4 min-w-0">
+              <div className="flex items-baseline gap-2 mb-2 flex-wrap">
+                <span className="font-mono text-[11px] font-bold text-coral shrink-0">{s.id}</span>
+                <span className="font-medium text-ink break-words">{s.name}</span>
               </div>
               {s.description && (
-                <p className="text-[13px] text-muted mb-3 leading-snug">{s.description}</p>
+                <p className="text-[13px] text-muted mb-3 leading-snug break-words">{s.description}</p>
               )}
               <ol className="space-y-1.5">
                 {LEVEL_KEYS.map((k) => (
@@ -123,7 +123,7 @@ function SubindexDrawer({ subindices }: { subindices: SubIndex[] }) {
                     <span className="shrink-0 w-5 h-5 rounded-pill bg-zebra text-ink text-[11px] font-bold flex items-center justify-center">
                       {k}
                     </span>
-                    <span className="text-ink/80">{s.rubric[k] || "—"}</span>
+                    <span className="text-ink/80 break-words min-w-0">{s.rubric[k] || "—"}</span>
                   </li>
                 ))}
               </ol>

@@ -52,8 +52,9 @@ export default function Gate() {
           Claim your name.
         </h1>
         <p className="text-muted mb-10 leading-relaxed text-[15px]">
-          Your name is the key to your work. Use the same name later on any
-          browser or device to pick up where you left off. No password, no email — just a name.
+          Your name is your identifier. Type it again on any browser or device to
+          sync your ratings and pick up where you left off. No password, no
+          email — pick a name only you'll use.
         </p>
 
         {expert && (

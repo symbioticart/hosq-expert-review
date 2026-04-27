@@ -103,25 +103,47 @@ export default function Final() {
         </Link>
 
         {err && (
-          <div className="no-print mt-6 rounded-card border border-coral/40 bg-coral/5 p-4 text-sm text-coral">
-            Couldn't load summary: {err}.{" "}
-            <Link to={`/project/${project.slug}`} className="underline">Back to review</Link>
+          <div className="no-print mt-6 rounded-card border border-coral/40 bg-coral/5 p-4 flex items-center justify-between gap-4 flex-wrap">
+            <div className="text-sm text-coral">Couldn't load summary: {err}.</div>
+            <div className="flex items-center gap-2">
+              <button
+                type="button"
+                onClick={() => {
+                  setErr(null);
+                  if (project) {
+                    fetchSummary(expertId, project.id)
+                      .then(setSummary)
+                      .catch((e) => setErr(e instanceof Error ? e.message : "Could not load summary."));
+                  }
+                }}
+                className="px-4 py-2 rounded-pill bg-ink text-cream text-sm font-medium hover:bg-coral transition-colors"
+              >
+                Retry
+              </button>
+              <Link to={`/project/${project.slug}`} className="text-sm text-coral underline">
+                Back to review
+              </Link>
+            </div>
           </div>
         )}
 
         {!err && noRatings && (
-          <div className="no-print mt-10 text-center bg-white rounded-card border border-hairline p-12">
-            <div className="text-4xl mb-2">∅</div>
-            <h2 className="text-h3 font-bold text-ink mb-2">No ratings yet for this project</h2>
-            <p className="text-sm text-muted mb-6">
-              Rate at least one of the 10 metrics to see your weighted score, AI comparison, and breakdown.
-            </p>
-            <Link
-              to={`/project/${project.slug}`}
-              className="inline-flex px-6 py-3 rounded-pill bg-ink text-cream text-sm font-medium hover:bg-coral transition-colors"
-            >
-              Start rating →
-            </Link>
+          <div className="no-print mt-10 bg-white rounded-card border border-hairline p-10 md:p-12">
+            <div className="max-w-xl">
+              <div className="text-[10px] uppercase tracking-[0.3em] text-muted mb-2">No data yet</div>
+              <h2 className="font-bold text-3xl text-ink mb-3">Rate at least one metric to see your result.</h2>
+              <p className="text-muted mb-8 leading-relaxed">
+                Once you score a metric, this page will show your weighted final
+                score, the AI's comparison, the delta, and a metric-by-metric
+                breakdown.
+              </p>
+              <Link
+                to={`/project/${project.slug}`}
+                className="inline-flex w-full sm:w-auto items-center justify-center px-7 py-3.5 rounded-pill bg-ink text-cream text-base font-medium hover:bg-coral transition-colors"
+              >
+                Start rating →
+              </Link>
+            </div>
           </div>
         )}
 

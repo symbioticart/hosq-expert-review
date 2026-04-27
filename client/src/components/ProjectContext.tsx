@@ -6,16 +6,26 @@ type Tab = "description" | "data" | "pdf" | "ai";
 
 const CTX_WIDTH_KEY = "hosq.ctxWidth";
 const CTX_WIDTH_MIN = 320;
-const CTX_WIDTH_MAX = 720;
+const CTX_WIDTH_MAX_DESKTOP = 720;
 const CTX_WIDTH_DEFAULT = 380;
+
+function maxWidthForViewport(): number {
+  if (typeof window === "undefined") return CTX_WIDTH_MAX_DESKTOP;
+  // Cap context panel at ~half the viewport so it never crowds out the metric editor.
+  return Math.min(CTX_WIDTH_MAX_DESKTOP, Math.max(CTX_WIDTH_MIN, Math.floor(window.innerWidth * 0.5)));
+}
+
+function clampWidth(n: number): number {
+  return Math.min(maxWidthForViewport(), Math.max(CTX_WIDTH_MIN, n));
+}
 
 function readStoredWidth(): number {
   try {
     const raw = localStorage.getItem(CTX_WIDTH_KEY);
     const n = raw ? parseInt(raw, 10) : NaN;
-    if (Number.isFinite(n) && n >= CTX_WIDTH_MIN && n <= CTX_WIDTH_MAX) return n;
+    if (Number.isFinite(n)) return clampWidth(n);
   } catch { /* ignore */ }
-  return CTX_WIDTH_DEFAULT;
+  return clampWidth(CTX_WIDTH_DEFAULT);
 }
 
 interface AsideProps {
@@ -36,8 +46,7 @@ export function ProjectContext({ meta, ai, className }: AsideProps) {
     const onMove = (e: PointerEvent) => {
       const d = dragStartRef.current;
       if (!d) return;
-      const next = Math.min(CTX_WIDTH_MAX, Math.max(CTX_WIDTH_MIN, d.w + (d.x - e.clientX)));
-      setWidth(next);
+      setWidth(clampWidth(d.w + (d.x - e.clientX)));
     };
     const onUp = () => {
       if (!dragStartRef.current) return;
@@ -48,9 +57,13 @@ export function ProjectContext({ meta, ai, className }: AsideProps) {
     };
     window.addEventListener("pointermove", onMove);
     window.addEventListener("pointerup", onUp);
+    // re-clamp on window resize so the panel can't overflow on smaller viewports
+    const onResize = () => setWidth((w) => clampWidth(w));
+    window.addEventListener("resize", onResize);
     return () => {
       window.removeEventListener("pointermove", onMove);
       window.removeEventListener("pointerup", onUp);
+      window.removeEventListener("resize", onResize);
     };
   }, [width]);
 
@@ -58,6 +71,13 @@ export function ProjectContext({ meta, ai, className }: AsideProps) {
     dragStartRef.current = { x: e.clientX, w: width };
     document.body.style.cursor = "col-resize";
     document.body.style.userSelect = "none";
+  };
+
+  const onResizeKey = (e: React.KeyboardEvent<HTMLDivElement>) => {
+    const STEP = e.shiftKey ? 32 : 8;
+    if (e.key === "ArrowLeft") { e.preventDefault(); setWidth((w) => clampWidth(w + STEP)); }
+    if (e.key === "ArrowRight") { e.preventDefault(); setWidth((w) => clampWidth(w - STEP)); }
+    if (e.key === "Home") { e.preventDefault(); setWidth(clampWidth(CTX_WIDTH_DEFAULT)); }
   };
 
   if (collapsed) {
@@ -85,15 +105,20 @@ export function ProjectContext({ meta, ai, className }: AsideProps) {
       className={cn("no-print sticky top-[72px] h-[calc(100vh-72px)] shrink-0 border-l border-hairline bg-white flex-col relative", className ?? "flex")}
     >
       <div
-        role="separator"
+        role="slider"
+        tabIndex={0}
+        aria-label="Resize project context panel"
+        aria-valuemin={CTX_WIDTH_MIN}
+        aria-valuemax={maxWidthForViewport()}
+        aria-valuenow={Math.round(width)}
         aria-orientation="vertical"
-        aria-label="Resize project context"
         onPointerDown={startDrag}
-        onDoubleClick={() => { setWidth(CTX_WIDTH_DEFAULT); try { localStorage.setItem(CTX_WIDTH_KEY, String(CTX_WIDTH_DEFAULT)); } catch { /* ignore */ } }}
-        title="Drag to resize · double-click to reset"
-        className="absolute left-0 top-0 h-full w-1.5 -ml-[3px] cursor-col-resize group z-10"
+        onKeyDown={onResizeKey}
+        onDoubleClick={() => { setWidth(clampWidth(CTX_WIDTH_DEFAULT)); try { localStorage.setItem(CTX_WIDTH_KEY, String(CTX_WIDTH_DEFAULT)); } catch { /* ignore */ } }}
+        title="Drag, ←/→ to resize, double-click to reset"
+        className="absolute left-0 top-0 h-full w-1.5 -ml-[3px] cursor-col-resize group z-10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-coral"
       >
-        <div className="absolute inset-y-0 left-1/2 -translate-x-1/2 w-px bg-transparent group-hover:bg-coral transition-colors" />
+        <div className="absolute inset-y-0 left-1/2 -translate-x-1/2 w-px bg-transparent group-hover:bg-coral group-focus-visible:bg-coral transition-colors" />
       </div>
       <TabBar tab={tab} setTab={setTab} aiAvailable={aiAvailable} trailingSlot={
         <button

@@ -94,7 +94,15 @@ export default function Lobby() {
         </div>
 
         {loading ? (
-          <div className="text-muted">Loading projects…</div>
+          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+            {[0, 1, 2, 3, 4].map((i) => (
+              <div
+                key={i}
+                className="animate-pulse h-[280px] bg-white/60 rounded-card border border-transparent"
+                aria-hidden
+              />
+            ))}
+          </div>
         ) : (
           <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {manifest!.projects.map((p) => (
@@ -109,29 +117,39 @@ export default function Lobby() {
           </div>
         )}
 
-        <div className="mt-20 pt-8 border-t border-hairline flex items-center gap-3 text-xs text-muted flex-wrap">
-          <span>Backup your session:</span>
-          <button
-            type="button"
-            onClick={onDownload}
-            className="px-3 py-1.5 rounded-pill bg-white border border-hairline text-ink hover:border-coral transition"
-          >
-            Download my vault
-          </button>
-          <label className="px-3 py-1.5 rounded-pill bg-white border border-hairline text-ink hover:border-coral transition cursor-pointer">
-            Restore from file
-            <input
-              ref={fileRef}
-              type="file"
-              accept="application/json,.json,.hosq"
-              className="hidden"
-              onChange={onRestore}
-            />
-          </label>
-          <span className="opacity-70">
-            — one file with all your ratings, portable between devices.
-          </span>
-        </div>
+        {/* Vault: data portability — promoted from the old footer to a labelled card so
+            users who switch browsers actually find it. */}
+        <section className="mt-16 bg-white rounded-card p-6 border border-hairline">
+          <div className="flex items-start justify-between gap-6 flex-wrap">
+            <div className="max-w-md">
+              <div className="text-[10px] uppercase tracking-[0.3em] text-muted mb-1">Backup &amp; restore</div>
+              <h2 className="font-bold text-ink text-lg mb-1">Your ratings, portable</h2>
+              <p className="text-sm text-muted leading-relaxed">
+                Download a single vault file with everything you've rated, then
+                restore it from any browser — no account needed.
+              </p>
+            </div>
+            <div className="flex items-center gap-2 flex-wrap">
+              <button
+                type="button"
+                onClick={onDownload}
+                className="px-4 py-2 rounded-pill bg-white border border-hairline text-ink hover:border-coral hover:text-coral transition-colors text-sm font-medium"
+              >
+                Download my vault
+              </button>
+              <label className="px-4 py-2 rounded-pill bg-white border border-hairline text-ink hover:border-coral hover:text-coral transition-colors text-sm font-medium cursor-pointer">
+                Restore from file
+                <input
+                  ref={fileRef}
+                  type="file"
+                  accept="application/json,.json,.hosq"
+                  className="hidden"
+                  onChange={onRestore}
+                />
+              </label>
+            </div>
+          </div>
+        </section>
       </main>
     </div>
   );

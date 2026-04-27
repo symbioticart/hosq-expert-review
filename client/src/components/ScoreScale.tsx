@@ -12,7 +12,7 @@ const LEVELS = [0, 1, 2, 3, 4, 5] as const;
 export function ScoreScale({ value, onChange, rubric }: Props) {
   return (
     <div>
-      <div className="flex flex-wrap gap-2">
+      <div className="flex flex-wrap gap-2" role="radiogroup" aria-label="Score from 0 to 5">
         {LEVELS.map((n) => {
           const active = value === n;
           return (
@@ -20,9 +20,11 @@ export function ScoreScale({ value, onChange, rubric }: Props) {
               key={n}
               type="button"
               onClick={() => onChange(n)}
-              aria-pressed={active}
+              role="radio"
+              aria-checked={active}
+              aria-label={`Score ${n} of 5`}
               className={cn(
-                "h-14 w-14 rounded-pill font-bold text-xl transition border-2",
+                "h-12 w-12 sm:h-14 sm:w-14 rounded-pill font-bold text-lg sm:text-xl transition-colors border-2 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-coral focus-visible:ring-offset-2 focus-visible:ring-offset-cream",
                 active
                   ? "bg-coral text-white border-coral"
                   : "bg-transparent text-ink border-ink/20 hover:border-ink",

@@ -63,7 +63,7 @@ export default function Review() {
       <Header />
       <div className="flex items-start min-h-[calc(100vh-72px)]">
         <LeftSidebar
-          className="hidden md:flex"
+          className="hidden lg:flex"
           projects={manifest.projects}
           projectId={project.id}
           projectSlug={project.slug}
@@ -81,7 +81,7 @@ export default function Review() {
             projectSlug={project.slug}
           />
           {pLoading || !meta || !ai ? (
-            <div className="text-muted">Loading project…</div>
+            <MetricSkeleton />
           ) : (
             <MetricEditor
               key={activeMetric.id}
@@ -127,9 +127,9 @@ export default function Review() {
               onClick={() => setCtxOpen(true)}
               aria-label="Open project info"
               title="Project info"
-              className="xl:hidden no-print fixed bottom-6 right-6 z-30 h-12 px-5 rounded-pill bg-ink text-cream shadow-lg hover:bg-coral transition text-sm font-medium"
+              className="xl:hidden no-print fixed bottom-6 right-6 z-30 h-12 px-5 rounded-pill bg-ink text-cream shadow-lg hover:bg-coral transition text-sm font-medium focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-coral focus-visible:ring-offset-2 focus-visible:ring-offset-cream"
             >
-              ⓘ Project info
+              Project info
             </button>
           </>
         )}
@@ -234,7 +234,7 @@ function FinalSidebarLink({
           ★
         </span>
         <span className={cn("text-sm font-medium", allDone ? "text-ink" : "text-muted")}>
-          {allDone ? "See final" : "Final"}
+          {allDone ? "See result" : "Result"}
         </span>
       </span>
       {allDone ? (
@@ -265,6 +265,30 @@ function FinalSidebarLink({
   );
 }
 
+function MetricSkeleton() {
+  return (
+    <div className="animate-pulse" aria-busy="true" aria-live="polite" aria-label="Loading metric">
+      <div className="flex items-center gap-3 mb-6">
+        <div className="h-14 w-14 rounded-pill bg-zebra" />
+        <div>
+          <div className="h-6 w-48 bg-zebra rounded-card mb-2" />
+          <div className="h-3 w-20 bg-zebra rounded-card" />
+        </div>
+      </div>
+      <div className="h-4 w-full bg-zebra rounded-card mb-2" />
+      <div className="h-4 w-5/6 bg-zebra rounded-card mb-8" />
+      <div className="h-4 w-32 bg-zebra rounded-card mb-3" />
+      <div className="flex gap-2 mb-8">
+        {[0, 1, 2, 3, 4, 5].map((i) => (
+          <div key={i} className="h-14 w-14 rounded-pill bg-zebra" />
+        ))}
+      </div>
+      <div className="h-24 w-full bg-zebra rounded-card mb-4" />
+      <div className="h-10 w-40 bg-zebra rounded-pill" />
+    </div>
+  );
+}
+
 function MobileMetricBar({
   metrics,
   ratings,
@@ -278,7 +302,7 @@ function MobileMetricBar({
 }) {
   const scoredIds = new Set(ratings.filter((r) => r.metricId !== "final").map((r) => r.metricId));
   return (
-    <nav className="md:hidden no-print -mx-4 mb-4 px-4 py-2 border-b border-hairline bg-cream sticky top-[72px] z-10 overflow-x-auto">
+    <nav className="lg:hidden no-print -mx-4 mb-4 px-4 py-2 border-b border-hairline bg-cream/95 backdrop-blur sticky top-[120px] z-10 overflow-x-auto">
       <ul className="flex gap-1.5 min-w-max">
         {metrics.map((m) => {
           const active = m.id === activeMetricId;
@@ -286,14 +310,15 @@ function MobileMetricBar({
           return (
             <li key={m.id}>
               <Link
-                to={`/project/${projectSlug}/review?m=${m.id}`}
+                to={`/project/${projectSlug}?m=${m.id}`}
                 title={m.nameEn}
+                aria-current={active ? "page" : undefined}
                 className={cn(
-                  "flex items-center justify-center h-8 w-8 rounded-pill text-xs font-bold transition",
+                  "flex items-center justify-center h-8 w-8 rounded-pill text-xs font-bold transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-coral",
                   active
                     ? "bg-ink text-cream"
                     : scored
-                      ? "bg-green/15 text-greenDark"
+                      ? "bg-greenDark text-white"
                       : "bg-zebra text-muted hover:bg-hairline",
                 )}
               >
