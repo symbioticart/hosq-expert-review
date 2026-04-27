@@ -53,6 +53,9 @@ export default function Review() {
   const activeMetric   = metrics.metrics[activeIndex >= 0 ? activeIndex : 0];
   const isLast         = activeIndex === metrics.metrics.length - 1;
 
+  const ratedMetricIds = new Set(projectRatings.map((r) => r.metricId));
+  const allDoneInProject = metrics.metrics.every((m) => ratedMetricIds.has(m.id));
+
   const existingRating = projectRatings.find((r) => r.metricId === activeMetric.id) ?? null;
 
   return (
@@ -102,7 +105,9 @@ export default function Review() {
                 if (isLast) navigate(`/project/${project.slug}/final`);
                 else setParams({ m: metrics.metrics[activeIndex + 1].id });
               }}
+              onSeeResult={() => navigate(`/project/${project.slug}/final`)}
               isLast={isLast}
+              allDoneInProject={allDoneInProject}
             />
           )}
         </main>
@@ -312,7 +317,9 @@ function MetricEditor({
   onChange,
   onSaveAndReveal,
   onNext,
+  onSeeResult,
   isLast,
+  allDoneInProject,
 }: {
   metric: import("../lib/types").MetricDef;
   aiMetric: import("../lib/types").AiMetricEval | null;
@@ -323,7 +330,9 @@ function MetricEditor({
   onChange: (score: number, comment: string) => void;
   onSaveAndReveal: (score: number, comment: string) => void;
   onNext: () => void;
+  onSeeResult: () => void;
   isLast: boolean;
+  allDoneInProject: boolean;
 }) {
   const [score, setScore] = useState<number | null>(existingScore);
   const [comment, setComment] = useState<string>(existingComment);
@@ -459,15 +468,38 @@ function MetricEditor({
       </div>
 
       {revealed && score !== null && (
-        <div className="mt-8">
-          <button
-            ref={nextBtnRef}
-            type="button"
-            onClick={onNext}
-            className="px-6 py-3 rounded-pill bg-ink text-cream font-medium hover:bg-coral transition"
-          >
-            {isLast ? "Finish · see final →" : "Next metric →"}
-          </button>
+        <div className="mt-8 flex items-center gap-3 flex-wrap">
+          {/* When the whole project is done, the primary CTA is always "See result" — momentum to next project. */}
+          {allDoneInProject ? (
+            <>
+              <button
+                ref={nextBtnRef}
+                type="button"
+                onClick={onSeeResult}
+                className="px-6 py-3 rounded-pill bg-ink text-cream font-medium hover:bg-coral transition-colors"
+              >
+                ✓ Project done · see result →
+              </button>
+              {!isLast && (
+                <button
+                  type="button"
+                  onClick={onNext}
+                  className="text-sm text-muted hover:text-ink transition-colors"
+                >
+                  Next metric →
+                </button>
+              )}
+            </>
+          ) : (
+            <button
+              ref={nextBtnRef}
+              type="button"
+              onClick={onNext}
+              className="px-6 py-3 rounded-pill bg-ink text-cream font-medium hover:bg-coral transition-colors"
+            >
+              {isLast ? "Finish · see result →" : "Next metric →"}
+            </button>
+          )}
         </div>
       )}
     </>
