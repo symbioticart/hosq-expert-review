@@ -443,22 +443,6 @@ function MetricEditor({
         <ScoreScale value={score} onChange={handleScore} rubric={metric.vectorRubric} />
       </section>
 
-      <section className="mb-8">
-        <label className="block text-xs uppercase tracking-wider text-muted mb-1" htmlFor="comment">
-          Comment <span className="normal-case text-muted/70">(optional)</span>
-        </label>
-        <textarea
-          id="comment"
-          className="underline-input"
-          placeholder="What is strong, what is weak…"
-          rows={3}
-          value={comment}
-          onChange={(e) => handleComment(e.target.value)}
-          onFocus={() => setTyping(true)}
-          onBlur={() => setTyping(false)}
-        />
-      </section>
-
       <section className="mb-8 flex items-center gap-3 flex-wrap">
         <button
           type="button"
@@ -473,7 +457,11 @@ function MetricEditor({
                 : "bg-ink text-cream hover:bg-coral")
           }
         >
-          {savedWithCurrent ? "✓ Saved" : "Save my rating"}
+          {savedWithCurrent
+            ? "✓ Saved"
+            : revealed
+              ? "Save my rating"
+              : "Save & reveal AI →"}
         </button>
         <span className={cn("text-xs text-muted transition-opacity", typing && "opacity-30")}>
           <kbd className="font-mono bg-zebra px-1.5 py-0.5 rounded">0</kbd>…
@@ -491,6 +479,22 @@ function MetricEditor({
           aiAnalysisPdf={aiAnalysisPdf}
         />
       </div>
+
+      {/* Comment field — promoted below AI reveal so the expert can react to the
+          AI's score (especially when they disagree). The text is what trains the
+          next model, so the framing is delta-aware and the field is visually loud. */}
+      {revealed && score !== null && (
+        <DisagreementComment
+          metricId={metric.id}
+          comment={comment}
+          onChange={handleComment}
+          onFocus={() => setTyping(true)}
+          onBlur={() => setTyping(false)}
+          expertScore={score}
+          aiMetric={aiMetric}
+          aiNotEvaluated={aiNotEvaluated}
+        />
+      )}
 
       {revealed && score !== null && (
         <div className="mt-8 flex items-center gap-3 flex-wrap">
@@ -528,5 +532,86 @@ function MetricEditor({
         </div>
       )}
     </>
+  );
+}
+
+function DisagreementComment({
+  metricId,
+  comment,
+  onChange,
+  onFocus,
+  onBlur,
+  expertScore,
+  aiMetric,
+  aiNotEvaluated,
+}: {
+  metricId: string;
+  comment: string;
+  onChange: (s: string) => void;
+  onFocus: () => void;
+  onBlur: () => void;
+  expertScore: number;
+  aiMetric: import("../lib/types").AiMetricEval | null;
+  aiNotEvaluated: boolean;
+}) {
+  // Compute delta between expert (0..5) and AI (normalised to 0..5)
+  const aiOnFive =
+    aiMetric && !aiNotEvaluated ? (aiMetric.score / aiMetric.scoreMax) * 5 : null;
+  const delta = aiOnFive != null ? expertScore - aiOnFive : null;
+
+  // Prompt + placeholder vary with the delta direction so the field doesn't read
+  // as a generic optional notes box. This is the data we use to fine-tune.
+  let heading = "Your reasoning";
+  let subtitle: string;
+  let placeholder: string;
+  let stripeColor = "border-coral";
+
+  if (aiNotEvaluated || aiOnFive == null) {
+    subtitle = "What about this project supports your score? Strengths, weaknesses, evidence.";
+    placeholder = "What is strong, what is weak…";
+    stripeColor = "border-coral";
+  } else if (delta != null && delta >= 0.5) {
+    heading = `Why higher than the AI?`;
+    subtitle = `You scored ${expertScore.toFixed(0)}; the AI says ≈ ${aiOnFive.toFixed(1)}. What did the AI miss or undervalue?`;
+    placeholder = "The AI didn't account for…";
+    stripeColor = "border-coral";
+  } else if (delta != null && delta <= -0.5) {
+    heading = `Why lower than the AI?`;
+    subtitle = `You scored ${expertScore.toFixed(0)}; the AI says ≈ ${aiOnFive.toFixed(1)}. What undercuts the AI's case?`;
+    placeholder = "What the AI overlooked or overstated…";
+    stripeColor = "border-violet";
+  } else {
+    heading = "Anchor your score";
+    subtitle = `You and the AI roughly agree (${expertScore.toFixed(0)} vs ≈ ${aiOnFive.toFixed(1)}). Add the rationale that locks the call in.`;
+    placeholder = "Why this score is right…";
+    stripeColor = "border-greenDark";
+  }
+
+  return (
+    <section className={cn("mt-10 mb-2 rounded-card bg-white p-6 border-l-[4px]", stripeColor)}>
+      <div className="flex items-baseline justify-between gap-3 flex-wrap mb-1">
+        <label htmlFor={`comment-${metricId}`} className="font-bold text-ink text-lg">
+          {heading}
+        </label>
+        <span className="text-[10px] uppercase tracking-wider text-muted/80">
+          Used to improve the AI
+        </span>
+      </div>
+      <p className="text-sm text-muted leading-relaxed mb-3 max-w-[640px]">{subtitle}</p>
+      <textarea
+        id={`comment-${metricId}`}
+        className="w-full bg-transparent border-0 border-b border-hairline focus:border-coral focus:outline-none transition-colors text-[16px] leading-7 text-ink placeholder-muted/60 resize-y py-2 -mx-1 px-1 min-h-[90px]"
+        placeholder={placeholder}
+        rows={4}
+        value={comment}
+        onChange={(e) => onChange(e.target.value)}
+        onFocus={onFocus}
+        onBlur={onBlur}
+      />
+      <div className="mt-2 flex items-center justify-between text-[11px] text-muted/70">
+        <span>Saves automatically.</span>
+        <span>{comment.length} chars</span>
+      </div>
+    </section>
   );
 }
